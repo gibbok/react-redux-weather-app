@@ -1,0 +1,11 @@
+﻿- [X] setup vs markdown
+- [ ] setup env
+- [ ] create package.json
+- [ ] setup webpack
+- [ ] setup babel
+- [ ] setup babel presets/plugins
+- [ ] setup redux
+- [ ] setup react
+- [ ] setup debug with source map
+- [ ] 
+- [ ] 
