@@ -1,0 +1,23 @@
+{
+  "name": "react-redux-weather-app",
+  "version": "1.0.0",
+  "description": "Weather Application based on ReactJs and Redux",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gibbok/react-redux-weather-app.git"
+  },
+  "keywords": [
+    "react",
+    "redux"
+  ],
+  "author": "GibboK",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gibbok/react-redux-weather-app/issues"
+  },
+  "homepage": "https://github.com/gibbok/react-redux-weather-app#readme"
+}

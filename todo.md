@@ -1,7 +1,7 @@
 ﻿- [X] setup vs markdown
-- [ ] setup env
-- [ ] create package.json
-- [ ] setup webpack
+- [X] setup env
+- [X] create package.json
+- [X] setup webpack
 - [ ] setup babel
 - [ ] setup babel presets/plugins
 - [ ] setup redux
