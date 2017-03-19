@@ -1,5 +1,6 @@
 ﻿# Todo
 
+## Setup 
 - [X] setup git
 - [X] setup vs markdown
 - [X] setup env
@@ -12,7 +13,15 @@
 - [X] setup redux
 - [X] setup react
 - [X] setup .editorconfig
+- [X] setup openweathermap
+
+- [ ] analysis openweathermap data
+- [ ] setup redux file structure using rails-style or domain-style
+- [ ] setup redux scaffolding
+- [ ] setup data tree
 
 ## Useful
 
 http://kleopetrov.me/2016/03/18/everything-about-babel/
+https://marmelab.com/blog/2015/12/17/react-directory-structure.html
+"OWY1ODViYWJjNTliZjQzNWM0MjMxOWI0ZTliNjk3NjY="
