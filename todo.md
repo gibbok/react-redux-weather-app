@@ -1,5 +1,6 @@
 ﻿# Todo
 
+- [X] setup git
 - [X] setup vs markdown
 - [X] setup env
 - [X] create package.json
