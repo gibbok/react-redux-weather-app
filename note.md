@@ -45,8 +45,8 @@ The Daily component provides at a glance basic weather information for the next 
 #### Hourly
 The Hourly component provides temperature and precipitation information in chart/table format.
 
-- [] As a user I want to see a chart with temperature/precipitation information for a select city/day.
-- [] As a user I want to switch the chart view to a more tabular view with more details.
+- [ ] As a user I want to see a chart with temperature/precipitation information for a select city/day.
+- [ ] As a user I want to switch the chart view to a more tabular view with more details.
 
 #### Day Details
 The Day Details component provides general information about Sunrise/Sunset/Precipitation/Himidity/Wind.
