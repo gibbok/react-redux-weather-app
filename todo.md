@@ -15,7 +15,7 @@
 - [X] setup .editorconfig
 - [X] setup openweathermap
 
-- [ ] analysis openweathermap data
+- [X] analysis openweathermap data
 - [ ] setup redux file structure using rails-style or domain-style
 - [ ] setup redux scaffolding
 - [ ] setup data tree
