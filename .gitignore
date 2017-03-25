@@ -1,5 +1,5 @@
 ﻿### Application ###
-build/
+build/app.bundle.js
 
 ### Node ###
 # Logs
