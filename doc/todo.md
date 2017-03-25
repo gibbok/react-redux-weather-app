@@ -8,7 +8,8 @@
 - [X] setup webpack
 - [X] setup webpack config
 - [ ] setup webpack plugins
-- [ ] setup webpack source map
+- [ ] setup webpack source map *
+- [ ] setup webpack livereload * FIX issue here
 - [X] setup babel
 - [X] setup babel presets/plugins
 - [X] setup redux
