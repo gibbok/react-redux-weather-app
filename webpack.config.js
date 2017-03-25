@@ -1,7 +1,9 @@
-﻿module.exports = {
+﻿const path = require('path');
+
+module.exports = {
     entry: './src/index.js',
     output: {
-        path: './build',
+        path: path.resolve(__dirname, 'build'),
         filename: 'app.bundle.js',
     },
     devServer: {
