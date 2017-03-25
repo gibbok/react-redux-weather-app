@@ -1,4 +1,4 @@
-﻿# API Related
+﻿# Notes
 
 ## Examples
 Get weather information for some cities matching the query, in this example London is returned in two countries.
