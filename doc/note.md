@@ -16,7 +16,6 @@ http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=
 - Forecast (5 days weather)
 - Finder (list of cities)
 
-
 ## Interesting projects
 API abstraction on top of openweathermap
 https://www.npmjs.com/package/openweathermap
