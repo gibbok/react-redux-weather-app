@@ -1,2 +1,1 @@
-﻿var hey = 'rocco tano';
-console.log(hey);
+﻿console.log('hello world');
