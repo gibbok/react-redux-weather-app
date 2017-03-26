@@ -2,15 +2,16 @@
 
 module.exports = {
     entry: {
-        app: ["./src/index.js"]
+        app: ['./src/index.js']
     },
     output: {
-        path: path.resolve(__dirname, "build"),
-        publicPath: "/assets/",
-        filename: "bundle.js"
+        path: path.resolve(__dirname, 'build'),
+        publicPath: '/assets/', //virtual
+        filename: 'bundle.js'
     },
     devServer: {
-        contentBase: 'build',
+        contentBase: path.resolve(__dirname, 'build'),
+        publicPath: '/assets/', //virtual
         inline: true,
         port: 8080
     },
