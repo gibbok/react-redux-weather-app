@@ -27,6 +27,8 @@
 
 ## Useful
 
+https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
+
 http://kleopetrov.me/2016/03/18/everything-about-babel/
 https://marmelab.com/blog/2015/12/17/react-directory-structure.html
 http://redux.js.org/docs/basics/Reducers.html#designing-the-state-shape
