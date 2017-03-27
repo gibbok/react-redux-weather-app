@@ -2,10 +2,30 @@
     app: {
         config: {}
     },
+    //locationFinder: {
+    //    data: [],   // domain data
+    //    app: {},    // app state that is specific to the application's behavior
+    //    ui: {}      // data that represents how the UI is currently displayed
+    //},
     locationFinder: {
-        data: [],   // domain data
-        app: {},    // app state that is specific to the application's behavior
-        ui: {}      // data that represents how the UI is currently displayed
+        data: {
+            byId: {
+                // data list of cities
+            },
+            allIds: []
+        },
+        app: {
+            isFetching: false
+        },
+        ui: {
+            inputValue: '',
+            resultCities: {
+                byId: {
+                    // ui list of cities
+                },
+                allIds: []
+            }
+        }
     },
     weather: {
         data: [],
