@@ -22,7 +22,8 @@
 - [ ] setup redux scaffolding
 - [ ] setup data tree
 
-- [ ] analysis state app
+- [X] analysis state app finder
+- [ ] setup static app finder version****
 - [ ] analysis and add configuration
 
 ## Useful
@@ -31,9 +32,11 @@ https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.ht
 
 http://kleopetrov.me/2016/03/18/everything-about-babel/
 https://marmelab.com/blog/2015/12/17/react-directory-structure.html
+
 http://redux.js.org/docs/basics/Reducers.html#designing-the-state-shape
 http://redux.js.org/docs/recipes/reducers/NormalizingStateShape.html
 http://redux.js.org/docs/recipes/reducers/BasicReducerStructure.html
+
 "OWY1ODViYWJjNTliZjQzNWM0MjMxOWI0ZTliNjk3NjY="
 "9f585babc59bf435c42319b4e9b69766"
 
