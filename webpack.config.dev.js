@@ -20,6 +20,7 @@ module.exports = {
         hot: true,
         inline: true
     },
+    devtool: 'source-map',
     module: {
         loaders: [
             {
