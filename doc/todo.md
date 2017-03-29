@@ -37,6 +37,12 @@ http://redux.js.org/docs/basics/Reducers.html#designing-the-state-shape
 http://redux.js.org/docs/recipes/reducers/NormalizingStateShape.html
 http://redux.js.org/docs/recipes/reducers/BasicReducerStructure.html
 
+http://jonnyreeves.co.uk/2016/simple-webpack-prod-and-dev-config/
+https://gist.github.com/sokra/27b24881210b56bbaff7#configuration
+https://medium.com/@rajaraodv/webpack-the-confusing-parts-58712f8fcad9
+
+https://github.com/webpack/webpack/issues/2666
+
 "OWY1ODViYWJjNTliZjQzNWM0MjMxOWI0ZTliNjk3NjY="
 "9f585babc59bf435c42319b4e9b69766"
 
