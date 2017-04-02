@@ -21,6 +21,7 @@ module.exports = {
         inline: true
     },
     devtool: 'source-map',
+    //devtool: 'eval-source-map',
     module: {
         loaders: [
             {
