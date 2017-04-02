@@ -32,7 +32,7 @@
 ## Static protoype
 - [ ] render a static list of cities for location finder
 - [ ] when user click search in location finder show the list of cities
-- [X] setup redux container and basic react componenet
+- [X] setup redux container and basic react component
 
 
 ## Useful
