@@ -1,21 +1,18 @@
-﻿import React, { PropTypes } from 'react';
-import Location from './Location';
+import Location from './Location'
 
 const LocationFinderList = ({ locations, onLocationClick }) => (
-    <ul>
-        {Object.keys(locations).map((location, index) =>
-            <Location
-                key={index}
-                {...locations[location]}
-                onClick={() => onLocationClick(location)}
+  <ul>
+    {Object.keys(locations).map((location, index) =>
+      <Location
+        key={index}
+        {...locations[location]}
+        onClick={() => onLocationClick(location)}
             />
         )}
-    </ul>
-);
+  </ul>
+)
 
-
-
-//const LocationFinderList = ({ locations, onLocationClick }) => (
+// const LocationFinderList = ({ locations, onLocationClick }) => (
 //    <ul>
 //        {locations.map(location =>
 //            <Location
@@ -25,6 +22,6 @@ const LocationFinderList = ({ locations, onLocationClick }) => (
 //            />
 //        )}
 //    </ul>
-//);
+// );
 
-export default LocationFinderList;
+export default LocationFinderList

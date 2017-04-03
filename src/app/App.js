@@ -1,11 +1,11 @@
-﻿import React from 'react';
-import LocationFinderListContainer from '../locationFinder/locationFinderListContainer';
+import React from 'react'
+import LocationFinderListContainer from '../locationFinder/locationFinderListContainer'
 
 const App = () => (
-    <div>
+  <div>
         App
         <LocationFinderListContainer />
-    </div>
-);
+  </div>
+)
 
-export default App;
+export default App
