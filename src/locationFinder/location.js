@@ -1,5 +1,3 @@
-var rocco = 'ddrf'
-
 const Location = ({onClick, name, country}) => (
   <li onClick={onClick}>
     {name} {country}
