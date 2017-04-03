@@ -10,6 +10,7 @@
 - [ ] setup webpack plugins
 - [X] setup webpack source map
 - [X] setup webpack livereload
+- [X] setup standard js with auto format
 - [X] setup babel
 - [X] setup babel presets/plugins
 - [X] setup redux

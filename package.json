@@ -4,7 +4,8 @@
     "description": "Weather Application based on ReactJs and Redux",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "standard",
+        "format": "standard --fix",
         "dev": "webpack-dev-server --config webpack.config.dev.js",
         "build": "webpack --config webpack.config.prod.js"
     },
@@ -41,6 +42,7 @@
         "babel-eslint": "7.1.1",
         "eslint": "3.18.0",
         "eslint-plugin-react": "6.10.0",
-        "webpack": "^2.2.1"
+        "webpack": "2.2.1",
+        "standard": "9.0.2"
     }
 }
