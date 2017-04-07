@@ -20,9 +20,9 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const VisibleTodoList = connect(
+const LocationFinderListContainer = connect(
     mapStateToProps,
     mapDispatchToProps
 )(LocationFinderList)
 
-export default VisibleTodoList
+export default LocationFinderListContainer

@@ -35,6 +35,11 @@
 - [ ] when user click search in location finder show the list of cities
 - [X] setup redux container and basic react component
 
+- [X] render a input field
+- [X] render a search butn
+- [*] when user enter a value in input, state is update using action
+- [*] when user enter search, list location is displayed (api call)
+
 
 ## Useful
 

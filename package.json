@@ -6,7 +6,7 @@
     "scripts": {
         "test": "standard",
         "format": "standard --fix",
-        "dev": "webpack-dev-server --config webpack.config.dev.js",
+        "start": "webpack-dev-server --config webpack.config.dev.js",
         "build": "webpack --config webpack.config.prod.js"
     },
     "repository": {

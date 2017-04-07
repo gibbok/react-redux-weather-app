@@ -1,3 +1,5 @@
+import React from 'react'
+
 const Location = ({onClick, name, country}) => (
   <li onClick={onClick}>
     {name} {country}
