@@ -9,4 +9,11 @@ const getFindLocations = q => ({
     })
 });
 
+const setFinderSearchValue = (value) => ({
+    type: 'SET_FIND_VALUE',
+    payload: new Promise(resolve => {
+            resolve(value);
+    })
+});
+
 export { getFindLocations }

@@ -8,7 +8,7 @@ import { Provider } from 'react-redux'
 import locationFinderReducer from './locationFinder/locationFinderReducer'
 import App from './app/App'
 import { getFindLocations } from './locationFinder/locationFinderSearchActions'
-debugger
+
 const store = createStore(locationFinderReducer, applyMiddleware(
   thunkMiddleware,
   promiseMiddleware()

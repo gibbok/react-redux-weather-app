@@ -8,15 +8,16 @@ import LocationFinderSearch from './locationFinderSearch'
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onLocationSearchClick: () => {
-      console.log('click search')
+    onLocationSearchClick: (e) => {
+      e.preventDefault();
+      console.log('click on search')
     }
   }
 }
 
 const LocationFinderSearchContainer = connect(
-    // mapStateToProps,
-    mapDispatchToProps
+  // mapStateToProps,
+  mapDispatchToProps
 )(LocationFinderSearch)
 
 export default LocationFinderSearchContainer
