@@ -1,3 +1,5 @@
+import dotProp from 'dot-prop-immutable'
+
 const initialState = {
   app: {
     config: {}
@@ -68,11 +70,10 @@ const initialState = {
 function locationFinderReducer (state = initialState, action) {
   switch (action.type) {
     case 'GET_FIND':
-      debugger
       return state
     case 'SET_FIND_VALUE':
-      debugger
-      return state
+    //TODO read docs https://github.com/debitoor/dot-prop-immutable
+    return dotProp.set(state, 'locationFinder.ui,inputValue', action.payload);
     default:
       return state
   }

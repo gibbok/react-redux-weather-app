@@ -65,6 +65,8 @@ https://github.com/webpack/webpack/issues/2666
 https://webpack.js.org/guides/development/#components/sidebar/sidebar.jsx
 https://survivejs.com/webpack/building/source-maps/
 
+http://redux.js.org/docs/recipes/reducers/ImmutableUpdatePatterns.html
+
 https://github.com/acdlite/flux-standard-action
 
 "OWY1ODViYWJjNTliZjQzNWM0MjMxOWI0ZTliNjk3NjY="
