@@ -39,7 +39,9 @@
 - [X] render a search butn
 - [*] when user enter a value in input, state is update using action
 - [*] when user enter search, list location is displayed (api call)
-
+- [*] mak a simple middleware for promise and test an action with promise
+- [ ] make type for action in different module
+- [ ] add api utility and config api
 
 ## Useful
 
@@ -60,8 +62,25 @@ https://github.com/webpack/webpack/issues/2666
 https://webpack.js.org/guides/development/#components/sidebar/sidebar.jsx
 https://survivejs.com/webpack/building/source-maps/
 
+https://github.com/acdlite/flux-standard-action
+
 "OWY1ODViYWJjNTliZjQzNWM0MjMxOWI0ZTliNjk3NjY="
 "9f585babc59bf435c42319b4e9b69766"
+
+## Flux Standard Actions
+
+{
+  type: 'ADD_TODO',
+  payload: {
+    text: 'Do something.'  
+  }
+}
+
+{
+  type: 'ADD_TODO',
+  payload: new Error(),
+  error: true
+}
 
 
 
