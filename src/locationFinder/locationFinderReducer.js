@@ -68,10 +68,10 @@ const initialState = {
 function locationFinderReducer (state = initialState, action) {
   switch (action.type) {
     case 'GET_FIND':
-    debugger
+      debugger
       return state
     case 'SET_FIND_VALUE':
-    debugger
+      debugger
       return state
     default:
       return state

@@ -6,6 +6,6 @@ import reducers from './reducers'
 const store = createStore(reducers, applyMiddleware(
   thunkMiddleware,
   promiseMiddleware()
-));
+))
 
 export default store

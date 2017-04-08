@@ -2,7 +2,7 @@ import { combineReducers } from 'redux'
 import locationFinderReducer from '../locationFinder/locationFinderReducer'
 
 const rootReducer = combineReducers({
-    locationFinderReducer
+  locationFinderReducer
 })
 
-export default rootReducer 
+export default rootReducer
