@@ -36,10 +36,17 @@
 - [X] setup redux container and basic react component
 
 - [X] render a input field
-- [X] render a search butn
+- [X] render a search button
+
 - [*] when user enter a value in input, state is update using action
 - [*] when user enter search, list location is displayed (api call)
 - [*] mak a simple middleware for promise and test an action with promise
+
+- [*] when user enter an input value, update state
+- [ ] when user click search send action with input value
+
+- [ ] fix babel polify must be included with an import or can be avoided?
+
 - [ ] make type for action in different module
 - [ ] add api utility and config api
 

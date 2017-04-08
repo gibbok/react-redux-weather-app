@@ -11,6 +11,10 @@ const mapDispatchToProps = (dispatch) => {
     onLocationSearchClick: (e) => {
       e.preventDefault();
       console.log('click on search')
+    },
+    onLocationInputChange: (e) => {
+      e.preventDefault();
+      console.log('change in input')
     }
   }
 }
