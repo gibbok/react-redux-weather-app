@@ -8,7 +8,7 @@ const getLocations = (location) => {
 
 const mapStateToProps = (state) => {
   return {
-    locations: getLocations(state.locationFinder.data.byId)
+    locations: getLocations(state.locationFinderReducer.locationFinder.data.byId)
   }
 }
 

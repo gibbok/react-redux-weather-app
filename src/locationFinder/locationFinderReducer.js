@@ -1,4 +1,4 @@
-const stateDefault = {
+const initialState = {
   app: {
     config: {}
   },
@@ -65,15 +65,17 @@ const stateDefault = {
   }
 }
 
-function app (state = stateDefault, action) {
+function locationFinderReducer (state = initialState, action) {
   switch (action.type) {
-    case 'INCREMENT':
-      return state + 1
-    case 'DECREMENT':
-      return state - 1
+    case 'GET_FIND':
+    debugger
+      return state
+    case 'SET_FIND_VALUE':
+    debugger
+      return state
     default:
       return state
   }
 }
 
-export default app
+export default locationFinderReducer

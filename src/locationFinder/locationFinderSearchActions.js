@@ -11,9 +11,7 @@ const getFindLocations = q => ({
 
 const setFinderSearchValue = (value) => ({
     type: 'SET_FIND_VALUE',
-    payload: new Promise(resolve => {
-            resolve(value);
-    })
+    payload: value
 });
 
-export { getFindLocations }
+export { getFindLocations, setFinderSearchValue }
