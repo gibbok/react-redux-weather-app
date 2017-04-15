@@ -20,6 +20,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onLocationSearchClick: (e) => {
       e.preventDefault()
+      let value = store.getState().locationFinderReducer.locationFinder.ui.inputValue;
+      store.dispatch(getFindLocations(value))
       console.log('click on search')
     },
     onLocationInputChange: (e) => {
