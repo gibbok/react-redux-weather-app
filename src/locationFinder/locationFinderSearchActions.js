@@ -1,9 +1,10 @@
 import 'isomorphic-fetch'
+import * as api from '../app/api' 
 
-const getFindLocations = q => ({
+const getFindLocations = query => ({
   type: 'GET_FIND',
   payload: new Promise((resolve, reject) => {
-    fetch(`http://api.openweathermap.org/data/2.5/find?q=${q}&APPID=9f585babc59bf435c42319b4e9b69766`).then(response => {
+    fetch(api.find(query)).then(response => {
       resolve(response.json())
     })
   })
