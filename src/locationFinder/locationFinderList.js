@@ -3,10 +3,10 @@ import Location from './Location'
 
 const LocationFinderList = ({ locations, onLocationClick }) => (
   <ul>
-    {Object.keys(locations).map((location, index) =>
+    {locations.map((location, index) =>
       <Location
         key={index}
-        {...locations[location]}
+        {...locations[index]}
         onClick={() => onLocationClick(location)}
             />
         )}

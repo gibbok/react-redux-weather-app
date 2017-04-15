@@ -10,28 +10,28 @@ const initialState = {
   //    ui: {}      // data that represents how the UI is currently displayed
   // },
   locationFinder: {
-    data: {
-      byId: {
-        // data list of cities
-        2643743: {
-          name: 'London',
-          country: 'GB'
-        },
-        4119617: {
-          name: 'London',
-          country: 'US'
-        },
-        4298960: {
-          name: 'London',
-          country: 'US'
-        },
-        4517009: {
-          name: 'London',
-          country: 'US'
-        }
+    data: [
+      {
+        id: 2643743,
+        name: 'London',
+        country: 'GB'
       },
-      allIds: [2643743, 4119617, 4298960, 4517009]
-    },
+      {
+        id: 4119617,
+        name: 'London',
+        country: 'US'
+      },
+      {
+        id: 4298960,
+        name: 'London',
+        country: 'US'
+      },
+      {
+        id: 4517009,
+        name: 'London',
+        country: 'US'
+      }
+    ],
     app: {
       isFetching: false
     },
@@ -72,16 +72,14 @@ const initialState = {
 function locationFinderReducer(state = initialState, action) {
   switch (action.type) {
     case 'GET_FIND_FULFILLED':
-      const locations = action.payload.list.reduce((acc, value) => {
-        let location = {
-          name: value.name,
-          country: value.sys.country
-        };
-        let id = value.id;
-        acc[id] = location;
-        return acc;
-      }, {})
-      return dotProp.set(state, 'locationFinder.data.byId', locations);
+      const locations = action.payload.list.map(location => {
+        return {
+          id: location.id,
+          name: location.name,
+          country: location.sys.country
+        }
+      });
+      return dotProp.set(state, 'locationFinder.data', locations);
     case 'SET_FIND_VALUE':
       //TODO read docs https://github.com/debitoor/dot-prop-immutable
       return dotProp.set(state, 'locationFinder.ui.inputValue', action.payload);
