@@ -67,22 +67,21 @@ const initialState = {
   }
 }
 
+const updateLocationFinderData = (state, action) => {
+  const locations = action.payload.list.map(({ id, name, sys: { country } }) => ({ id, name, country }));
+  return dotProp.set(state, 'locationFinder.data', locations)
+}
 
+const updateLocationFinderInputValue = (state, action) => {
+  return dotProp.set(state, 'locationFinder.ui.inputValue', action.payload)
+}
 
 function locationFinderReducer(state = initialState, action) {
   switch (action.type) {
     case 'GET_FIND_FULFILLED':
-      const locations = action.payload.list.map(location => {
-        return {
-          id: location.id,
-          name: location.name,
-          country: location.sys.country
-        }
-      });
-      return dotProp.set(state, 'locationFinder.data', locations);
+      return updateLocationFinderData(state, action)
     case 'SET_FIND_VALUE':
-      //TODO read docs https://github.com/debitoor/dot-prop-immutable
-      return dotProp.set(state, 'locationFinder.ui.inputValue', action.payload);
+      return updateLocationFinderInputValue(state, action)
     default:
       return state
   }
