@@ -3,10 +3,11 @@ import LocationFinderSearch from './locationFinderSearch'
 import { getLocations, setSearchValue } from './locationFinderSearchActions'
 import store from '../app/store'
 
-// const mapStateToProps = (state) => {
-//   return {
-//   }
-// }
+const mapStateToProps = (state) => {
+  // helper function, a simpler way to access state properties in react componenets
+  return {
+  }
+}
 
 const handleInputChange = (e) => {
   e.preventDefault()
@@ -19,7 +20,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onLocationSearchClick: (e) => {
       e.preventDefault()
-      let value = store.getState().locationFinderReducer.locationFinder.ui.inputValue
+      let value = store.getState().locationFinderReducer.locationFinder.ui.inputValue // can be refacotred in mapStateToProps?
       store.dispatch(getLocations(value))
       console.log('click on search')
     },
@@ -30,7 +31,7 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const LocationFinderSearchContainer = connect(
-  // mapStateToProps,
+  mapStateToProps,
   mapDispatchToProps
 )(LocationFinderSearch)
 
