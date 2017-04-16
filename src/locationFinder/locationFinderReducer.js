@@ -11,26 +11,6 @@ const initialState = {
   // },
   locationFinder: {
     data: [
-      {
-        id: 2643743,
-        name: 'London',
-        country: 'GB'
-      },
-      {
-        id: 4119617,
-        name: 'London',
-        country: 'US'
-      },
-      {
-        id: 4298960,
-        name: 'London',
-        country: 'US'
-      },
-      {
-        id: 4517009,
-        name: 'London',
-        country: 'US'
-      }
     ],
     app: {
       isFetching: false
@@ -67,21 +47,29 @@ const initialState = {
   }
 }
 
-const updateLocationFinderData = (state, action) => {
-  const locations = action.payload.list.map(({ id, name, sys: { country } }) => ({ id, name, country }));
+const updateAppIsFetching = (state, action, value) => {
+  return dotProp.set(state, 'locationFinder.app.isFetching', value)
+}
+
+const updateData = (state, action) => {
+  const locations = action.payload.list.map(({ id, name, sys: { country } }) => ({ id, name, country }))
   return dotProp.set(state, 'locationFinder.data', locations)
 }
 
-const updateLocationFinderInputValue = (state, action) => {
+const updateUiInputValue = (state, action) => {
   return dotProp.set(state, 'locationFinder.ui.inputValue', action.payload)
 }
 
-function locationFinderReducer(state = initialState, action) {
+function locationFinderReducer (state = initialState, action) {
+  console.log(action.type)
   switch (action.type) {
+    case 'GET_FIND_PENDING':
+      return updateAppIsFetching(state, action, true)
     case 'GET_FIND_FULFILLED':
-      return updateLocationFinderData(state, action)
+      updateAppIsFetching(state, action, false)
+      return updateData(state, action)
     case 'SET_FIND_VALUE':
-      return updateLocationFinderInputValue(state, action)
+      return updateUiInputValue(state, action)
     default:
       return state
   }

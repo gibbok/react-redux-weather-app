@@ -1,6 +1,5 @@
 import { connect } from 'react-redux'
 import LocationFinderSearch from './locationFinderSearch'
-import app from './locationFinderReducer'
 import { getFindLocations, setFinderSearchValue } from './locationFinderSearchActions'
 import store from '../app/store'
 
@@ -20,7 +19,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onLocationSearchClick: (e) => {
       e.preventDefault()
-      let value = store.getState().locationFinderReducer.locationFinder.ui.inputValue;
+      let value = store.getState().locationFinderReducer.locationFinder.ui.inputValue
       store.dispatch(getFindLocations(value))
       console.log('click on search')
     },
