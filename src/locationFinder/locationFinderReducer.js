@@ -17,13 +17,7 @@ const initialState = {
       isFetching: false
     },
     ui: {
-      inputValue: '',
-      resultCities: {
-        byId: {
-          // ui list of cities
-        },
-        allIds: []
-      }
+      inputValue: ''
     }
   },
   weather: {

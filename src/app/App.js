@@ -4,7 +4,6 @@ import LocationFinderSearchContainer from '../locationFinder/locationFinderSearc
 
 const App = () => (
   <div>
-    App
     <LocationFinderSearchContainer />
     <LocationFinderListContainer />
   </div>

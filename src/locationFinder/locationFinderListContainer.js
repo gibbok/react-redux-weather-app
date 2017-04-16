@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import LocationFinderList from './locationFinderList'
 
 const getLocations = (location) => {
-    // we can apply some filters here
+  // we can apply some filters here
   return location
 }
 
@@ -21,8 +21,8 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const LocationFinderListContainer = connect(
-    mapStateToProps,
-    mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(LocationFinderList)
 
 export default LocationFinderListContainer

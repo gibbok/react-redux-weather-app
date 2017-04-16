@@ -8,21 +8,9 @@ const LocationFinderList = ({ locations, onLocationClick }) => (
         key={index}
         {...locations[index]}
         onClick={() => onLocationClick(location)}
-            />
-        )}
+      />
+    )}
   </ul>
 )
-
-// const LocationFinderList = ({ locations, onLocationClick }) => (
-//    <ul>
-//        {locations.map(location =>
-//            <Location
-//                key={location.id}
-//                {...location}
-//                onClick={() => onLocationClick(location.id)}
-//            />
-//        )}
-//    </ul>
-// );
 
 export default LocationFinderList
