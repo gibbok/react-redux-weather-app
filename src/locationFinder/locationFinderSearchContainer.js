@@ -1,31 +1,23 @@
 import { connect } from 'react-redux'
 import LocationFinderSearch from './locationFinderSearch'
 import { getLocations, setSearchValue } from './locationFinderSearchActions'
-import store from '../app/store'
 
-const mapStateToProps = (state) => {
-  // helper function, a simpler way to access state properties in react componenets
+const mapStateToProps = (state, ownProps) => {
   return {
+    inputValue: state.locationFinderReducer.locationFinder.ui.inputValue
   }
 }
 
-const handleInputChange = (e) => {
-  e.preventDefault()
-  let value = e.target.value
-  store.dispatch(setSearchValue(value))
-  console.log('change in input')
-}
-
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onLocationSearchClick: (e) => {
+    onSearchClick: (e, inputValue) => {
       e.preventDefault()
-      let value = store.getState().locationFinderReducer.locationFinder.ui.inputValue // can be refacotred in mapStateToProps?
-      store.dispatch(getLocations(value))
-      console.log('click on search')
+      dispatch(getLocations(inputValue))
     },
-    onLocationInputChange: (e) => {
-      handleInputChange(e)
+    onLocationChange: (e) => {
+      e.preventDefault()
+      let value = e.target.value
+      dispatch(setSearchValue(value))
     }
   }
 }

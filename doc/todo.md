@@ -69,6 +69,11 @@ http://redux.js.org/docs/recipes/reducers/ImmutableUpdatePatterns.html
 
 https://github.com/acdlite/flux-standard-action
 
+https://quickleft.com/blog/redux-plain-english-workflow/
+https://github.com/reactjs/react-redux/blob/master/docs/api.md
+http://www.pshrmn.com/tutorials/react/react-redux/
+
+
 "OWY1ODViYWJjNTliZjQzNWM0MjMxOWI0ZTliNjk3NjY="
 "9f585babc59bf435c42319b4e9b69766"
 

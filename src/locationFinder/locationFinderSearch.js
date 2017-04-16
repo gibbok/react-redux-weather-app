@@ -1,9 +1,9 @@
 import React from 'react'
 
-const LocationFinderSearch = ({ locations, onLocationSearchClick, onLocationInputChange }) => (
+const LocationFinderSearch = ({ onLocationChange, onSearchClick, inputValue }) => (
   <form>
-    <input type='text' name='name' placeholder='Location' onChange={(e) => onLocationInputChange(e)} />
-    <input type='submit' value='Search' onClick={(e) => onLocationSearchClick(e)} />
+    <input id='locationFinderSearch__inputLocation' type='text' placeholder='Location' onChange={(e) => onLocationChange(e)} />
+    <input id='locationFinderSearch__inputSearch' type='submit' value='Search' onClick={(e) => onSearchClick(e, inputValue)} />
   </form>
 )
 
