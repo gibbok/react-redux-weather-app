@@ -1,7 +1,7 @@
 import 'isomorphic-fetch'
 import * as api from '../app/api'
 import * as types from './locationFinderActionTypes'
-debugger
+
 const getLocations = query => ({
   type: types.GET_LOCATIONS,
   payload: new Promise((resolve, reject) => {
