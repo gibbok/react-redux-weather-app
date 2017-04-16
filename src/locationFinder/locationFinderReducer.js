@@ -1,4 +1,5 @@
 import dotProp from 'dot-prop-immutable'
+import * as types from './locationFinderActionTypes'
 
 const initialState = {
   app: {
@@ -63,12 +64,12 @@ const updateUiInputValue = (state, action) => {
 function locationFinderReducer (state = initialState, action) {
   console.log(action.type)
   switch (action.type) {
-    case 'GET_FIND_PENDING':
+    case types.GET_LOCATIONS_PENDING:
       return updateAppIsFetching(state, action, true)
-    case 'GET_FIND_FULFILLED':
+    case types.GET_LOCATIONS_FULFILLED:
       updateAppIsFetching(state, action, false)
       return updateData(state, action)
-    case 'SET_FIND_VALUE':
+    case types.SET_SEARCHVALUE:
       return updateUiInputValue(state, action)
     default:
       return state

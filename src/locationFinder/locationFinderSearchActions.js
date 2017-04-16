@@ -1,17 +1,19 @@
 import 'isomorphic-fetch'
 import * as api from '../app/api'
-
-const getFindLocations = query => ({
-  type: 'GET_FIND',
+import * as types from './locationFinderActionTypes'
+debugger
+const getLocations = query => ({
+  type: types.GET_LOCATIONS,
   payload: new Promise((resolve, reject) => {
     fetch(api.find(query)).then(response => {
       resolve(response.json())
     })
   })
 })
-const setFinderSearchValue = (value) => ({
-  type: 'SET_FIND_VALUE',
+
+const setSearchValue = (value) => ({
+  type: types.SET_SEARCHVALUE,
   payload: value
 })
 
-export { getFindLocations, setFinderSearchValue }
+export { getLocations, setSearchValue }
