@@ -6,18 +6,21 @@ const initialState = {
     data: [
       {
         id: 'home',
+        title: 'Weather',
         tooltip: 'Weather',
         isActive: true,
         isDefault: false
       },
       {
         id: 'map',
+        title: 'Map',
         tooltip: 'Weather map',
         isActive: false,
         isDefault: false
       },
       {
         id: 'news',
+        title: 'News',
         tooltip: 'Weather News',
         isActive: false,
         isDefault: false
@@ -29,7 +32,7 @@ const initialState = {
   }
 }
 
-const updateActive = (state, action) => {
+const updateUiActive = (state, action) => {
   return dotProp.set(state, 'navigation.ui.active', action.payload)
 }
 
@@ -45,7 +48,7 @@ function navigationReducer (state = initialState, action) {
   console.log(action.type)
   switch (action.type) {
     case types.SET_SEARCHVALUE:
-      updateActive(state, action)
+      updateUiActive(state, action)
       return updateData(state, action)
     default:
       return state

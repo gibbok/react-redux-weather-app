@@ -1,20 +1,19 @@
 import { connect } from 'react-redux'
-import Navigation from '.navigation'
+import NavigationList from './navigationList'
 
-const getNavigations = (location) => {
-  // we can apply some filters here
-  return location
+const getNavigations = (navigations) => {
+  return navigations
 }
 
 const mapStateToProps = (state) => {
   return {
-    locations: getNavigations(state.navigationReducer.navigation.data)
+    navigations: getNavigations(state.navigationReducer.navigation.data)
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onLocationClick: (id) => {
+    onNavigationClick: (id) => {
 
     }
   }
@@ -23,6 +22,6 @@ const mapDispatchToProps = (dispatch) => {
 const NavigationContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Navigation)
+)(NavigationList)
 
 export default NavigationContainer

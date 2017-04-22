@@ -1,9 +1,9 @@
 import { connect } from 'react-redux'
 import LocationFinderList from './locationFinderList'
 
-const getLocations = (location) => {
+const getLocations = (locations) => {
   // we can apply some filters here
-  return location
+  return locations
 }
 
 const mapStateToProps = (state) => {
