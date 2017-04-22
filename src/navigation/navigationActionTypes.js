@@ -1,1 +1,1 @@
-export const SET_SEARCHVALUE = 'SET_ACTIVE'
+export const SET_ACTIVE = 'SET_ACTIVE'

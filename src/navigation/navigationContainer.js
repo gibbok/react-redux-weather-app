@@ -1,20 +1,21 @@
 import { connect } from 'react-redux'
 import NavigationList from './navigationList'
+import { setActive } from './navigationActions'
 
 const getNavigations = (navigations) => {
   return navigations
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
     navigations: getNavigations(state.navigationReducer.navigation.data)
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onNavigationClick: (id) => {
-
+    onNavigationClick: (navigation) => {
+      dispatch(setActive(navigation.id))
     }
   }
 }
