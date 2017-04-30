@@ -13,22 +13,20 @@ const Weather = ({ weather: {
     windDegree,
     windSpeed,
     visibility
- } }) => {
-  return (<div>
-    { name }, { country }
-    { temperature }
-    { temperatureMin }
-    { temperatureMax }
-    { weatherMain }
-    { weatherDescription }
-    { weatherIcon }
-    { updatedTime }
-    { windDegree }
-    { windSpeed }
-    { visibility }
-  </div>
+ } }) => (<div>
+   { name }, { country }
+   { temperature }
+   { temperatureMin }
+   { temperatureMax }
+   { weatherMain }
+   { weatherDescription }
+   { weatherIcon }
+   { updatedTime }
+   { windDegree }
+   { windSpeed }
+   { visibility }
+ </div>
   )
-}
 
 export default Weather
 /*
