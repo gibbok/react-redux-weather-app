@@ -1,7 +1,6 @@
 import React from 'react'
 
-const Weather = ({ weather }) => {
-  let {
+const Weather = { weather: {
     name,
     country,
     temperature,
@@ -14,7 +13,7 @@ const Weather = ({ weather }) => {
     windDegree,
     windSpeed,
     visibility
- } = weather
+ } } = weather
   return (<div>
     { name }, { country }
     { temperature }
