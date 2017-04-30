@@ -1,9 +1,9 @@
 import { connect } from 'react-redux'
 import Weather from './weather'
-import { getLocation as getWeatherInfo } from './weatherActions'
+import { getWeather } from './weatherActions'
 import store from '../app/store'
 
-const getWeather = (weather) => {
+const weather = (weather) => {
   return weather
 }
 
@@ -13,12 +13,12 @@ const getWeatherLocationId = () => {
 
 const onInit = () => {
   let weatherLocationId = getWeatherLocationId()
-  store.dispatch(getWeatherInfo(weatherLocationId))
+  store.dispatch(getWeather(weatherLocationId))
 }
 
 const mapStateToProps = (state) => {
   return {
-    weather: getWeather(state.weatherReducer.weather.data),
+    weather: weather(state.weatherReducer.weather.data),
     onInit: onInit()
   }
 }
