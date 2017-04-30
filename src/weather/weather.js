@@ -29,15 +29,3 @@ const Weather = ({ weather: {
   )
 
 export default Weather
-/*
-    { temperature }
-    { temperatureMin }
-    { temperatureMax }
-    { weatherMain }
-    { weatherDescription }
-    { weatherIcon }
-    { updatedTime }
-    { windDegree },
-    { windSpeed }
-    { visibility }
-*/
