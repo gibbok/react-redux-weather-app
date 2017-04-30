@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Weather = { weather: {
+const Weather = ({ weather: {
     name,
     country,
     temperature,
@@ -13,7 +13,7 @@ const Weather = { weather: {
     windDegree,
     windSpeed,
     visibility
- } } = weather
+ } }) => {
   return (<div>
     { name }, { country }
     { temperature }
