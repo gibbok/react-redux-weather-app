@@ -16,28 +16,48 @@ const Weather = ({ weather: {
     humidity,
     sunrise,
     sunset
- } }) => (<div>
-   { name }, { country }
-   { temperature }
-   Temperature
-   Min { temperatureMin }
-   Max { temperatureMax }
-   { weatherMain }
-   { weatherDescription }
-   { weatherIcon }
-   Updated as of { updatedTime }
-   Wind
-   { windDegree }
-   { windSpeed }
-   Visibility
-   { visibility }
-   Humidity
-   { humidity },
-   Sunrise
-   {sunrise},
-   Sunset
-   {sunset}
- </div>
+ } }) => (
+   <div>
+     <div>
+       { name }, { country }
+     </div>
+     <div>
+       { temperature }
+     </div>
+     <div>
+       <span>Min { temperatureMin }</span>
+       <span>Max { temperatureMax }</span>
+     </div>
+     <div>
+       <div>
+         { weatherMain }
+       </div>
+       <div>
+         { weatherDescription }
+       </div>
+       <div>
+         { weatherIcon }
+       </div>
+     </div>
+     <div>
+       Updated as of { updatedTime }
+     </div>
+     <div>
+       Wind { windDegree } { windSpeed }
+     </div>
+     <div>
+       Visibility { visibility }
+     </div>
+     <div>
+       Humidity { humidity }
+     </div>
+     <div>
+       Sunris {sunrise}
+     </div>
+     <div>
+       Sunset {sunset}
+     </div>
+   </div>
   )
 
 export default Weather
