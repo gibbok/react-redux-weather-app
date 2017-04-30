@@ -16,38 +16,21 @@ const updateAppIsFetching = (state, action, value) => {
 }
 
 const updateData = (state, action) => {
-  // take data from api
-  let weather = {}
-  weather.name = action.payload.name
-  weather.country = action.payload.sys.country
-
-  weather.temperature = action.payload.main.temp
-  weather.temperatureMin = action.payload.main.temp_min
-  weather.temperatureMax = action.payload.main.temp_max
-
-  weather.weatherMain = action.payload.weather[0].main
-  weather.weatherDescription = action.payload.weather[0].description
-  weather.weatherIcon = action.payload.weather[0].icon
-
-  weather.updatedTime = new Date().toString()
-
-  weather.windDegree = action.payload.wind.deg
-  weather.windSpeed = action.payload.wind.speed
-
-  weather.visibility = action.payload.visibility
-
-/*
-weather: [
-{
-id: 802,
-main: "Clouds",
-description: "scattered clouds",
-icon: "03n"
-}
-],
-
-*/
-
+  const { payload } = action
+  const weather = {
+    name: payload.name,
+    country: payload.sys.country,
+    temperature: payload.main.temp,
+    temperatureMin: payload.main.temp_min,
+    temperatureMax: payload.main.temp_max,
+    weatherMain: payload.weather[0].main,
+    weatherDescription: payload.weather[0].description,
+    weatherIcon: payload.weather[0].icon,
+    updatedTime: new Date().toString(),
+    windDegree: payload.wind.deg,
+    windSpeed: payload.wind.speed,
+    visibility: payload.visibility
+  }
   return dotProp.set(state, 'weather.data', weather)
 }
 
