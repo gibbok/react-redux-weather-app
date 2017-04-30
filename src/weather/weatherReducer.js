@@ -16,25 +16,25 @@ const updateAppIsFetching = (state, action, value) => {
 }
 
 const updateData = (state, action) => {
-  const { payload } = action
-  const weather = {
-    name: payload.name,
-    country: payload.sys.country,
-    temperature: payload.main.temp,
-    temperatureMin: payload.main.temp_min,
-    temperatureMax: payload.main.temp_max,
-    weatherMain: payload.weather[0].main,
-    weatherDescription: payload.weather[0].description,
-    weatherIcon: payload.weather[0].icon,
+  const { payload: { name, main, weather, wind, sys, visibility } } = action
+  const weatherData = {
+    name: name,
+    country: sys.country,
+    temperature: main.temp,
+    temperatureMin: main.temp_min,
+    temperatureMax: main.temp_max,
+    weatherMain: weather[0].main,
+    weatherDescription: weather[0].description,
+    weatherIcon: weather[0].icon,
     updatedTime: new Date().toString(),
-    windDegree: payload.wind.deg,
-    windSpeed: payload.wind.speed,
-    visibility: payload.visibility,
-    humidity: payload.main.humidity,
-    sunrise: payload.sys.sunrise,
-    sunset: payload.sys.sunset
+    windDegree: wind.deg,
+    windSpeed: wind.speed,
+    visibility: visibility,
+    humidity: main.humidity,
+    sunrise: sys.sunrise,
+    sunset: sys.sunset
   }
-  return dotProp.set(state, 'weather.data', weather)
+  return dotProp.set(state, 'weather.data', weatherData)
 }
 
 function weatherReducer (state = initialState, action) {
