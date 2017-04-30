@@ -29,7 +29,10 @@ const updateData = (state, action) => {
     updatedTime: new Date().toString(),
     windDegree: payload.wind.deg,
     windSpeed: payload.wind.speed,
-    visibility: payload.visibility
+    visibility: payload.visibility,
+    humidity: payload.main.humidity,
+    sunrise: payload.sys.sunrise,
+    sunset: payload.sys.sunset
   }
   return dotProp.set(state, 'weather.data', weather)
 }

@@ -12,19 +12,31 @@ const Weather = ({ weather: {
     updatedTime,
     windDegree,
     windSpeed,
-    visibility
+    visibility,
+    humidity,
+    sunrise,
+    sunset
  } }) => (<div>
    { name }, { country }
    { temperature }
-   { temperatureMin }
-   { temperatureMax }
+   Temperature
+   Min { temperatureMin }
+   Max { temperatureMax }
    { weatherMain }
    { weatherDescription }
    { weatherIcon }
-   { updatedTime }
+   Updated as of { updatedTime }
+   Wind
    { windDegree }
    { windSpeed }
+   Visibility
    { visibility }
+   Humidity
+   { humidity },
+   Sunrise
+   {sunrise},
+   Sunset
+   {sunset}
  </div>
   )
 
