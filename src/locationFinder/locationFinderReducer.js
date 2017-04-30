@@ -69,7 +69,6 @@ const updateUiInputValue = (state, action) => {
 }
 
 function locationFinderReducer (state = initialState, action) {
-  console.log(action.type)
   switch (action.type) {
     case types.GET_LOCATIONS_PENDING:
       return updateAppIsFetching(state, action, true)

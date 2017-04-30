@@ -20,10 +20,11 @@ const updateData = (state, action) => {
 }
 
 function weatherReducer (state = initialState, action) {
+  console.log(action.type)
   switch (action.type) {
-    case types.GET_LOCATION_PENDING:
+    case types.GET_WEATHER_PENDING:
       return updateAppIsFetching(state, action, true)
-    case types.GET_LOCATION_FULFILLED:
+    case types.GET_WEATHER_FULFILLED:
       updateAppIsFetching(state, action, false)
       return updateData(state, action)
     default:

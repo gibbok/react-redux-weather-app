@@ -18,7 +18,7 @@ const onInit = () => {
 
 const mapStateToProps = (state) => {
   return {
-    weather: weather(state.weatherReducer.weather.data),
+    data: weather(state.weatherReducer.weather.data),
     onInit: onInit()
   }
 }
