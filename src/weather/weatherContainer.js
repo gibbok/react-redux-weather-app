@@ -8,8 +8,8 @@ const getLocation = (location) => {
 }
 
 const onInit = () => {
-  debugger
-  store.dispatch(getWeatherLocation(5128581))
+  let locationId = store.getState().weatherReducer.weather.app.location
+  store.dispatch(getWeatherLocation(locationId))
 }
 
 const mapStateToProps = (state) => {
