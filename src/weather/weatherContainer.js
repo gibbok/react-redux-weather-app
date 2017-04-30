@@ -3,6 +3,8 @@ import Weather from './weather'
 import { getWeather } from './weatherActions'
 import store from '../app/store'
 
+let isInitiated = false
+
 const weather = (weather) => {
   return weather
 }
@@ -12,13 +14,18 @@ const getWeatherLocationId = () => {
 }
 
 const onInit = () => {
+  if (isInitiated) {
+    return
+  }
+  console.log('init ++++')
+  isInitiated = true
   let weatherLocationId = getWeatherLocationId()
   store.dispatch(getWeather(weatherLocationId))
 }
 
 const mapStateToProps = (state) => {
   return {
-    data: weather(state.weatherReducer.weather.data),
+    weather: weather(state.weatherReducer.weather.data),
     onInit: onInit()
   }
 }

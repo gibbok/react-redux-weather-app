@@ -1,15 +1,9 @@
 import React from 'react'
 
-const Weather = ({ data }) => (
-  <div />
+const Weather = ({ name }) => (
+  <div>
+    { name }
+  </div>
 )
 
 export default Weather
-/*
-    {name}
-    {weather.main}
-    {weather.description}
-    {main.temp}
-    {main.humidity}
-
-*/

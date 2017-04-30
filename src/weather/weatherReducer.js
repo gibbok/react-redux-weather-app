@@ -16,11 +16,10 @@ const updateAppIsFetching = (state, action, value) => {
 }
 
 const updateData = (state, action) => {
-  return {}
+  return dotProp.set(state, 'weather.data', action.payload)
 }
 
 function weatherReducer (state = initialState, action) {
-  console.log(action.type)
   switch (action.type) {
     case types.GET_WEATHER_PENDING:
       return updateAppIsFetching(state, action, true)
