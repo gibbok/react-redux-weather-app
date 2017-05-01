@@ -1,4 +1,5 @@
 import React from 'react'
+import WindDegree from './windDegree'
 
 const Weather = ({ weather: {
     name,
@@ -43,7 +44,7 @@ const Weather = ({ weather: {
        Updated as of { updatedTime }
      </div>
      <div>
-       Wind { windDegree } { windSpeed }
+       Wind { windDegree } { windSpeed } <WindDegree degree={windDegree} />
      </div>
      <div>
        Visibility { visibility }

@@ -1,11 +1,13 @@
 import React from 'react'
 
-const WindDegree = (degree) => {
+const WindDegree = ({degree}) => {
+  const degreeAdjusted = -90 + degree
   const style = {
-    transform: `rotate(${degree}}deg)`
+    display: 'inline-block',
+    transform: `rotate(${degreeAdjusted}deg)`
   }
   return (
-    <span style={style} />
+    <span style={style}>&#10148;</span>
   )
 }
 
