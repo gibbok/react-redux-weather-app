@@ -17,10 +17,8 @@ const onInit = () => {
   if (isInitiated) {
     return
   }
-  console.log('init ++++')
   isInitiated = true
-  let weatherLocationId = getWeatherLocationId()
-  store.dispatch(getWeather(weatherLocationId))
+  store.dispatch(getWeather(getWeatherLocationId()))
 }
 
 const mapStateToProps = (state) => {

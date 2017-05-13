@@ -3,7 +3,7 @@ import NavigationContainer from '../navigation/navigationContainer'
 import LocationFinderListContainer from '../locationFinder/locationFinderListContainer'
 import LocationFinderSearchContainer from '../locationFinder/locationFinderSearchContainer'
 import WeatherContainer from '../weather/weatherContainer'
-import ForecastContainer from '../forecast/forecastContainer'
+import ForecastDailyContainer from '../forecastDaily/forecastDailyContainer'
 
 const App = () => (
   <div>
@@ -11,7 +11,7 @@ const App = () => (
     <LocationFinderSearchContainer />
     <LocationFinderListContainer />
     <WeatherContainer onInit />
-    <ForecastContainer onInit />
+    <ForecastDailyContainer onInit />
   </div>
 )
 

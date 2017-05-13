@@ -19,6 +19,7 @@ const Weather = ({ weather: {
     sunset
  } }) => (
    <div>
+     { console.log(name)}
      <div>
        { name }, { country }
      </div>
