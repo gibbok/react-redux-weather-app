@@ -5,7 +5,7 @@ const initialState = {
   forecastDaily: {
     data: [],
     app: {
-      location: 5128581 // nyc usa
+      locationId: 5128581 // nyc usa
     },
     ui: {}
   }
@@ -17,7 +17,7 @@ const updateAppIsFetching = (state, action, value) => {
 
 const updateData = (state, action) => {
   const { payload: { list } } = action
-  const days = list.map(x => {
+  const data = list.map(x => {
     return {
       date: new Date(x.dt).toString(),
       tempMin: x.temp.min,
@@ -25,7 +25,7 @@ const updateData = (state, action) => {
       weatherDescription: x.weather[0].description
     }
   })
-  return dotProp.set(state, 'forecastDaily.data', days)
+  return dotProp.set(state, 'forecastDaily.data', data)
 }
 
 function forecastDailyReducer (state = initialState, action) {

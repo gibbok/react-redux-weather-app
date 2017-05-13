@@ -1,12 +1,12 @@
 import React from 'react'
 import ForecastDay from './forecastDay'
 
-const ForecastDaily = ({ forecastDayList, onForecastDayClick }) => (
+const ForecastDaily = ({ forecastDays, onForecastDayClick }) => (
   <ul>
-    {forecastDayList.map((day, index) =>
+    {forecastDays.map((day, index) =>
       <ForecastDay
         key={index}
-        {...forecastDayList[index]}
+        {...forecastDays[index]}
         onClick={() => onForecastDayClick(day)}
       />
     )}

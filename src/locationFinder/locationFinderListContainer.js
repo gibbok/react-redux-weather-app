@@ -2,7 +2,6 @@ import { connect } from 'react-redux'
 import LocationFinderList from './locationFinderList'
 
 const getLocations = (locations) => {
-  // we can apply some filters here
   return locations
 }
 

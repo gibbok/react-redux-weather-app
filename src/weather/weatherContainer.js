@@ -10,7 +10,7 @@ const weather = (weather) => {
 }
 
 const getWeatherLocationId = () => {
-  return store.getState().weatherReducer.weather.app.location
+  return store.getState().weatherReducer.weather.app.locationId
 }
 
 const onInit = () => {

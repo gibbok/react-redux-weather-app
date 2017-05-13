@@ -1,7 +1,8 @@
 import React from 'react'
 import NavigationContainer from '../navigation/navigationContainer'
-import LocationFinderListContainer from '../locationFinder/locationFinderListContainer'
 import LocationFinderSearchContainer from '../locationFinder/locationFinderSearchContainer'
+import LocationFinderListContainer from '../locationFinder/locationFinderListContainer'
+
 import WeatherContainer from '../weather/weatherContainer'
 import ForecastDailyContainer from '../forecastDaily/forecastDailyContainer'
 

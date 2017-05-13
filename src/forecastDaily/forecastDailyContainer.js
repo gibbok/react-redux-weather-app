@@ -10,7 +10,7 @@ const forecastDaily = (forecastDaily) => {
 }
 
 const getForecastDailyLocationId = () => {
-  return store.getState().forecastDailyReducer.forecastDaily.app.location
+  return store.getState().forecastDailyReducer.forecastDaily.app.locationId
 }
 
 const onInit = () => {
@@ -23,7 +23,7 @@ const onInit = () => {
 
 const mapStateToProps = (state) => {
   return {
-    forecastDayList: forecastDaily(state.forecastDailyReducer.forecastDaily.data),
+    forecastDays: forecastDaily(state.forecastDailyReducer.forecastDaily.data),
     onInit: onInit()
   }
 }
