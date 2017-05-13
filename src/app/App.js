@@ -1,8 +1,9 @@
 import React from 'react'
+import NavigationContainer from '../navigation/navigationContainer'
 import LocationFinderListContainer from '../locationFinder/locationFinderListContainer'
 import LocationFinderSearchContainer from '../locationFinder/locationFinderSearchContainer'
 import WeatherContainer from '../weather/weatherContainer'
-import NavigationContainer from '../navigation/navigationContainer'
+import ForecastContainer from '../forecast/forecastContainer'
 
 const App = () => (
   <div>
@@ -10,6 +11,7 @@ const App = () => (
     <LocationFinderSearchContainer />
     <LocationFinderListContainer />
     <WeatherContainer onInit />
+    <ForecastContainer onInit />
   </div>
 )
 

@@ -1,50 +1,11 @@
 ﻿# Todo
 
-## Setup 
-- [X] setup git
-- [X] setup vs markdown
-- [X] setup env
-- [X] create package.json
-- [X] setup webpack
-- [X] setup webpack config
-- [ ] setup webpack plugins
-- [X] setup webpack source map
-- [X] setup webpack livereload
-- [X] setup standard js with auto format
-- [X] setup babel
-- [X] setup babel presets/plugins
-- [X] setup redux
-- [X] setup react
-- [X] setup .editorconfig
-- [X] setup openweathermap
 
-- [X] analysis openweathermap data
-- [X] setup redux file structure using domain-style
-- [ ] setup redux scaffolding
-- [x] setup state data tree
-
-- [X] analysis state app finder
-- [ ] setup static app finder version****
-- [ ] analysis and add configuration
-- [X] generate first reducer
-- [ ] split nd combine reducers
-
-
-## Static protoype
-- [x] include babel polify
-- [X] render a static list of cities for location finder
-- [X] render a input field
-- [X] render a search button
-
-- [ ] when user click search in location finder show the list of cities
-- [X] setup redux container and basic react component
-- [X] mak a simple middleware for promise and test an action with promise
-
-- [*] when user enter a value in input, state is update using action
-- [*] when user enter search, list location is displayed (api call)
-
-- [ ] refactory type for actions in different module looks at FSA
-- [ ] add api utility and config api
+## Weather Details
+- [ ] Define a city id as default
+- [ ] Use city default to get Weather Details infos
+- [ ] Render basic UI
+- [ ] Render charts
 
 ## Useful
 
