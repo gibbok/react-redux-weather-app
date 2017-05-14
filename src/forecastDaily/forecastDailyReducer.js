@@ -19,7 +19,7 @@ const updateData = (state, action) => {
   const { payload: { list } } = action
   const data = list.map(x => {
     return {
-      date: new Date(x.dt).toString(),
+      date: new Date(x.dt * 1000).toString(),
       tempMin: x.temp.min,
       tempMax: x.temp.max,
       weatherDescription: x.weather[0].description
