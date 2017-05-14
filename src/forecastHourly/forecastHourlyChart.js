@@ -2,7 +2,8 @@ import React from 'react'
 
 const ForecastHourlyChart = ({ forecastHourly }) => (
   <div>
-    { console.log(forecastHourly)}
+    <h2>Hourly</h2>
+    { JSON.stringify(forecastHourly) }
   </div>
 )
 
