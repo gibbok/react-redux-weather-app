@@ -1,5 +1,6 @@
 import dotProp from 'dot-prop-immutable'
 import * as types from './forecastDailyActionTypes'
+import { createMomentId } from '../app/utility'
 
 const initialState = {
   forecastDaily: {
@@ -7,7 +8,9 @@ const initialState = {
     app: {
       locationId: 5128581 // nyc usa
     },
-    ui: {}
+    ui: {
+      selectedDate: createMomentId(Date.now())
+    }
   }
 }
 
@@ -16,6 +19,7 @@ const updateAppIsFetching = (state, action, value) => {
 }
 
 const updateData = (state, action) => {
+  debugger
   const { payload: { list } } = action
   const data = list.map(x => {
     return {
