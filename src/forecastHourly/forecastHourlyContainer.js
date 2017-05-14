@@ -6,7 +6,7 @@ import store from '../app/store'
 let isInitiated = false
 
 const forecastHourly = (forecastHourly) => {
-  return forecastHourly
+  return forecastHourly.data.filter(x => x.momentId === forecastHourly.ui.selectedDate)
 }
 
 const getForecastHourlyLocationId = () => {
@@ -23,7 +23,7 @@ const onInit = () => {
 
 const mapStateToProps = (state) => {
   return {
-    forecastHourly: forecastHourly(state.forecastHourlyReducer.forecastHourly.data),
+    forecastHourly: forecastHourly(state.forecastHourlyReducer.forecastHourly),
     onInit: onInit()
   }
 }

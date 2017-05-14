@@ -8,7 +8,9 @@ const initialState = {
     app: {
       locationId: 5128581 // nyc usa
     },
-    ui: {}
+    ui: {
+      selectedDate: createMomentId(Date.now())
+    }
   }
 }
 
