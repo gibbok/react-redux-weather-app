@@ -1,8 +1,8 @@
 import dotProp from 'dot-prop-immutable'
-import * as types from './forecastDailyActionTypes'
+import * as types from './forecastHourlyActionTypes'
 
 const initialState = {
-  forecastDaily: {
+  forecastHourly: {
     data: [],
     app: {
       locationId: 5128581 // nyc usa
@@ -12,28 +12,26 @@ const initialState = {
 }
 
 const updateAppIsFetching = (state, action, value) => {
-  return dotProp.set(state, 'forecastDaily.app.isFetching', value)
+  return dotProp.set(state, 'forecastHourly.app.isFetching', value)
 }
 
 const updateData = (state, action) => {
+  debugger
   const { payload: { list } } = action
   const data = list.map(x => {
     return {
       dt: x.dt,
-      date: new Date(x.dt * 1000).toDateString(),
-      tempMin: x.temp.min,
-      tempMax: x.temp.max,
-      weatherDescription: x.weather[0].description
+      date: new Date(x.dt * 1000).toString()
     }
   })
-  return dotProp.set(state, 'forecastDaily.data', data)
+  return dotProp.set(state, 'forecastHourly.data', data)
 }
 
-function forecastDailyReducer (state = initialState, action) {
+function forecastHourlyReducer (state = initialState, action) {
   switch (action.type) {
-    case types.GET_FORECAST_DAILY_PENDING:
+    case types.GET_FORECAST_HOURLY_PENDING:
       return updateAppIsFetching(state, action, true)
-    case types.GET_FORECAST_DAILY_FULFILLED:
+    case types.GET_FORECAST_HOURLY_FULFILLED:
       updateAppIsFetching(state, action, false)
       return updateData(state, action)
     default:
@@ -41,4 +39,4 @@ function forecastDailyReducer (state = initialState, action) {
   }
 }
 
-export default forecastDailyReducer
+export default forecastHourlyReducer

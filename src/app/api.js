@@ -6,3 +6,5 @@ export const find = query => `${url}find?q=${query}&APPID=${key}`
 export const weather = id => `${url}weather?id=${id}&APPID=${key}`
 
 export const forecastDaily = id => `${url}forecast/daily?id=${id}&APPID=${key}`
+
+export const forecast = id => `${url}forecast?id=${id}&APPID=${key}`
