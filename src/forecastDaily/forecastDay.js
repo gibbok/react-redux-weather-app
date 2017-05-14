@@ -1,8 +1,8 @@
 import React from 'react'
 
-const ForecastDay = ({ onClick, dt, date, tempMin, tempMax, weatherDescription }) => (
+const ForecastDay = ({ onClick, momentId, date, tempMin, tempMax, weatherDescription }) => (
   <li onClick={onClick}>
-    {dt} {date} {tempMin} {tempMax} {weatherDescription}
+    {momentId} {date} {tempMin} {tempMax} {weatherDescription}
   </li>
 )
 

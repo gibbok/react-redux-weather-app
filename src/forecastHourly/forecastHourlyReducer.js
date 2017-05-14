@@ -1,5 +1,6 @@
 import dotProp from 'dot-prop-immutable'
 import * as types from './forecastHourlyActionTypes'
+import { createMomentId } from '../app/utility'
 
 const initialState = {
   forecastHourly: {
@@ -16,11 +17,11 @@ const updateAppIsFetching = (state, action, value) => {
 }
 
 const updateData = (state, action) => {
-  debugger
   const { payload: { list } } = action
   const data = list.map(x => {
     return {
       dt: x.dt,
+      momentId: createMomentId(x.dt * 1000),
       date: new Date(x.dt * 1000).toString()
     }
   })

@@ -19,10 +19,10 @@ const updateAppIsFetching = (state, action, value) => {
 }
 
 const updateData = (state, action) => {
-  debugger
   const { payload: { list } } = action
   const data = list.map(x => {
     return {
+      momentId: createMomentId(x.dt * 1000),
       dt: x.dt,
       date: new Date(x.dt * 1000).toDateString(),
       tempMin: x.temp.min,
