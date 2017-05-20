@@ -1,0 +1,23 @@
+{
+  "name": "react-redux-weather-app",
+  "description": "Weather Application based on ReactJs and Redux",
+  "authors": [
+    "GibboK"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "redux"
+  ],
+  "homepage": "https://github.com/gibbok/react-redux-weather-app",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "owfont": "latest"
+  }
+}
