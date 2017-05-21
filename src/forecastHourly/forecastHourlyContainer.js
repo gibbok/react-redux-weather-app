@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import ForecastHourlyChart from './ForecastHourlyChart'
+import ForecastHourly from './ForecastHourly'
 import { getForecastHourly } from './forecastHourlyActions'
 import store from '../app/store'
 
@@ -30,6 +30,6 @@ const mapStateToProps = (state) => {
 
 const ForecastHourlyContainer = connect(
   mapStateToProps
-)(ForecastHourlyChart)
+)(ForecastHourly)
 
 export default ForecastHourlyContainer

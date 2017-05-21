@@ -1,7 +1,7 @@
 import React from 'react'
 import IconWeather from '../shared/IconWeather'
 
-const CustomizedDot = React.createClass({
+const SummaryChartIcon = React.createClass({
   render () {
     const { cx, cy, payload: {weatherIconCode} } = this.props
     return (
@@ -14,4 +14,4 @@ const CustomizedDot = React.createClass({
   }
 })
 
-export default CustomizedDot
+export default SummaryChartIcon
