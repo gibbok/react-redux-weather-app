@@ -28,8 +28,25 @@ const mapStateToProps = (state) => {
   }
 }
 
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    onSummaryClick: (e) => {
+      e.preventDefault()
+      console.log('onSummaryClick')
+      // dispatch(getLocations(inputValue))
+    },
+    onDetailsClick: (e) => {
+      e.preventDefault()
+      console.log('onDetailsClick')
+      // let value = e.target.value
+      // dispatch(setSearchValue(value))
+    }
+  }
+}
+
 const ForecastHourlyContainer = connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(ForecastHourly)
 
 export default ForecastHourlyContainer
