@@ -9,8 +9,11 @@ const ForecastHourly = ({ forecastHourly, activeTypeReport, onSummaryClick, onDe
     <div>
       <SummaryButton onSummaryClick={onSummaryClick} />
       <DetailsButton onDetailsClick={onDetailsClick} />
-      <SummaryChart forecastHourly={forecastHourly} />
-      <Details forecastHourly={forecastHourly} />
+      {activeTypeReport === 'summary' ? (
+        <SummaryChart forecastHourly={forecastHourly} />
+      ) : (
+        <Details forecastHourly={forecastHourly} />
+        )}
     </div>
   )
 }

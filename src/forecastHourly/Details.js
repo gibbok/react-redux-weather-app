@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Details = ({ forecastHourly }) => (
-  <div>Details</div>
+  <div>Details - Forecast Hourly details</div>
 )
 
 export default Details
