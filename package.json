@@ -25,6 +25,10 @@
     "homepage": "https://github.com/gibbok/react-redux-weather-app#readme",
     "dependencies": {
         "babel": "6.23.0",
+        "url-loader":"0.5.8",
+        "style-loader":"0.17.0",
+        "css-loader":"0.28.1",
+        "extract-text-webpack-plugin":"2.1.0",
         "babel-cli": "6.24.0",
         "babel-core": "6.24.0",
         "babel-loader": "6.4.1",
