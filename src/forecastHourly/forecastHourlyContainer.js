@@ -13,6 +13,10 @@ const getForecastHourlyLocationId = () => {
   return store.getState().forecastDailyReducer.forecastDaily.app.locationId
 }
 
+const getActiveTypeReport = (state) => {
+  return state.forecastHourlyReducer.forecastHourly.ui.activeReportType
+}
+
 const onInit = () => {
   if (isInitiated) {
     return
@@ -24,7 +28,8 @@ const onInit = () => {
 const mapStateToProps = (state) => {
   return {
     forecastHourly: forecastHourly(state.forecastHourlyReducer.forecastHourly),
-    onInit: onInit()
+    onInit: onInit(),
+    activeTypeReport: getActiveTypeReport(state)
   }
 }
 
@@ -32,15 +37,11 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onSummaryClick: (e) => {
       e.preventDefault()
-      console.log('onSummaryClick')
       dispatch(setForecastHourlyActiveReportType('summary'))
     },
     onDetailsClick: (e) => {
       e.preventDefault()
-      console.log('onDetailsClick')
       dispatch(setForecastHourlyActiveReportType('details'))
-      // let value = e.target.value
-      // dispatch(setSearchValue(value))
     }
   }
 }

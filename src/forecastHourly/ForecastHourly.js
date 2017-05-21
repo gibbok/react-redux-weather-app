@@ -4,7 +4,7 @@ import Details from './Details'
 import SummaryButton from './SummaryButton'
 import DetailsButton from './DetailsButton'
 
-const ForecastHourly = ({ forecastHourly, onSummaryClick, onDetailsClick }) => {
+const ForecastHourly = ({ forecastHourly, activeTypeReport, onSummaryClick, onDetailsClick }) => {
   return (
     <div>
       <SummaryButton onSummaryClick={onSummaryClick} />

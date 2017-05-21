@@ -10,7 +10,7 @@ const initialState = {
     },
     ui: {
       selectedDate: createMomentId(Date.now()),
-      activeReportType: 'summry'
+      activeReportType: 'summary'
     }
   }
 }
