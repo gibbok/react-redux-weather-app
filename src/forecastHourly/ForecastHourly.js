@@ -5,15 +5,14 @@ import SummaryButton from './SummaryButton'
 import DetailsButton from './DetailsButton'
 
 const ForecastHourly = ({ forecastHourly, activeTypeReport, onSummaryClick, onDetailsClick }) => {
+  const isReportSummary = activeTypeReport === 'summary'
+  const isReportDetails = activeTypeReport === 'details'
   return (
     <div>
       <SummaryButton onSummaryClick={onSummaryClick} />
       <DetailsButton onDetailsClick={onDetailsClick} />
-      {activeTypeReport === 'summary' ? (
-        <SummaryChart forecastHourly={forecastHourly} />
-      ) : (
-        <Details forecastHourly={forecastHourly} />
-        )}
+      {isReportSummary ? (<SummaryChart forecastHourly={forecastHourly} />) : null}
+      {isReportDetails ? (<Details forecastHourly={forecastHourly} />) : null}
     </div>
   )
 }
