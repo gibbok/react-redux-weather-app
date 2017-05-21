@@ -1,6 +1,6 @@
 import React from 'react'
 
-const WindDegree = ({degree}) => {
+const IconWind = ({degree}) => {
   const degreeAdjusted = -90 + degree
   const style = {
     display: 'inline-block',
@@ -11,4 +11,4 @@ const WindDegree = ({degree}) => {
   )
 }
 
-export default WindDegree
+export default IconWind
