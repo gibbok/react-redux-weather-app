@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import ForecastHourly from './ForecastHourly'
-import { getForecastHourly } from './forecastHourlyActions'
+import { getForecastHourly, setForecastHourlyActiveReportType } from './forecastHourlyActions'
 import store from '../app/store'
 
 let isInitiated = false
@@ -33,11 +33,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     onSummaryClick: (e) => {
       e.preventDefault()
       console.log('onSummaryClick')
-      // dispatch(getLocations(inputValue))
+      dispatch(setForecastHourlyActiveReportType('summary'))
     },
     onDetailsClick: (e) => {
       e.preventDefault()
       console.log('onDetailsClick')
+      dispatch(setForecastHourlyActiveReportType('details'))
       // let value = e.target.value
       // dispatch(setSearchValue(value))
     }

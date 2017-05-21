@@ -11,4 +11,9 @@ const getForecastHourly = query => ({
   })
 })
 
-export { getForecastHourly }
+const setForecastHourlyActiveReportType = type => ({
+  type: types.SET_FORECAST_HOURLY_ACTIVE_REPORT_TYPE,
+  payload: type
+})
+
+export { getForecastHourly, setForecastHourlyActiveReportType }

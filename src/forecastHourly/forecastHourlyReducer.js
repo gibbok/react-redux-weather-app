@@ -9,7 +9,8 @@ const initialState = {
       locationId: 5128581 // nyc usa
     },
     ui: {
-      selectedDate: createMomentId(Date.now())
+      selectedDate: createMomentId(Date.now()),
+      activeReportType: 'summry'
     }
   }
 }
@@ -32,6 +33,10 @@ const updateData = (state, action) => {
   return dotProp.set(state, 'forecastHourly.data', data)
 }
 
+const updateDataActiveReportType = (state, action) => {
+  return dotProp.set(state, 'forecastHourly.ui.activeReportType', action.payload)
+}
+
 function forecastHourlyReducer (state = initialState, action) {
   switch (action.type) {
     case types.GET_FORECAST_HOURLY_PENDING:
@@ -39,6 +44,8 @@ function forecastHourlyReducer (state = initialState, action) {
     case types.GET_FORECAST_HOURLY_FULFILLED:
       updateAppIsFetching(state, action, false)
       return updateData(state, action)
+    case types.SET_FORECAST_HOURLY_ACTIVE_REPORT_TYPE:
+      return updateDataActiveReportType(state, action)
     default:
       return state
   }
