@@ -5,7 +5,7 @@ import LocationFinderListContainer from '../locationFinder/locationFinderListCon
 import WeatherContainer from '../weather/weatherContainer'
 import ForecastDailyContainer from '../forecastDaily/forecastDailyContainer'
 import ForecastHourlyContainer from '../forecastHourly/forecastHourlyContainer'
-import styles from '../../bower_components/owfont/css/owfont-regular.css'
+import styles from '../../node_modules/weather-icons/css/weather-icons.css'
 
 const App = () => (
   <div>

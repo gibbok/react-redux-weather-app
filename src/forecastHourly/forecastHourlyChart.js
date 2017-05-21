@@ -6,10 +6,14 @@ import { LineChart, Line, CartesianGrid, XAxis, Tooltip } from 'recharts'
 const CustomizedDot = React.createClass({
   render () {
     const { cx, cy, payload: {weatherIcon} } = this.props
+    const owf = `owf owf-${weatherIcon} owf-4x`
+    console.log(weatherIcon)
     return (
       <svg x={cx - 10} y={cy + 20}>
         <foreignObject width='100%' height='100%'>
-          <div>{weatherIcon}</div>
+          <i className='wi wi-night-sleet' />
+          {/* <i className={owf}>hello</i> */}
+          {/* <i className={'owf owf-501'} /> */}
         </foreignObject>
       </svg>
     )
