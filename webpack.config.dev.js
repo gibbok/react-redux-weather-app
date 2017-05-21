@@ -1,6 +1,5 @@
 const path = require('path')
 const webpack = require('webpack')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -12,8 +11,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin('[name].css')
+    new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
     contentBase: path.resolve(__dirname, 'public'),
@@ -30,10 +28,6 @@ module.exports = {
         test: /\.(png|woff|woff2|eot|ttf|svg)$/,
         loader: 'url-loader?limit=100000'
       },
-      // {
-      //   test: /\.css$/,
-      //   loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })
-      // },
       {
         test: /\.css$/,
         use: [ 'style-loader', 'css-loader' ]
