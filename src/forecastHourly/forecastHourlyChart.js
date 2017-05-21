@@ -1,19 +1,31 @@
 import React from 'react'
 import { LineChart, Line, CartesianGrid, XAxis, Tooltip } from 'recharts'
+import weatherIcons from '../app/icons'
 
 // use icon from https://websygen.github.io/owfont/#usage
 
 const CustomizedDot = React.createClass({
   render () {
     const { cx, cy, payload: {weatherIcon} } = this.props
-    const owf = `owf owf-${weatherIcon} owf-4x`
-    console.log(weatherIcon)
+
+    var prefix = 'wi wi-'
+    var code = weatherIcon
+    var icon = weatherIcons[code].icon
+
+  // If we are not in the ranges mentioned above, add a day/night prefix.
+    if (!(code > 699 && code < 800) && !(code > 899 && code < 1000)) {
+      icon = 'day-' + icon
+    }
+
+  // Finally tack on the prefix.
+    icon = prefix + icon
+
+    console.log(icon)
     return (
       <svg x={cx - 10} y={cy + 20}>
         <foreignObject width='100%' height='100%'>
-          <i className='wi wi-night-sleet' />
-          {/* <i className={owf}>hello</i> */}
-          {/* <i className={'owf owf-501'} /> */}
+          <i className={icon} />
+          {/* {wi-owm-800} */}
         </foreignObject>
       </svg>
     )

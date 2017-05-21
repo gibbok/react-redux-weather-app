@@ -26,7 +26,7 @@ const updateData = (state, action) => {
       momentId: createMomentId(timeInMs),
       hour: getHoursFromMoment(timeInMs),
       temp: x.main.temp,
-      weatherIcon: x.weather[0].icon
+      weatherIcon: x.weather[0].id
     }
   })
   return dotProp.set(state, 'forecastHourly.data', data)
