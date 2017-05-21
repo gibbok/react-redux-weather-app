@@ -1,13 +1,13 @@
 import React from 'react'
 import { LineChart, Line, CartesianGrid, XAxis, Tooltip } from 'recharts'
-import match from '../app/weatherIcons'
+import getIconClassName from '../app/weatherIcons'
 
 // use icon from https://websygen.github.io/owfont/#usage
 
 const CustomizedDot = React.createClass({
   render () {
-    const { cx, cy, payload: {weatherIcon} } = this.props
-    const icon = match(weatherIcon)
+    const { cx, cy, payload: {weatherIconCode} } = this.props
+    const icon = getIconClassName(weatherIconCode)
     return (
       <svg x={cx - 10} y={cy + 20}>
         <foreignObject width='100%' height='100%'>
