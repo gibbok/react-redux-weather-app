@@ -1,8 +1,8 @@
 import React from 'react'
 import getIconClassName from '../app/weatherIcons'
 
-const IconWeather = ({iconCode}) => {
-  const iconClassName = getIconClassName(iconCode)
+const IconWeather = ({code}) => {
+  const iconClassName = getIconClassName(code)
   return (
     <i className={iconClassName} />
   )
