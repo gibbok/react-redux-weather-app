@@ -1,5 +1,5 @@
 
-export default {
+const mapIcons = {
   '200': {
     'label': 'thunderstorm with light rain',
     'icon': 'storm-showers'
@@ -365,3 +365,16 @@ export default {
     'icon': 'cloudy-gusts'
   }
 }
+const match = code => {
+  const prefix = 'wi wi-'
+  let icon = mapIcons[code].icon
+  // if we are not in the ranges mentioned above, add a day/night prefix.
+  if (!(code > 699 && code < 800) && !(code > 899 && code < 1000)) {
+    icon = 'day-' + icon
+  }
+  // tack on the prefix.
+  icon = prefix + icon
+  return icon
+}
+
+export default match

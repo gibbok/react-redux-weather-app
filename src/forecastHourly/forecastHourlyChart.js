@@ -1,31 +1,17 @@
 import React from 'react'
 import { LineChart, Line, CartesianGrid, XAxis, Tooltip } from 'recharts'
-import weatherIcons from '../app/icons'
+import match from '../app/weatherIcons'
 
 // use icon from https://websygen.github.io/owfont/#usage
 
 const CustomizedDot = React.createClass({
   render () {
     const { cx, cy, payload: {weatherIcon} } = this.props
-
-    var prefix = 'wi wi-'
-    var code = weatherIcon
-    var icon = weatherIcons[code].icon
-
-  // If we are not in the ranges mentioned above, add a day/night prefix.
-    if (!(code > 699 && code < 800) && !(code > 899 && code < 1000)) {
-      icon = 'day-' + icon
-    }
-
-  // Finally tack on the prefix.
-    icon = prefix + icon
-
-    console.log(icon)
+    const icon = match(weatherIcon)
     return (
       <svg x={cx - 10} y={cy + 20}>
         <foreignObject width='100%' height='100%'>
           <i className={icon} />
-          {/* {wi-owm-800} */}
         </foreignObject>
       </svg>
     )
