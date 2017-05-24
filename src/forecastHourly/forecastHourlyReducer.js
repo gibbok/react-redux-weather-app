@@ -27,7 +27,12 @@ const updateData = (state, action) => {
       momentId: createMomentId(timeInMs),
       hour: getHoursFromMoment(timeInMs),
       temp: x.main.temp,
-      weatherIconCode: x.weather[0].id
+      weatherIconCode: x.weather[0].id,
+      weatherDescription: x.weather[0].main,
+      windDegree: x.wind.deg,
+      windSpeed: x.wind.speed,
+      humidityUnit: '%',
+      humidityValue: x.main.humidity
     }
   })
   return dotProp.set(state, 'forecastHourly.data', data)

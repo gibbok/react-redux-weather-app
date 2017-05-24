@@ -2,10 +2,12 @@
 
 
 ## Weather Details
-- [ ] Define a city id as default
-- [ ] Use city default to get Weather Details infos
-- [ ] Render basic UI
-- [ ] Render charts
+- [ ] Look for utility time and hours conversion (example from 14:00 to 2:00 PM).
+- [ ] Add routing.
+- [ ] Add weather map.
+- [ ] Add weather news if a free API is available.
+- [ ] Add section settings, time, celsius/fahrenheit, favourite cities
+- [ ] Add detect user location
 
 ## Useful
 
