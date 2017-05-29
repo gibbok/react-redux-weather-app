@@ -3,60 +3,72 @@ import IconWind from '../shared/IconWind'
 
 const Weather = ({ weather: {
     name,
-    country,
-    temperature,
-    temperatureMin,
-    temperatureMax,
-    weatherMain,
-    weatherDescription,
-    weatherIcon,
-    updatedTime,
-    windDegree,
-    windSpeed,
-    visibility,
-    humidity,
-    sunrise,
-    sunset
+  country,
+  temperature,
+  temperatureMin,
+  temperatureMax,
+  weatherMain,
+  weatherDescription,
+  weatherIcon,
+  updatedTime,
+  windDegree,
+  windSpeed,
+  visibility,
+  humidity,
+  sunrise,
+  sunset,
+  cloudiness,
+  pressure,
+  pressureUnit
  } }) => (
    <div>
      <div>
-       { name }, { country }
+       {name}, {country}
      </div>
      <div>
-       { temperature }
+       {temperature}
      </div>
      <div>
-       <span>Min { temperatureMin }</span>
-       <span>Max { temperatureMax }</span>
+       <span>Min {temperatureMin}</span>
+       <span>Max {temperatureMax}</span>
      </div>
      <div>
        <div>
-         { weatherMain }
+         {weatherMain}
        </div>
        <div>
-         { weatherDescription }
+         {weatherDescription}
        </div>
        <div>
-         { weatherIcon }
+         {weatherIcon}
        </div>
      </div>
      <div>
-       Updated as of { updatedTime }
+        Updated as of {updatedTime}
      </div>
      <div>
-       Wind { windDegree } { windSpeed } <IconWind degree={windDegree} />
+        Wind {windDegree} {windSpeed} <IconWind degree={windDegree} />
      </div>
      <div>
-       Visibility { visibility }
+        Visibility {visibility}
      </div>
      <div>
-       Humidity { humidity }
+        Humidity {humidity}
      </div>
      <div>
-       Sunris {sunrise}
+        Sunrise {sunrise}
      </div>
      <div>
-       Sunset {sunset}
+        Sunset {sunset}
+     </div>
+     <div>
+        Cloudiness {cloudiness}
+     </div>
+     <div>
+        Pressure {pressure}
+     </div>
+     <div>
+        Pressure unit {pressureUnit}
      </div>
    </div>
   )

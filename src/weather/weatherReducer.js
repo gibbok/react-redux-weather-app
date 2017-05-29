@@ -16,7 +16,8 @@ const updateAppIsFetching = (state, action, value) => {
 }
 
 const updateData = (state, action) => {
-  const { payload: { name, main, weather, wind, sys, visibility } } = action
+  const { payload: { name, main, weather, wind, sys, visibility, clouds } } = action
+  debugger
   const weatherData = {
     name: name,
     country: sys.country,
@@ -32,7 +33,10 @@ const updateData = (state, action) => {
     visibility: visibility,
     humidity: main.humidity,
     sunrise: sys.sunrise,
-    sunset: sys.sunset
+    sunset: sys.sunset,
+    cloudiness: clouds.all,
+    pressure: main.pressure,
+    pressureUnit: 'hPa'
   }
   return dotProp.set(state, 'weather.data', weatherData)
 }
