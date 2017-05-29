@@ -1,7 +1,7 @@
 import React from 'react'
-import ForecastDay from './forecastDay'
+import ForecastDay from './ForecastDay'
 
-const ForecastDaily = ({ forecastDays, onForecastDayClick }) => (
+const ForecastDays = ({ forecastDays, onForecastDayClick }) => (
   <div>
     <h2>Daily</h2>
     <ul>
@@ -16,4 +16,4 @@ const ForecastDaily = ({ forecastDays, onForecastDayClick }) => (
   </div>
 )
 
-export default ForecastDaily
+export default ForecastDays

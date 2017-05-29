@@ -17,7 +17,6 @@ const updateAppIsFetching = (state, action, value) => {
 
 const updateData = (state, action) => {
   const { payload: { name, main, weather, wind, sys, visibility, clouds } } = action
-  debugger
   const weatherData = {
     name: name,
     country: sys.country,

@@ -1,7 +1,7 @@
 import React from 'react'
-import Location from './location'
+import Location from './Location'
 
-const LocationFinderList = ({ locations, onLocationClick }) => (
+const LocationFinder = ({ locations, onLocationClick }) => (
   <ul>
     {locations.map((location, index) =>
       <Location
@@ -13,4 +13,4 @@ const LocationFinderList = ({ locations, onLocationClick }) => (
   </ul>
 )
 
-export default LocationFinderList
+export default LocationFinder

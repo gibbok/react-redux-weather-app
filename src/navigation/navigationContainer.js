@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import NavigationList from './navigationList'
+import Navigations from './Navigations'
 import { setActive } from './navigationActions'
 
 const getNavigations = (navigations) => {
@@ -23,6 +23,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 const NavigationContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(NavigationList)
+)(Navigations)
 
 export default NavigationContainer

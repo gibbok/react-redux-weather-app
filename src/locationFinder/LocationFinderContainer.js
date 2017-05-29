@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import LocationFinderList from './locationFinderList'
+import LocationFinder from './LocationFinder'
 
 const getLocations = (locations) => {
   return locations
@@ -18,9 +18,9 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const LocationFinderListContainer = connect(
+const LocationFinderContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(LocationFinderList)
+)(LocationFinder)
 
-export default LocationFinderListContainer
+export default LocationFinderContainer

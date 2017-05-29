@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import ForecastDayList from './forecastDayList'
+import ForecastDays from './ForecastDays'
 import { getForecastDaily } from './forecastDailyActions'
 import store from '../app/store'
 
@@ -38,6 +38,6 @@ const mapDispatchToProps = (dispatch) => {
 const ForecastDailyContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(ForecastDayList)
+)(ForecastDays)
 
 export default ForecastDailyContainer

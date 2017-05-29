@@ -1,46 +1,5 @@
 import dotProp from 'dot-prop-immutable'
 import * as types from './locationFinderActionTypes'
-// locationFinder: {
-//    data: [],   // domain data
-//    app: {},    // app state that is specific to the application's behavior
-//    ui: {}      // data that represents how the UI is currently displayed
-// },
-
-// const initialState = {
-//   app: {
-//     config: {}
-//   },
-//   locationFinder: {
-//     data: [
-//     ],
-//     app: {
-//       isFetching: false
-//     },
-//     ui: {
-//       inputValue: ''
-//     }
-//   },
-//   weather: {
-//     data: [],
-//     app: {},
-//     ui: {}
-//   },
-//   weatherDetails: {
-//     data: [],
-//     app: {},
-//     ui: {}
-//   },
-//   forecastDaily: {
-//     data: [],
-//     app: {},
-//     ui: {}
-//   },
-//   forecastHourly: {
-//     data: [],
-//     app: {},
-//     ui: {}
-//   }
-// }
 
 const initialState = {
   locationFinder: {

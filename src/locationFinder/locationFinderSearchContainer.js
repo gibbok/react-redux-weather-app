@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import LocationFinderSearch from './locationFinderSearch'
+import LocationFinderSearch from './LocationFinderSearch'
 import { getLocations, setSearchValue } from './locationFinderSearchActions'
 
 const getInputValue = (state) => {
