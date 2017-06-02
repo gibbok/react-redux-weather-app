@@ -1,16 +1,18 @@
 import React from 'react'
 import Location from './Location'
 
-const LocationFinder = ({ locations, onLocationClick }) => (
-  <ul>
-    {locations.map((location, index) =>
-      <Location
-        key={index}
-        {...locations[index]}
-        onClick={() => onLocationClick(location)}
+const LocationFinder = ({ locations, onLocationClick }) => {
+  let hasLocations = locations.length > 0
+  return (hasLocations ? (
+    <ul>
+      {locations.map((location, index) =>
+        <Location
+          key={index}
+          {...locations[index]}
+          onLocationClick={() => onLocationClick(location)}
       />
     )}
-  </ul>
-)
-
+    </ul>
+    ) : null)
+}
 export default LocationFinder

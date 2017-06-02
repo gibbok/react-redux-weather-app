@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Location = ({ onClick, name, country }) => (
-  <li onClick={onClick}>
-    {name} {country}
+const Location = ({ onLocationClick, id, name, country }) => (
+  <li>
+    <a onClick={onLocationClick}>{name}, {country}</a>
   </li>
 )
 

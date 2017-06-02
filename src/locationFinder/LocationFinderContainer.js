@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import LocationFinder from './LocationFinder'
+import { setLocation } from './locationFinderSearchActions'
 
 const getLocations = (locations) => {
   return locations
@@ -13,7 +14,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onLocationClick: (id) => {
+    onLocationClick: (location) => {
+      dispatch(setLocation(location.id))
     }
   }
 }

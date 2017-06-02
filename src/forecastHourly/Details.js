@@ -11,7 +11,6 @@ const Details = ({ forecastHourly }) => (
       />
     )}
     </ul>
-
   </div>
 )
 
