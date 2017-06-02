@@ -1,5 +1,5 @@
 export const createMomentId = timeInMs => {
-  var moment = new Date(timeInMs)
+  let moment = new Date(timeInMs)
   let day = moment.getUTCDay()
   let date = moment.getUTCDate()
   let month = moment.getUTCMonth()
