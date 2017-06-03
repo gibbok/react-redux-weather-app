@@ -22,6 +22,11 @@ https://openlayersbook.github.io/ch10-openlayers-goes-mobile/example-02.html
 https://openlayersbook.github.io/ch03-charting-the-map-class/example-04.html
 http://openlayers.org/en/master/examples/
 
+API news
+https://webhose.io/
+http://eventregistry.org/pricing
+https://newsapi.org/
+
 ## Useful
 
 https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
