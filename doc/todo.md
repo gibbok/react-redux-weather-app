@@ -17,6 +17,11 @@ https://gist.github.com/karlfloersch/1bb1e23ae7c31082cdd4
 
 https://www.npmjs.com/package/openlayers
 
+Animated map
+https://openlayersbook.github.io/ch10-openlayers-goes-mobile/example-02.html
+https://openlayersbook.github.io/ch03-charting-the-map-class/example-04.html
+http://openlayers.org/en/master/examples/
+
 ## Useful
 
 https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
