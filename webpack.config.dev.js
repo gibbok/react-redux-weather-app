@@ -18,7 +18,8 @@ module.exports = {
     publicPath: '/assets/', // virtual
     port: 8080,
     hot: true,
-    inline: true
+    inline: true,
+    historyApiFallback: true
   },
   devtool: 'source-map',
   // devtool: 'eval-source-map',
