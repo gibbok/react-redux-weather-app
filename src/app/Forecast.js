@@ -7,7 +7,7 @@ import ForecastDailyContainer from '../forecastDaily/ForecastDailyContainer'
 import ForecastHourlyContainer from '../forecastHourly/ForecastHourlyContainer'
 import styles from '../../node_modules/weather-icons/css/weather-icons.css'
 
-const App = () => (
+const Forecast = () => (
   <div>
     <NavigationContainer />
     <LocationFinderSearchContainer />
@@ -18,4 +18,4 @@ const App = () => (
   </div>
 )
 
-export default App
+export default Forecast

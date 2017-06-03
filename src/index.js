@@ -3,7 +3,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import store from './app/store'
-import App from './app/App'
+import Forecast from './app/Forecast'
 import Root from './app/Root'
 
 /* render(

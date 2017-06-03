@@ -1,13 +1,12 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import App from './App'
+import Forecast from './Forecast'
 
 const Root = ({ store }) => (
   <Provider store={store}>
     <Router>
-      {/* <Route path='/(:filter)' component={App} /> */}
-      <Route exact path='/' component={App} />
+      <Route exact path='/' component={Forecast} />
     </Router>
   </Provider>
 )
