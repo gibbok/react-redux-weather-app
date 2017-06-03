@@ -9,6 +9,14 @@
 - [ ] Add section settings, time, celsius/fahrenheit, favourite cities
 - [ ] Add detect user location
 
+https://openlayers.org/en/latest/apidoc/ol.source.XYZ.html
+
+https://github.com/buche/leaflet-openweathermap
+
+https://gist.github.com/karlfloersch/1bb1e23ae7c31082cdd4
+
+https://www.npmjs.com/package/openlayers
+
 ## Useful
 
 https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
