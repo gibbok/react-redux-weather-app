@@ -2,7 +2,7 @@ import React from 'react'
 import Navigation from './Navigation'
 
 const NavigationList = ({ navigations, onNavigationClick }) => (
-  <ul>
+  <div>
     {navigations.map((navigation, index) =>
       <Navigation
         key={index}
@@ -10,7 +10,7 @@ const NavigationList = ({ navigations, onNavigationClick }) => (
         onClick={() => onNavigationClick(navigation)}
       />
     )}
-  </ul>
+  </div>
 )
 
 export default NavigationList

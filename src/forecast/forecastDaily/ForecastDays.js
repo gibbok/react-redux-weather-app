@@ -4,7 +4,7 @@ import ForecastDay from './ForecastDay'
 const ForecastDays = ({ forecastDays, onForecastDayClick }) => (
   <div>
     <h2>Daily</h2>
-    <ul>
+    <div>
       {forecastDays.map((day, index) =>
         <ForecastDay
           key={index}
@@ -12,7 +12,7 @@ const ForecastDays = ({ forecastDays, onForecastDayClick }) => (
           onClick={() => onForecastDayClick(day)}
       />
     )}
-    </ul>
+    </div>
   </div>
 )
 

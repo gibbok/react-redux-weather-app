@@ -8,19 +8,22 @@ const initialState = {
         id: 'home',
         title: 'Weather',
         tooltip: 'Weather',
-        isActive: true
+        isActive: true,
+        url: ''
       },
       {
         id: 'map',
         title: 'Map',
         tooltip: 'Weather map',
-        isActive: false
+        isActive: false,
+        url: 'map'
       },
       {
         id: 'news',
         title: 'News',
         tooltip: 'Weather News',
-        isActive: false
+        isActive: false,
+        url: 'news'
       }
     ],
     ui: {

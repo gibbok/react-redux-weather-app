@@ -1,9 +1,9 @@
 import React from 'react'
 
 const ForecastDay = ({ onClick, momentId, date, tempMin, tempMax, weatherDescription }) => (
-  <li onClick={onClick}>
+  <div onClick={onClick}>
     {momentId} {date} {tempMin} {tempMax} {weatherDescription}
-  </li>
+  </div>
 )
 
 export default ForecastDay
