@@ -5,7 +5,8 @@ const initialState = {
   weather: {
     data: {},
     app: {
-      locationId: 5128581 // nyc usa
+      locationId: 5128581, // nyc usa
+      isFetching: false
     },
     ui: {}
   }
