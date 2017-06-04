@@ -1,7 +1,7 @@
 import React from 'react'
 import Map from './Map'
 import * as ol from 'openlayers'
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 
 // high order component
 class MapHOC extends React.Component {

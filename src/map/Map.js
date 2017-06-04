@@ -1,6 +1,7 @@
 import React from 'react'
-import * as ol from 'openlayers'
+/* eslint-disable no-unused-vars */
 import styles from '../../node_modules/openlayers/css/ol.css'
+/* eslint-enable no-unused-vars */
 
 const Map = () => (
   <div id='map' className='map' />

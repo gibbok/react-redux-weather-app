@@ -27,6 +27,8 @@ https://webhose.io/
 http://eventregistry.org/pricing
 https://newsapi.org/
 
+https://github.com/planttheidea/react-pure-lifecycle
+
 ## Useful
 
 https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
