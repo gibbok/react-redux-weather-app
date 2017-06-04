@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import Map from './Map'
+import MapHOC from './MapHOC'
 import store from '../app/store'
 
 let isInitiated = false
@@ -29,6 +29,6 @@ const mapStateToProps = (state) => {
 
 const MapContainer = connect(
   mapStateToProps
-)(Map)
+)(MapHOC)
 
 export default MapContainer
