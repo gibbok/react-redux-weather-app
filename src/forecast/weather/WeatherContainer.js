@@ -13,23 +13,16 @@ const getWeatherLocationId = () => {
   return store.getState().weatherReducer.weather.app.locationId
 }
 
-const onInit = () => {
-  if (isInitiated) {
-    return
-  }
-  isInitiated = true
-  store.dispatch(getWeather(getWeatherLocationId()))
-}
-
 const mapStateToProps = (state) => {
   return {
-    weather: weather(state.weatherReducer.weather.data),
-    onInit: onInit()
+    weather: weather(state.weatherReducer.weather.data)
   }
 }
 
 const WeatherContainer = connect(
   mapStateToProps
 )(Weather)
+
+store.dispatch(getWeather(getWeatherLocationId()))
 
 export default WeatherContainer

@@ -3,8 +3,6 @@ import ForecastHourly from './ForecastHourly'
 import { getForecastHourly, setForecastHourlyActiveReportType } from './hourlyActions'
 import store from '../../app/store'
 
-let isInitiated = false
-
 const forecastHourly = (forecastHourly) => {
   return forecastHourly.data.filter(x => x.momentId === forecastHourly.ui.selectedDate)
 }
@@ -17,18 +15,9 @@ const getActiveTypeReport = (state) => {
   return state.forecastHourlyReducer.forecastHourly.ui.activeReportType
 }
 
-const onInit = () => {
-  if (isInitiated) {
-    return
-  }
-  isInitiated = true
-  store.dispatch(getForecastHourly(getForecastHourlyLocationId()))
-}
-
 const mapStateToProps = (state) => {
   return {
     forecastHourly: forecastHourly(state.forecastHourlyReducer.forecastHourly),
-    onInit: onInit(),
     activeTypeReport: getActiveTypeReport(state)
   }
 }
@@ -50,5 +39,7 @@ const HourlyContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(ForecastHourly)
+
+store.dispatch(getForecastHourly(getForecastHourlyLocationId()))
 
 export default HourlyContainer

@@ -12,9 +12,9 @@ const Forecast = () => (
     <NavigationContainer />
     <LocationFinderSearchContainer />
     <LocationFinderContainer />
-    <WeatherContainer onInit />
-    <ForecastDailyContainer onInit />
-    <ForecastHourlyContainer onInit />
+    <WeatherContainer />
+    <ForecastDailyContainer />
+    <ForecastHourlyContainer />
   </div>
 )
 

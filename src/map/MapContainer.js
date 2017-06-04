@@ -1,34 +1,21 @@
 import { connect } from 'react-redux'
 import Map from './Map'
-import store from '../app/store'
-
-let isInitiated = false
+// import store from '../app/store'
 
 const map = (map) => {
   return map
 }
 
-// const getMapLocationId = () => {
-//   return store.getState().mapReducer.map.app.locationId
-// }
-
-const onInit = () => {
-  if (isInitiated) {
-    return
-  }
-  isInitiated = true
-  // store.dispatch(getWeather(getWeatherLocationId()))
-}
-
 const mapStateToProps = (state) => {
   return {
-    map: map(state.mapReducer.map.data),
-    onInit: onInit()
+    map: map(state.mapReducer.map.data)
   }
 }
 
 const MapContainer = connect(
   mapStateToProps
 )(Map)
+
+// store.dispatch(getWeather(getWeatherLocationId()))
 
 export default MapContainer

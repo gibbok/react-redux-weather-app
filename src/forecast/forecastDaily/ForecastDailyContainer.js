@@ -13,18 +13,9 @@ const getForecastDailyLocationId = () => {
   return store.getState().forecastDailyReducer.forecastDaily.app.locationId
 }
 
-const onInit = () => {
-  if (isInitiated) {
-    return
-  }
-  isInitiated = true
-  store.dispatch(getForecastDaily(getForecastDailyLocationId()))
-}
-
 const mapStateToProps = (state) => {
   return {
-    forecastDays: forecastDaily(state.forecastDailyReducer.forecastDaily.data),
-    onInit: onInit()
+    forecastDays: forecastDaily(state.forecastDailyReducer.forecastDaily.data)
   }
 }
 
@@ -39,5 +30,7 @@ const ForecastDailyContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(ForecastDays)
+
+store.dispatch(getForecastDaily(getForecastDailyLocationId()))
 
 export default ForecastDailyContainer
