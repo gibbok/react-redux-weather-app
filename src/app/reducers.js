@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import locationFinderReducer from '../locationFinder/locationFinderReducer'
-import navigationReducer from '../navigation/navigationReducer'
+import locationFinderReducer from '../forecast/locationFinder/locationFinderReducer'
+import navigationReducer from '../shared/navigation/navigationReducer'
 import weatherReducer from '../forecast/weather/weatherReducer'
 import forecastDailyReducer from '../forecast/forecastDaily/forecastDailyReducer'
 import forecastHourlyReducer from '../forecast/forecastHourly/forecastHourlyReducer'

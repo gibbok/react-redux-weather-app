@@ -1,5 +1,5 @@
 import React from 'react'
-import NavigationContainer from '../navigation/NavigationContainer'
+import NavigationContainer from '../shared/navigation/NavigationContainer'
 import MapContainer from '../map/MapContainer'
 
 const Map = () => (
