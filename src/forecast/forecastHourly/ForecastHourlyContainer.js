@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import ForecastHourly from './ForecastHourly'
 import { getForecastHourly, setForecastHourlyActiveReportType } from './forecastHourlyActions'
-import store from '../app/store'
+import store from '../../app/store'
 
 let isInitiated = false
 

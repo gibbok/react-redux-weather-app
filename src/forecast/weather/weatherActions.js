@@ -1,5 +1,5 @@
 import 'isomorphic-fetch'
-import * as api from '../app/api'
+import * as api from '../../app/api'
 import * as types from './weatherActionTypes'
 
 const getWeather = query => ({

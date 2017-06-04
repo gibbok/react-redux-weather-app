@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import ForecastDays from './ForecastDays'
 import { getForecastDaily } from './forecastDailyActions'
-import store from '../app/store'
+import store from '../../app/store'
 
 let isInitiated = false
 

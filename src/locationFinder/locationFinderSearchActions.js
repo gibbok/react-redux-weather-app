@@ -1,9 +1,9 @@
 import 'isomorphic-fetch'
 import * as api from '../app/api'
 import * as types from './locationFinderActionTypes'
-import { getWeather } from '../weather/weatherActions'
-import { getForecastDaily } from '../forecastDaily/forecastDailyActions'
-import { getForecastHourly } from '../forecastHourly/forecastHourlyActions'
+import { getWeather } from '../forecast/weather/weatherActions'
+import { getForecastDaily } from '../forecast/forecastDaily/forecastDailyActions'
+import { getForecastHourly } from '../forecast/forecastHourly/forecastHourlyActions'
 
 const getLocations = query => ({
   type: types.GET_LOCATIONS,

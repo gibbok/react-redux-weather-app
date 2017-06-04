@@ -1,6 +1,6 @@
 import dotProp from 'dot-prop-immutable'
 import * as types from './forecastDailyActionTypes'
-import { createMomentId } from '../app/utility'
+import { createMomentId } from '../../app/utility'
 
 const initialState = {
   forecastDaily: {

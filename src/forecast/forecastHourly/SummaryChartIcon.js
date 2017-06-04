@@ -1,5 +1,5 @@
 import React from 'react'
-import IconWeather from '../shared/IconWeather'
+import IconWeather from '../../shared/IconWeather'
 
 const SummaryChartIcon = React.createClass({
   render () {

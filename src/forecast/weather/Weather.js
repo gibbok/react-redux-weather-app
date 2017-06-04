@@ -1,5 +1,5 @@
 import React from 'react'
-import IconWind from '../shared/IconWind'
+import IconWind from '../../shared/IconWind'
 
 const Weather = ({ weather: {
     name,

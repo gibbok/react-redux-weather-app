@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import Weather from './Weather'
 import { getWeather } from './weatherActions'
-import store from '../app/store'
+import store from '../../app/store'
 
 let isInitiated = false
 
