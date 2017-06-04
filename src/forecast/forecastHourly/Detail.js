@@ -1,6 +1,6 @@
 import React from 'react'
-import IconWeather from '../../shared/IconWeather'
-import IconWind from '../../shared/IconWind'
+import IconWeather from '../../shared/icon/IconWeather'
+import IconWind from '../../shared/icon/IconWind'
 
 const Detail = ({ momentId, hour, temp, weatherIconCode, weatherDescription, windDegree, windSpeed, humidityUnit, humidityValue }) => (
   <li>
