@@ -1,5 +1,6 @@
 import React from 'react'
 import * as ol from 'openlayers'
+import * as api from '../app/api'
 import styles from '../../node_modules/openlayers/css/ol.css'
 
 const Map = React.createClass({
@@ -18,7 +19,7 @@ const Map = React.createClass({
     })
     let layerCloud = new ol.layer.Tile({
       source: new ol.source.XYZ({
-        url: 'http://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=9f585babc59bf435c42319b4e9b69766'
+        url: api.mapTemperature()
       })
     })
     map.addLayer(layerCloud)
