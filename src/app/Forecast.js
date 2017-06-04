@@ -5,7 +5,7 @@ import LocationFinderContainer from '../locationFinder/LocationFinderContainer'
 import WeatherContainer from '../forecast/weather/WeatherContainer'
 import ForecastDailyContainer from '../forecast/forecastDaily/ForecastDailyContainer'
 import ForecastHourlyContainer from '../forecast/forecastHourly/ForecastHourlyContainer'
-import styles from '../../node_modules/weather-icons/css/weather-icons.css'
+import styles from '../../node_modules/weather-icons/css/weather-icons.css' // eslint-disable-line no-unused-vars
 
 const Forecast = () => (
   <div>

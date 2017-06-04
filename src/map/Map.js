@@ -1,7 +1,7 @@
 import React from 'react'
 import * as ol from 'openlayers'
 import * as api from '../app/api'
-import styles from '../../node_modules/openlayers/css/ol.css'
+import styles from '../../node_modules/openlayers/css/ol.css' // eslint-disable-line no-unused-vars
 
 const Map = React.createClass({
   componentDidMount () {
