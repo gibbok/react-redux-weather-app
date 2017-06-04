@@ -3,8 +3,6 @@ import Weather from './Weather'
 import { getWeather } from './weatherActions'
 import store from '../../app/store'
 
-let isInitiated = false
-
 const weather = (weather) => {
   return weather
 }

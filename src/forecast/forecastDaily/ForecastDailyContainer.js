@@ -3,8 +3,6 @@ import ForecastDays from './ForecastDays'
 import { getForecastDaily } from './forecastDailyActions'
 import store from '../../app/store'
 
-let isInitiated = false
-
 const forecastDaily = (forecastDaily) => {
   return forecastDaily
 }
