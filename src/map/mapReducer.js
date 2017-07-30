@@ -35,6 +35,32 @@ const initialState = {
           title: 'Africa',
           isActive: false
         }
+      ],
+      types: [
+        {
+          id: 'temperature',
+          title: 'Temperature'
+        },
+        {
+          id: 'precipitation',
+          title: 'Precipitation',
+          isActive: false
+        },
+        {
+          id: 'pressure',
+          title: 'Pressure',
+          isActive: false
+        },
+        {
+          id: 'wind',
+          title: 'Wind',
+          isActive: false
+        },
+        {
+          id: 'cloud',
+          title: 'Cloud',
+          isActive: false
+        }
       ]
     },
     app: {

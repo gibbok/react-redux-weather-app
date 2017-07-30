@@ -10,17 +10,24 @@ const getRegions = (regions) => {
   return regions
 }
 
+const getTypes = (types) => {
+  return types
+}
+
 const mapStateToProps = (state) => {
   return {
     map: map(state.mapReducer.map.data),
-    regions: getRegions(state.mapReducer.map.data.regions)
+    regions: getRegions(state.mapReducer.map.data.regions),
+    types: getTypes(state.mapReducer.map.data.types)
   }
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onRegionsChange: (navigation) => {
       console.log('onRegionsChange')
-      // dispatch(setActive(navigation.id))
+    },
+    onTypesChange: (navigation) => {
+      console.log('onTypesChange')
     }
   }
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import * as ol from 'openlayers'
 import * as api from '../app/api'
 import RegionsSelect from './RegionsSelect'
+import TypesSelect from './TypesSelect'
 import styles from '../../node_modules/openlayers/css/ol.css' // eslint-disable-line no-unused-vars
 
 const Map = React.createClass({
@@ -29,6 +30,7 @@ const Map = React.createClass({
     return (
       <div>
         <RegionsSelect regions={this.props.regions} onRegionsChange={this.props.onRegionsChange} />
+        <TypesSelect types={this.props.types} onTypesChange={this.props.onTypesChange} />
         <div id='map' className='map' />
       </div>
     )
