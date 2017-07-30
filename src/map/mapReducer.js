@@ -3,7 +3,40 @@ import * as types from './mapActionTypes'
 
 const initialState = {
   map: {
-    data: {},
+    data: {
+      regions: [
+        {
+          id: 'northAmerica',
+          title: 'North America',
+          isActive: true
+        },
+        {
+          id: 'southAmerica',
+          title: 'South America',
+          isActive: false
+        },
+        {
+          id: 'europe',
+          title: 'Europe',
+          isActive: false
+        },
+        {
+          id: 'asia',
+          title: 'Asia',
+          isActive: false
+        },
+        {
+          id: 'pacificIslands',
+          title: 'Pacific Islands',
+          isActive: false
+        },
+        {
+          id: 'africa',
+          title: 'Africa',
+          isActive: false
+        }
+      ]
+    },
     app: {
       locationId: 5128581, // nyc usa
       isFetching: false
@@ -23,9 +56,9 @@ const updateMapType = (state, action) => {
 }
 
 const updateData = (state, action) => {
-  // const { payload: { name, main, weather, wind, sys, visibility, clouds } } = action
+  // const { payload: { title, main, weather, wind, sys, visibility, clouds } } = action
   // const weatherData = {
-  //   name: name,
+  //   title: title,
   //   country: sys.country,
   //   temperature: main.temp,
   //   temperatureMin: main.temp_min,
