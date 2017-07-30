@@ -17,13 +17,6 @@ const initialState = {
         tooltip: 'Weather map',
         isActive: false,
         url: 'map'
-      },
-      {
-        id: 'news',
-        title: 'News',
-        tooltip: 'Weather News',
-        isActive: false,
-        url: 'news'
       }
     ],
     ui: {

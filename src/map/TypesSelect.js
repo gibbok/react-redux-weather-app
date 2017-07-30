@@ -1,7 +1,6 @@
 import React from 'react'
 
 const TypesSelect = ({ types, onTypesChange }) => {
-  debugger
   return (
     <select onChange={() => onTypesChange()}>
       {types.map((type) =>
