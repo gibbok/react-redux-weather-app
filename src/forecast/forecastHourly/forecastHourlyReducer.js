@@ -1,12 +1,13 @@
 import dotProp from 'dot-prop-immutable'
 import * as types from './forecastHourlyActionTypes'
 import { createMomentId, getHoursFromMoment } from '../../app/utility'
+import location from '../../app/location'
 
 const initialState = {
   forecastHourly: {
     data: [],
     app: {
-      locationId: 5128581, // nyc usa
+      locationId: location().locationId, // nyc usa
       isFetching: false
     },
     ui: {

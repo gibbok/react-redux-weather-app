@@ -1,5 +1,6 @@
 import dotProp from 'dot-prop-immutable'
 import * as types from './mapActionTypes'
+import location from '../app/location'
 
 const initialState = {
   map: {
@@ -64,7 +65,7 @@ const initialState = {
       ]
     },
     app: {
-      locationId: 5128581, // nyc usa
+      locationId: location().locationId, // nyc usa
       isFetching: false
     },
     ui: {
