@@ -28,21 +28,13 @@ const Map = React.createClass({
       features: [markerFeature]
     })
 
-    var svg = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 30 30" enable-background="new 0 0 30 30" xml:space="preserve">' +
-'<path fill="#156BB1" d="M22.906,10.438c0,4.367-6.281,14.312-7.906,17.031c-1.719-2.75-7.906-12.665-7.906-17.031S10.634,2.531,15,2.531S22.906,6.071,22.906,10.438z"/>' +
-'<circle fill="#FFFFFF" cx="15" cy="10.677" r="3.291"/></svg>'
-
-    var markerSvg = new Image()
-    markerSvg.src = 'data:image/svg+xml,' + escape(svg)
-
     let markerStyle = new ol.style.Style({
       image: new ol.style.Icon(({
         anchor: [0, 0],
         anchorXUnits: 'fraction',
         anchorYUnits: 'pixels',
         opacity: 0.75,
-        img: markerSvg,
-        imgSize: [100, 100]
+        src: 'assets/pin.svg'
       }))
     })
 
@@ -73,9 +65,14 @@ const Map = React.createClass({
         cloudLayer
       ],
       view: new ol.View({
-        center: ol.proj.transform([37.41, 8.82], 'EPSG:4326', 'EPSG:3857'),
+        center: ol.proj.transform([0, 0], 'EPSG:4326', 'EPSG:3857'),
         zoom: 4
       })
+    })
+    var view = map.getView()
+    view.animate({
+      center: ol.proj.fromLonLat([-0.12755, 51.507222]),
+      duration: 2000
     })
   }
 })
