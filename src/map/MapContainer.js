@@ -31,6 +31,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     onRegionsChange: (region) => {
       console.log('onRegionsChange')
       dispatch(setRegion(region))
+      debugger
     },
     onTypesChange: (navigation) => {
       console.log('onTypesChange')

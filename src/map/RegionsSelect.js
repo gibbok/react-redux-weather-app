@@ -7,7 +7,7 @@ const RegionsSelect = ({ regions, onRegionsChange }) => {
         <option
           value={region.id}
           key={region.id}
-          >{region.title}</option>)}
+        >{region.title}</option>)}
     </select>
   )
 }

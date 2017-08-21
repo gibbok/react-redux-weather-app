@@ -9,10 +9,24 @@ const Map = React.createClass({
   componentDidMount () {
     this.renderMapOpenLayer()
   },
+  componentDidUpdate (prevProps, prevState) {
+    console.log('componentDidUpdate')
+    this.activeRegionOnMap()
+  },
+  activeRegionOnMap () {
+    debugger
+    console.log('change region')
+  },
+  zoomMapToRegion () {
+
+  },
   render () {
     return (
       <div>
-        <RegionsSelect regions={this.props.regions} onRegionsChange={this.props.onRegionsChange} />
+        <RegionsSelect
+          regions={this.props.regions}
+          onRegionsChange={this.props.onRegionsChange}
+         />
         <TypesSelect types={this.props.types} onTypesChange={this.props.onTypesChange} />
         <div id='map' className='map' />
       </div>
@@ -20,6 +34,7 @@ const Map = React.createClass({
   },
   renderMapOpenLayer () {
     let geo = this.props.geo
+
     // render marker vector
     let markerFeature = new ol.Feature({
       geometry: new ol.geom.Point(ol.proj.transform([-72.0704, 46.678], 'EPSG:4326', 'EPSG:3857')) // TODO // take lat long from openweather api which should be sotred in the state
