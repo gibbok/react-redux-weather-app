@@ -1,17 +1,16 @@
 import { connect } from 'react-redux'
 import Map from './Map'
-// import store from '../app/store'
 
-const map = (map) => {
-  return map
+const map = state => {
+  return state.mapReducer.map.data
 }
 
-const getRegions = (regions) => {
-  return regions
+const getRegions = state => {
+  return state.mapReducer.map.data.regions
 }
 
-const getTypes = (types) => {
-  return types
+const getTypes = state => {
+  return state.mapReducer.map.data.types
 }
 
 const geo = state => {
@@ -21,9 +20,9 @@ const geo = state => {
 const mapStateToProps = (state) => {
   return {
     geo: geo(state),
-    map: map(state.mapReducer.map.data),
-    regions: getRegions(state.mapReducer.map.data.regions),
-    types: getTypes(state.mapReducer.map.data.types)
+    map: map(state),
+    regions: getRegions(state),
+    types: getTypes(state)
   }
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
