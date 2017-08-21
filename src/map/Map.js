@@ -6,19 +6,46 @@ import TypesSelect from './TypesSelect'
 import styles from '../../node_modules/openlayers/css/ol.css' // eslint-disable-line no-unused-vars
 
 const Map = React.createClass({
+  map: undefined,
   componentDidMount () {
     this.renderMapOpenLayer()
   },
-  componentDidUpdate (prevProps, prevState) {
-    console.log('componentDidUpdate')
-    this.activeRegionOnMap()
+  componentDidUpdate (prevProps) {
+    this.animateMapToRegion(prevProps)
   },
-  activeRegionOnMap () {
-    debugger
-    console.log('change region')
-  },
-  zoomMapToRegion () {
+  animateMapToRegion (prevProps) {
+    let nextActiveRegion = prevProps.map.regions.find(region => region.isActive)
+    let newCenterMap
+    switch (nextActiveRegion.id) {
+      case 'currentLocation':
+        newCenterMap = this.props.geo
+        break
+      case 'northAmerica':
+        newCenterMap = [ -100.7838, 46.8083 ]
+        break
+      case 'southAmerica':
+        newCenterMap = [ -57.6534, -19.0092 ]
+        break
+      case 'europe':
+        newCenterMap = [8.6833, 50.1167]
+        break
+      case 'asia':
+        newCenterMap = [ 91.1, 29.65]
+        break
+      case 'pacificIslands':
+        newCenterMap = [ 156.3159, -7.5559 ]
+        break
+      case 'africa':
+        newCenterMap = [ 18.5333, 4.3833 ]
+        break
+    }
 
+    var view = this.map.getView()
+    view.animate({
+      center: ol.proj.fromLonLat(newCenterMap),
+      duration: 1000,
+      zoom: 4
+    })
   },
   render () {
     return (
@@ -73,7 +100,8 @@ const Map = React.createClass({
       })
     })
 
-    let map = new ol.Map({
+    // create map
+    this.map = new ol.Map({
       target: 'map',
       layers: [
         tileLayer,
