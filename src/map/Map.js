@@ -19,6 +19,7 @@ const Map = React.createClass({
     )
   },
   renderMapOpenLayer () {
+    let geo = this.props.geo
     // render marker vector
     let markerFeature = new ol.Feature({
       geometry: new ol.geom.Point(ol.proj.transform([-72.0704, 46.678], 'EPSG:4326', 'EPSG:3857')) // TODO // take lat long from openweather api which should be sotred in the state
@@ -65,14 +66,9 @@ const Map = React.createClass({
         cloudLayer
       ],
       view: new ol.View({
-        center: ol.proj.transform([0, 0], 'EPSG:4326', 'EPSG:3857'),
+        center: ol.proj.transform(geo, 'EPSG:4326', 'EPSG:3857'),
         zoom: 4
       })
-    })
-    var view = map.getView()
-    view.animate({
-      center: ol.proj.fromLonLat([-0.12755, 51.507222]),
-      duration: 2000
     })
   }
 })

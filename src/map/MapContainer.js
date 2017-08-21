@@ -14,8 +14,13 @@ const getTypes = (types) => {
   return types
 }
 
+const geo = state => {
+  return state.mapReducer.map.app.geo
+}
+
 const mapStateToProps = (state) => {
   return {
+    geo: geo(state),
     map: map(state.mapReducer.map.data),
     regions: getRegions(state.mapReducer.map.data.regions),
     types: getTypes(state.mapReducer.map.data.types)
