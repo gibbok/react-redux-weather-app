@@ -7,9 +7,14 @@ const initialState = {
     data: {
       regions: [
         {
+          id: 'currentLocation',
+          title: 'Current Location',
+          isActive: true
+        },
+        {
           id: 'northAmerica',
           title: 'North America',
-          isActive: true
+          isActive: false
         },
         {
           id: 'southAmerica',

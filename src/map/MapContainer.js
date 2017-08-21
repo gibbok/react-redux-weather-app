@@ -41,6 +41,4 @@ const MapContainer = connect(
   mapDispatchToProps
 )(Map)
 
-// store.dispatch(getWeather(getWeatherLocationId()))
-
 export default MapContainer
