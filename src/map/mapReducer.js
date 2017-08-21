@@ -88,6 +88,14 @@ const updateMapType = (state, action) => {
   return dotProp.set(state, 'map.ui.type', action.payload)
 }
 
+const updateRegions = (state, action) => {
+  let regions = state.map.data.regions.map(region => {
+    region.isActive = region.id === action.payload
+    return region
+  })
+  return dotProp.set(state, 'map.data.regions', regions)
+}
+
 const updateData = (state, action) => {
   // const { payload: { title, main, weather, wind, sys, visibility, clouds } } = action
   // const weatherData = {
@@ -117,8 +125,13 @@ function mapReducer (state = initialState, action) {
   switch (action.type) {
     case types.GET_MAP:
       return updateAppIsFetching(state, action, true)
+
     case types.SET_MAP_TYPE:
       return updateMapType(state, action)
+
+    case types.SET_MAP_REGION:
+      return updateRegions(state, action)
+
     default:
       return state
   }
