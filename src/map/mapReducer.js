@@ -66,6 +66,7 @@ const initialState = {
     },
     app: {
       locationId: location().locationId, // nyc usa
+      geo: location().geo,
       isFetching: false
     },
     ui: {
