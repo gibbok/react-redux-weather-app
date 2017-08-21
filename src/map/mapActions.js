@@ -5,4 +5,9 @@ const setRegion = value => ({
   payload: value
 })
 
-export { setRegion }
+const setType = value => ({
+  type: types.SET_MAP_TYPE,
+  payload: value
+})
+
+export { setRegion, setType}

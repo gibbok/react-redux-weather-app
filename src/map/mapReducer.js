@@ -45,7 +45,8 @@ const initialState = {
       types: [
         {
           id: 'temperature',
-          title: 'Temperature'
+          title: 'Temperature',
+          isActive: true
         },
         {
           id: 'precipitation',
@@ -84,8 +85,21 @@ const initialState = {
 const updateAppIsFetching = (state, action, value) => {
   return dotProp.set(state, 'weather.app.isFetching', value)
 }
-const updateMapType = (state, action) => {
+
+const updateType = (state, action) => {
   return dotProp.set(state, 'map.ui.type', action.payload)
+}
+
+const updateTypes = (state, action) => {
+  let types = state.map.data.types.map(type => {
+    type.isActive = type.id === action.payload
+    return type
+  })
+  return dotProp.set(state, 'map.ui.types', types)
+}
+
+const updateRegion = (state, action) => {
+  return dotProp.set(state, 'map.data.region', action.payload)
 }
 
 const updateRegions = (state, action) => {
@@ -102,9 +116,11 @@ function mapReducer (state = initialState, action) {
       return updateAppIsFetching(state, action, true)
 
     case types.SET_MAP_TYPE:
-      return updateMapType(state, action)
+      updateType(state, action)
+      return updateTypes(state, action)
 
     case types.SET_MAP_REGION:
+      updateRegion(state, action)
       return updateRegions(state, action)
 
     default:
