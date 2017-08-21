@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import Map from './Map'
+import { setRegion } from './mapActions'
 
 const map = state => {
   return state.mapReducer.map.data
@@ -27,8 +28,9 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onRegionsChange: (navigation) => {
+    onRegionsChange: (region) => {
       console.log('onRegionsChange')
+      dispatch(setRegion(region))
     },
     onTypesChange: (navigation) => {
       console.log('onTypesChange')
