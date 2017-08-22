@@ -103,6 +103,18 @@ const Map = React.createClass({
       })
     })
 
+    let forecastLayer = new ol.layer.Tile({
+      source: new ol.source.XYZ({
+        url: api.forecast()
+      })
+    })
+
+    // setTimeout(function () {
+    //   // https://gis.stackexchange.com/questions/158187/openlayers3-change-layer-source-url-or-replace-features-loaded-from-another-url
+    //   let layer = this.map.getLayers().getArray()[2]
+    //   layer.setSource(forecastLayer)
+    // }.bind(this), 3000)
+
     // create map
     this.map = new ol.Map({
       target: 'map',
