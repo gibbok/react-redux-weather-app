@@ -29,10 +29,12 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onRegionsChange: (region) => {
+      debugger
       console.log('onRegionsChange')
       dispatch(setRegion(region))
     },
     onTypesChange: (type) => {
+      debugger
       console.log('onTypesChange')
       dispatch(setType(type))
     }

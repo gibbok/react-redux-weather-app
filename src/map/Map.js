@@ -21,22 +21,22 @@ const Map = React.createClass({
         newCenterMap = this.props.geo
         break
       case 'northAmerica':
-        newCenterMap = [ -100.7838, 46.8083 ]
+        newCenterMap = [-100.7838, 46.8083]
         break
       case 'southAmerica':
-        newCenterMap = [ -57.6534, -19.0092 ]
+        newCenterMap = [-57.6534, -19.0092]
         break
       case 'europe':
         newCenterMap = [8.6833, 50.1167]
         break
       case 'asia':
-        newCenterMap = [ 91.1, 29.65]
+        newCenterMap = [91.1, 29.65]
         break
       case 'pacificIslands':
-        newCenterMap = [ 156.3159, -7.5559 ]
+        newCenterMap = [156.3159, -7.5559]
         break
       case 'africa':
-        newCenterMap = [ 18.5333, 4.3833 ]
+        newCenterMap = [18.5333, 4.3833]
         break
     }
 
@@ -54,7 +54,10 @@ const Map = React.createClass({
           regions={this.props.regions}
           onRegionsChange={this.props.onRegionsChange}
          />
-        <TypesSelect types={this.props.types} onTypesChange={this.props.onTypesChange} />
+        <TypesSelect
+          types={this.props.types}
+          onTypesChange={this.props.onTypesChange}
+          />
         <div id='map' className='map' />
       </div>
     )

@@ -95,7 +95,7 @@ const updateTypes = (state, action) => {
     type.isActive = type.id === action.payload
     return type
   })
-  return dotProp.set(state, 'map.ui.types', types)
+  return dotProp.set(state, 'map.data.types', types)
 }
 
 const updateRegion = (state, action) => {
