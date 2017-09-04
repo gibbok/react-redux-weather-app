@@ -5,10 +5,86 @@ import RegionsSelect from './RegionsSelect'
 import TypesSelect from './TypesSelect'
 import styles from '../../node_modules/openlayers/css/ol.css' // eslint-disable-line no-unused-vars
 
-const Map = React.createClass({
+let mapOpenLayer = {
   map: undefined,
+  init (props) {
+    let geo = props.geo
+
+    // render marker vector
+    let markerFeature = new ol.Feature({
+      geometry: new ol.geom.Point(ol.proj.transform([-72.0704, 46.678], 'EPSG:4326', 'EPSG:3857')) // TODO // take lat long from openweather api which should be sotred in the state
+    })
+
+    let markerSource = new ol.source.Vector({
+      features: [markerFeature]
+    })
+
+    let markerStyle = new ol.style.Style({
+      image: new ol.style.Icon(({
+        anchor: [0, 0],
+        anchorXUnits: 'fraction',
+        anchorYUnits: 'pixels',
+        opacity: 0.75,
+        src: 'assets/pin.svg'
+      }))
+    })
+
+    let markerLayer = new ol.layer.Vector({
+      source: markerSource,
+      style: markerStyle
+    })
+
+    // render OpenStreetMap tile server
+    let tileLayer = new ol.layer.Tile({
+      source: new ol.source.OSM()
+    }, new ol.layer.Vector({
+      source: new ol.source.Vector({ features: [], projection: 'EPSG:4326' })
+    }))
+    // create map
+    this.map = new ol.Map({
+      target: 'map',
+      layers: [
+        tileLayer,
+        markerLayer,
+        new ol.layer.Tile({
+          source: new ol.source.XYZ({
+            url: api.mapTemperature()
+          })
+        })
+      ],
+      view: new ol.View({
+        center: ol.proj.transform(geo, 'EPSG:4326', 'EPSG:3857'),
+        zoom: 4
+      })
+    })
+  },
+  changeLayer (name) {
+    let source
+    switch (name) {
+      case 'default':
+      case 'temperature':
+        source = api.mapTemperature()
+        break
+      case 'pressure':
+        source = api.mapPressure()
+        break
+      case 'wind':
+        source = api.mapWind()
+        break
+      case 'cloud':
+        source = api.mapCloud()
+        break
+    }
+    let tile = new ol.layer.Tile({source})
+    let layer = this.getLayers().getArray()[2]
+    layer.setSource(tile)
+  }
+}
+
+const Map = React.createClass({
   componentDidMount () {
-    this.renderMapOpenLayer()
+    debugger
+    mapOpenLayer.init(this.props)
   },
   componentDidUpdate (prevProps) {
     this.animateMapToRegion(prevProps)
@@ -40,7 +116,7 @@ const Map = React.createClass({
         break
     }
 
-    var view = this.map.getView()
+    let view = mapOpenLayer.map.getView()
     view.animate({
       center: ol.proj.fromLonLat(newCenterMap),
       duration: 1000,
@@ -61,86 +137,6 @@ const Map = React.createClass({
         <div id='map' className='map' />
       </div>
     )
-  },
-  renderMapOpenLayer () {
-    let geo = this.props.geo
-
-    // render marker vector
-    let markerFeature = new ol.Feature({
-      geometry: new ol.geom.Point(ol.proj.transform([-72.0704, 46.678], 'EPSG:4326', 'EPSG:3857')) // TODO // take lat long from openweather api which should be sotred in the state
-    })
-
-    let markerSource = new ol.source.Vector({
-      features: [markerFeature]
-    })
-
-    let markerStyle = new ol.style.Style({
-      image: new ol.style.Icon(({
-        anchor: [0, 0],
-        anchorXUnits: 'fraction',
-        anchorYUnits: 'pixels',
-        opacity: 0.75,
-        src: 'assets/pin.svg'
-      }))
-    })
-
-    let markerLayer = new ol.layer.Vector({
-      source: markerSource,
-      style: markerStyle
-    })
-
-    // render OpenStreetMap tile server
-    var tileLayer = new ol.layer.Tile({
-      source: new ol.source.OSM()
-    }, new ol.layer.Vector({
-      source: new ol.source.Vector({ features: [], projection: 'EPSG:4326' })
-    }))
-
-    // render cloud tile
-    let temperatureLayerSource = new ol.source.XYZ({
-      url: api.mapTemperature()
-    })
-
-    let defaultLayer = new ol.layer.Tile({
-      source: temperatureLayerSource
-    })
-
-    let forecastLayerSource = new ol.source.XYZ({
-      url: api.mapPrecipitation()
-    })
-
-    let pressureLayerSource = new ol.source.XYZ({
-      url: api.mapPressure()
-    })
-
-    let windLayerSource = new ol.source.XYZ({
-      url: api.mapWind()
-    })
-
-    let windCloudSource = new ol.source.XYZ({
-      url: api.mapCloud()
-    })
-
-    setTimeout(function () {
-      // https://gis.stackexchange.com/questions/158187/openlayers3-change-layer-source-url-or-replace-features-loaded-from-another-url
-      let layer = this.map.getLayers().getArray()[2]
-      // try to change source
-      layer.setSource(windCloudSource)
-    }.bind(this), 3000)
-
-    // create map
-    this.map = new ol.Map({
-      target: 'map',
-      layers: [
-        tileLayer,
-        markerLayer,
-        defaultLayer
-      ],
-      view: new ol.View({
-        center: ol.proj.transform(geo, 'EPSG:4326', 'EPSG:3857'),
-        zoom: 4
-      })
-    })
   }
 })
 
