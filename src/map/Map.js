@@ -105,7 +105,25 @@ const Map = React.createClass({
 
     let forecastLayer = new ol.layer.Tile({
       source: new ol.source.XYZ({
-        url: api.forecast()
+        url: api.mapPrecipitation()
+      })
+    })
+
+    let pressureLayer = new ol.layer.Tile({
+      source: new ol.source.XYZ({
+        url: api.mapPressure()
+      })
+    })
+
+    let windLayer = new ol.layer.Tile({
+      source: new ol.source.XYZ({
+        url: api.mapWind()
+      })
+    })
+
+    let windCloud = new ol.layer.Tile({
+      source: new ol.source.XYZ({
+        url: api.mapCloud()
       })
     })
 
@@ -121,7 +139,11 @@ const Map = React.createClass({
       layers: [
         tileLayer,
         markerLayer,
-        cloudLayer
+        cloudLayer,
+        // pressureLayer
+        // windLayer,
+        windCloud
+        // forecastLayer
       ],
       view: new ol.View({
         center: ol.proj.transform(geo, 'EPSG:4326', 'EPSG:3857'),
