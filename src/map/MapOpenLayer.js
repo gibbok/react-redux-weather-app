@@ -79,15 +79,27 @@ let mapOpenLayer = {
 }
 
 const MapOpenLayer = React.createClass({
+  getInitialState () {
+    return {
+      activeRegion: 'currentLocation',
+      activeType: 'temperature',
+      isRendered: false
+    }
+  },
   componentDidMount () {
-    debugger
     mapOpenLayer.init(this.props)
   },
   componentDidUpdate (prevProps) {
-    // this.animateMapToRegion(prevProps)
+    let activeRegion = Object.assign({}, this.props.regions.find(region => region.isActive))
+    let activeType = Object({}, this.props.types.find(type => type.isActive))
+
+    if (activeRegion !== this.state.activeRegion) {
+      this.animateMapToRegion()
+      // this.state.activeRegion = activeRegion.id
+    }
   },
-  animateMapToRegion (prevProps) {
-    let nextActiveRegion = prevProps.map.regions.find(region => region.isActive)
+  animateMapToRegion () {
+    let nextActiveRegion = this.props.regions.find(region => region.isActive)
     let newCenterMap
     switch (nextActiveRegion.id) {
       case 'currentLocation':
@@ -121,6 +133,10 @@ const MapOpenLayer = React.createClass({
     })
   },
   render () {
+    if (!this.state.isRendered) {
+      mapOpenLayer.init(this.props)
+      this.state.isRendered = true
+    }
     return (
       <div id='map' className='map' />
     )
