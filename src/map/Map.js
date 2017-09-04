@@ -1,5 +1,4 @@
 import React from 'react'
-import * as ol from 'openlayers'
 import RegionsSelect from './RegionsSelect'
 import TypesSelect from './TypesSelect'
 import MapOpenLayer from './MapOpenLayer'
