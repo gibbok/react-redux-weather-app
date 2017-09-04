@@ -97,41 +97,36 @@ const Map = React.createClass({
     }))
 
     // render cloud tile
-    let cloudLayer = new ol.layer.Tile({
-      source: new ol.source.XYZ({
-        url: api.mapTemperature()
-      })
+    let temperatureLayerSource = new ol.source.XYZ({
+      url: api.mapTemperature()
     })
 
-    let forecastLayer = new ol.layer.Tile({
-      source: new ol.source.XYZ({
-        url: api.mapPrecipitation()
-      })
+    let defaultLayer = new ol.layer.Tile({
+      source: temperatureLayerSource
     })
 
-    let pressureLayer = new ol.layer.Tile({
-      source: new ol.source.XYZ({
-        url: api.mapPressure()
-      })
+    let forecastLayerSource = new ol.source.XYZ({
+      url: api.mapPrecipitation()
     })
 
-    let windLayer = new ol.layer.Tile({
-      source: new ol.source.XYZ({
-        url: api.mapWind()
-      })
+    let pressureLayerSource = new ol.source.XYZ({
+      url: api.mapPressure()
     })
 
-    let windCloud = new ol.layer.Tile({
-      source: new ol.source.XYZ({
-        url: api.mapCloud()
-      })
+    let windLayerSource = new ol.source.XYZ({
+      url: api.mapWind()
     })
 
-    // setTimeout(function () {
-    //   // https://gis.stackexchange.com/questions/158187/openlayers3-change-layer-source-url-or-replace-features-loaded-from-another-url
-    //   let layer = this.map.getLayers().getArray()[2]
-    //   layer.setSource(forecastLayer)
-    // }.bind(this), 3000)
+    let windCloudSource = new ol.source.XYZ({
+      url: api.mapCloud()
+    })
+
+    setTimeout(function () {
+      // https://gis.stackexchange.com/questions/158187/openlayers3-change-layer-source-url-or-replace-features-loaded-from-another-url
+      let layer = this.map.getLayers().getArray()[2]
+      // try to change source
+      layer.setSource(windCloudSource)
+    }.bind(this), 3000)
 
     // create map
     this.map = new ol.Map({
@@ -139,11 +134,7 @@ const Map = React.createClass({
       layers: [
         tileLayer,
         markerLayer,
-        cloudLayer,
-        // pressureLayer
-        // windLayer,
-        windCloud
-        // forecastLayer
+        defaultLayer
       ],
       view: new ol.View({
         center: ol.proj.transform(geo, 'EPSG:4326', 'EPSG:3857'),
