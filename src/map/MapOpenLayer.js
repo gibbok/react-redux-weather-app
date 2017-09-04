@@ -2,12 +2,41 @@ import React from 'react'
 import * as ol from 'openlayers'
 import * as api from '../app/api'
 
-let mapOpenLayer = {
-  map: undefined,
-  init (props) {
-    let geo = props.geo
+/*
+ * Open Layer interactive world map.
+ */
+const MapOpenLayer = React.createClass({
+  olMap: undefined,
+  getInitialState () {
+    return {
+      activeRegion: 'currentLocation',
+      activeType: 'temperature'
+    }
+  },
+  componentDidMount () {
+    this.olMapInit()
+  },
+  componentDidUpdate (prevProps) {
+    let activeRegion = Object.assign({}, this.props.regions.find(region => region.isActive))
+    let activeType = Object.assign({}, this.props.types.find(mapType => mapType.isActive))
 
-      // render marker vector
+    if (activeRegion.id !== this.state.activeRegion) {
+      this.moveMapCenterToRegion(this.props)
+      this.state.activeRegion = activeRegion.id
+    }
+
+    if (activeType.id !== this.state.activeType) {
+      this.changeLayerOlMap(activeType.id)
+      this.state.activeType = activeType.id
+    }
+  },
+/*
+ * Initialize and draw on screen the Open Layer world map.
+ */
+  olMapInit () {
+    let geo = this.props.geo
+
+    // render marker vector
     let markerFeature = new ol.Feature({
       geometry: new ol.geom.Point(ol.proj.transform([-72.0704, 46.678], 'EPSG:4326', 'EPSG:3857')) // TODO // take lat long from openweather api which should be sotred in the state
     })
@@ -31,14 +60,15 @@ let mapOpenLayer = {
       style: markerStyle
     })
 
-      // render OpenStreetMap tile server
+    // render OpenStreetMap tile server
     let tileLayer = new ol.layer.Tile({
       source: new ol.source.OSM()
     }, new ol.layer.Vector({
       source: new ol.source.Vector({ features: [], projection: 'EPSG:4326' })
     }))
-      // create map
-    this.map = new ol.Map({
+
+    // create map
+    this.olMap = new ol.Map({
       target: 'map',
       layers: [
         tileLayer,
@@ -55,12 +85,15 @@ let mapOpenLayer = {
       })
     })
   },
-  changeLayer (name) {
+/*
+ * Change the layer information on the map, allowing user to chose different weather information.
+ */
+  changeLayerOlMap (name) {
     let url
     switch (name) {
       case 'default':
       case 'temperature':
-        url = api.mapTemperature() // ok
+        url = api.mapTemperature()
         break
       case 'precipitation':
         url = api.mapPrecipitation()
@@ -78,36 +111,13 @@ let mapOpenLayer = {
     let tile = new ol.source.XYZ({
       url: url
     })
-    let layer = this.map.getLayers().getArray()[2]
+    let layer = this.olMap.getLayers().getArray()[2]
     layer.setSource(tile)
-  }
-}
-
-const MapOpenLayer = React.createClass({
-  getInitialState () {
-    return {
-      activeRegion: 'currentLocation',
-      activeType: 'temperature'
-    }
   },
-  componentDidMount () {
-    mapOpenLayer.init(this.props)
-  },
-  componentDidUpdate (prevProps) {
-    let activeRegion = Object.assign({}, this.props.regions.find(region => region.isActive))
-    let activeType = Object.assign({}, this.props.types.find(mapType => mapType.isActive))
-
-    if (activeRegion.id !== this.state.activeRegion) {
-      this.animateMapToRegion()
-      this.state.activeRegion = activeRegion.id
-    }
-
-    if (activeType.id !== this.state.activeType) {
-      mapOpenLayer.changeLayer(activeType.id)
-      this.state.activeType = activeType.id
-    }
-  },
-  animateMapToRegion () {
+  /*
+   * Move the center of the map to a different world region.
+   */
+  moveMapCenterToRegion () {
     let nextActiveRegion = this.props.regions.find(region => region.isActive)
     let newCenterMap
     switch (nextActiveRegion.id) {
@@ -134,7 +144,7 @@ const MapOpenLayer = React.createClass({
         break
     }
 
-    let view = mapOpenLayer.map.getView()
+    let view = this.olMap.getView()
     view.animate({
       center: ol.proj.fromLonLat(newCenterMap),
       duration: 1000,
