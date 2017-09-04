@@ -56,24 +56,26 @@ let mapOpenLayer = {
     })
   },
   changeLayer (name) {
-    let source
+    let url
     switch (name) {
       case 'default':
       case 'temperature':
-        source = api.mapTemperature()
+        url = api.mapTemperature()
         break
       case 'pressure':
-        source = api.mapPressure()
+        url = api.mapPressure()
         break
       case 'wind':
-        source = api.mapWind()
+        url = api.mapWind()
         break
       case 'cloud':
-        source = api.mapCloud()
+        url = api.mapCloud()
         break
     }
-    let tile = new ol.layer.Tile({source})
-    let layer = this.getLayers().getArray()[2]
+    let tile = new ol.source.XYZ({
+      url: url
+    })
+    let layer = this.map.getLayers().getArray()[2]
     layer.setSource(tile)
   }
 }
@@ -90,11 +92,16 @@ const MapOpenLayer = React.createClass({
   },
   componentDidUpdate (prevProps) {
     let activeRegion = Object.assign({}, this.props.regions.find(region => region.isActive))
-    let activeType = Object({}, this.props.types.find(type => type.isActive))
+    let activeType = Object.assign({}, this.props.types.find(mapType => mapType.isActive))
 
-    if (activeRegion !== this.state.activeRegion) {
+    if (activeRegion.id !== this.state.activeRegion) {
       this.animateMapToRegion()
       this.state.activeRegion = activeRegion.id
+    }
+
+    if (activeType.id !== this.state.activeType) {
+      mapOpenLayer.changeLayer(activeType.id)
+      this.state.activeType = activeType.id
     }
   },
   animateMapToRegion () {

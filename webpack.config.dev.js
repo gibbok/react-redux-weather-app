@@ -2,6 +2,11 @@ const path = require('path')
 const webpack = require('webpack')
 
 module.exports = {
+  resolve: {
+    alias: {
+      openlayers: 'openlayers/dist/ol-debug.js'
+    }
+  },
   entry: {
     index: './src/index.js'
   },
