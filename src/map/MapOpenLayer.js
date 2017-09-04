@@ -60,7 +60,10 @@ let mapOpenLayer = {
     switch (name) {
       case 'default':
       case 'temperature':
-        url = api.mapTemperature()
+        url = api.mapTemperature() // ok
+        break
+      case 'precipitation':
+        url = api.mapPrecipitation()
         break
       case 'pressure':
         url = api.mapPressure()
@@ -72,6 +75,7 @@ let mapOpenLayer = {
         url = api.mapCloud()
         break
     }
+    debugger
     let tile = new ol.source.XYZ({
       url: url
     })

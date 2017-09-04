@@ -4,12 +4,10 @@ export const apiKey = '9f585babc59bf435c42319b4e9b69766'
 
 export const apiMapCoulds = 'http://tile.openweathermap.org/map/clouds_new/{z}/{x}/{y}.png'
 
-// NEXT
 export const apiMapPrecipitation = 'http://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png'
 
-export const apiMapSeaLevelPressure = 'http://tile.openweathermap.org/map/pressure_new/{z}/{x}/{y}.png'
+export const apiMapPressure = 'http://tile.openweathermap.org/map/pressure_new/{z}/{x}/{y}.png'
 
-export const apiMapWindSpeed = 'http://tile.openweathermap.org/map/wind_new/{z}/{x}/{y}.png'
+export const apiMapWind = 'http://tile.openweathermap.org/map/wind_new/{z}/{x}/{y}.png'
 
-// OK
 export const apiMapTemperature = 'http://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png'
