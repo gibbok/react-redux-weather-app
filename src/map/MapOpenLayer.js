@@ -75,7 +75,6 @@ let mapOpenLayer = {
         url = api.mapCloud()
         break
     }
-    debugger
     let tile = new ol.source.XYZ({
       url: url
     })
