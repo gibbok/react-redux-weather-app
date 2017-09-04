@@ -11,4 +11,5 @@ const RegionsSelect = ({ regions, onRegionsChange }) => {
     </select>
   )
 }
+
 export default RegionsSelect

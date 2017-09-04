@@ -2,13 +2,13 @@ import React from 'react'
 
 const TypesSelect = ({ types, onTypesChange }) => {
   return (
-    <select onChange={(e) => onTypesChange(e.target.value)}>
+    <div >
       {types.map((type) =>
-        <option
-          value={type.id}
+        <div onClick={(e) => onTypesChange(type.id)}
           key={type.id}
-          >{type.title}</option>)}
-    </select>
+          >{type.title}</div>)}
+    </div>
   )
 }
+
 export default TypesSelect
