@@ -82,8 +82,7 @@ const MapOpenLayer = React.createClass({
   getInitialState () {
     return {
       activeRegion: 'currentLocation',
-      activeType: 'temperature',
-      isRendered: false
+      activeType: 'temperature'
     }
   },
   componentDidMount () {
@@ -95,7 +94,7 @@ const MapOpenLayer = React.createClass({
 
     if (activeRegion !== this.state.activeRegion) {
       this.animateMapToRegion()
-      // this.state.activeRegion = activeRegion.id
+      this.state.activeRegion = activeRegion.id
     }
   },
   animateMapToRegion () {
@@ -133,10 +132,6 @@ const MapOpenLayer = React.createClass({
     })
   },
   render () {
-    if (!this.state.isRendered) {
-      mapOpenLayer.init(this.props)
-      this.state.isRendered = true
-    }
     return (
       <div id='map' className='map' />
     )
