@@ -9,36 +9,46 @@ const MapOpenLayer = React.createClass({
   olMap: undefined,
   getInitialState () {
     return {
-      activeRegion: 'currentLocation',
-      activeType: 'temperature'
+      activeMapRegion: 'currentLocation',
+      activeMapType: 'temperature'
     }
   },
   componentDidMount () {
     this.olMapInit()
   },
+  getActiveMapRegion () {
+    return this.props.regions.find(mapRegion => mapRegion.isActive)
+  },
+  getActiveMapType () {
+    return this.props.types.find(mapType => mapType.isActive)
+  },
+  setMapRegion () {
+    // when an user select a new region, save region in state and move map center
+    let activeMapRegion = Object.assign({}, this.getActiveMapRegion())
+    if (activeMapRegion.id !== this.state.activeMapRegion) {
+      this.moveMapCenterToRegion()
+      this.state.activeMapRegion = activeMapRegion.id
+    }
+  },
+  setMapType () {
+    let activeMapType = Object.assign({}, this.getActiveMapType())
+    // when an user select a new map type, save map type in state and render new map tile
+    if (activeMapType.id !== this.state.activeMapType) {
+      this.changeLayerOlMap(activeMapType.id)
+      this.state.activeMapType = activeMapType.id
+    }
+  },
   componentDidUpdate (prevProps) {
-    let activeRegion = Object.assign({}, this.props.regions.find(region => region.isActive))
-    let activeType = Object.assign({}, this.props.types.find(mapType => mapType.isActive))
-
-    if (activeRegion.id !== this.state.activeRegion) {
-      this.moveMapCenterToRegion(this.props)
-      this.state.activeRegion = activeRegion.id
-    }
-
-    if (activeType.id !== this.state.activeType) {
-      this.changeLayerOlMap(activeType.id)
-      this.state.activeType = activeType.id
-    }
+    this.setMapRegion()
+    this.setMapType()
   },
 /*
  * Initialize and draw on screen the Open Layer world map.
  */
   olMapInit () {
-    let geo = this.props.geo
-
     // render marker vector
     let markerFeature = new ol.Feature({
-      geometry: new ol.geom.Point(ol.proj.transform([-72.0704, 46.678], 'EPSG:4326', 'EPSG:3857')) // TODO // take lat long from openweather api which should be sotred in the state
+      geometry: new ol.geom.Point(ol.proj.transform([-72.0704, 46.678], 'EPSG:4326', 'EPSG:3857')) // TODO // take lat long from openweather api which should be stored in state
     })
 
     let markerSource = new ol.source.Vector({
@@ -60,7 +70,7 @@ const MapOpenLayer = React.createClass({
       style: markerStyle
     })
 
-    // render OpenStreetMap tile server
+    // render OpenStreetMap tile from their server
     let tileLayer = new ol.layer.Tile({
       source: new ol.source.OSM()
     }, new ol.layer.Vector({
@@ -80,7 +90,7 @@ const MapOpenLayer = React.createClass({
         })
       ],
       view: new ol.View({
-        center: ol.proj.transform(geo, 'EPSG:4326', 'EPSG:3857'),
+        center: ol.proj.transform(this.props.geo, 'EPSG:4326', 'EPSG:3857'),
         zoom: 4
       })
     })
@@ -118,7 +128,7 @@ const MapOpenLayer = React.createClass({
    * Move the center of the map to a different world region.
    */
   moveMapCenterToRegion () {
-    let nextActiveRegion = this.props.regions.find(region => region.isActive)
+    let nextActiveRegion = this.getActiveMapRegion()
     let newCenterMap
     switch (nextActiveRegion.id) {
       case 'currentLocation':
