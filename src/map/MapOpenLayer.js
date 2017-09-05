@@ -22,17 +22,21 @@ const MapOpenLayer = React.createClass({
   getActiveMapType () {
     return this.props.types.find(mapType => mapType.isActive)
   },
+  /*
+   * When an user select a new region, save region in state and move map center.
+   */
   setMapRegion () {
-    // when an user select a new region, save region in state and move map center
     let activeMapRegion = Object.assign({}, this.getActiveMapRegion())
     if (activeMapRegion.id !== this.state.activeMapRegion) {
       this.moveMapCenterToRegion()
       this.state.activeMapRegion = activeMapRegion.id
     }
   },
+  /*
+   * When an user select a new map type, save map type in state and render new map tile.
+   */
   setMapType () {
     let activeMapType = Object.assign({}, this.getActiveMapType())
-    // when an user select a new map type, save map type in state and render new map tile
     if (activeMapType.id !== this.state.activeMapType) {
       this.changeLayerOlMap(activeMapType.id)
       this.state.activeMapType = activeMapType.id
