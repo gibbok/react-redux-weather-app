@@ -6,34 +6,32 @@ const map = state => {
   return state.mapReducer.map.data
 }
 
-const getRegions = state => {
+const getMapRegions = state => {
   return state.mapReducer.map.data.regions
 }
 
-const getTypes = state => {
+const getMapTypes = state => {
   return state.mapReducer.map.data.types
 }
 
-const geo = state => {
+const getGeo = state => {
   return state.mapReducer.map.app.geo
 }
 
 const mapStateToProps = (state) => {
   return {
-    geo: geo(state),
+    geo: getGeo(state),
     map: map(state),
-    regions: getRegions(state),
-    types: getTypes(state)
+    regions: getMapRegions(state),
+    types: getMapTypes(state)
   }
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onRegionsChange: (region) => {
-      console.log('onRegionsChange')
       dispatch(setMapRegion(region))
     },
     onTypesChange: (type) => {
-      console.log('onTypesChange')
       dispatch(setMapType(type))
     }
   }
