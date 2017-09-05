@@ -1,9 +1,12 @@
 import React from 'react'
 import IconWind from '../../shared/icon/IconWind'
+import moment from 'moment'
+import IconWeather from '../../shared/icon/IconWeather'
 
 const Weather = ({ weather: {
-    name,
+  name,
   country,
+  icon,
   temperature,
   temperatureMin,
   temperatureMax,
@@ -20,57 +23,59 @@ const Weather = ({ weather: {
   cloudiness,
   pressure,
   pressureUnit
- } }) => (
-   <div>
-     <div>
-       {name}, {country}
-     </div>
-     <div>
-       {temperature}
-     </div>
-     <div>
-       <span>Min {temperatureMin}</span>
-       <span>Max {temperatureMax}</span>
-     </div>
-     <div>
-       <div>
-         {weatherMain}
-       </div>
-       <div>
-         {weatherDescription}
-       </div>
-       <div>
-         {weatherIcon}
-       </div>
-     </div>
-     <div>
-        Updated as of {updatedTime}
-     </div>
-     <div>
-        Wind {windDegree} {windSpeed} <IconWind degree={windDegree} />
-     </div>
-     <div>
-        Visibility {visibility}
-     </div>
-     <div>
-        Humidity {humidity}
-     </div>
-     <div>
-        Sunrise {sunrise}
-     </div>
-     <div>
-        Sunset {sunset}
-     </div>
-     <div>
-        Cloudiness {cloudiness}
-     </div>
-     <div>
-        Pressure {pressure}
-     </div>
-     <div>
-        Pressure unit {pressureUnit}
-     </div>
-   </div>
+ } }) => {
+  const updatedTimeFormat = moment.unix(updatedTime).format('h:mm A')
+  const sunriseFormat = moment.unix(sunrise).format('h:mm A')
+  const sunsetFormat = moment.unix(sunset).format('h:mm A')
+  return (
+    <div>
+      <div>
+        {name}, {country}
+      </div>
+      <div>
+        <IconWeather code={icon} />
+      </div>
+      <div>
+        {temperature}
+      </div>
+      <div>
+        <span>Min {temperatureMin}</span>
+        <span>Max {temperatureMax}</span>
+      </div>
+      <div>
+        <div>
+          {weatherMain}
+        </div>
+        <div>
+          {weatherDescription}
+        </div>
+      </div>
+      <div>
+        Updated as of {updatedTimeFormat}
+      </div>
+      <div>
+        Wind {windDegree} {windSpeed} mps <IconWind degree={windDegree} />
+      </div>
+      <div>
+        Visibility {visibility} meter
+      </div>
+      <div>
+        Humidity {humidity} &#37;
+      </div>
+      <div>
+        Sunrise {sunriseFormat}
+      </div>
+      <div>
+        Sunset {sunsetFormat}
+      </div>
+      <div>
+        Cloudiness {cloudiness} &#37;
+      </div>
+      <div>
+        Pressure {pressure} {pressureUnit}
+      </div>
+    </div>
   )
+}
 
 export default Weather

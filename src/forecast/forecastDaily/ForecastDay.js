@@ -9,7 +9,9 @@ const ForecastDay = ({ onClick, momentId, date, tempMin, tempMax, iconCode, weat
   return (
     <div onClick={onClick}>
       <div>{dateFormat}</div>
-      <div><IconWeather code={iconCode} /></div>
+      <div>
+        <IconWeather code={iconCode} />
+      </div>
       <div>
         <div>
           {tempMinRounded}&#176;

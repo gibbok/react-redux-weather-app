@@ -1,6 +1,7 @@
 import dotProp from 'dot-prop-immutable'
 import * as types from './weatherActionTypes'
 import location from '../../app/location'
+import moment from 'moment'
 
 const initialState = {
   weather: {
@@ -22,13 +23,13 @@ const updateData = (state, action) => {
   const weatherData = {
     name: name,
     country: sys.country,
+    icon: weather[0].id,
     temperature: main.temp,
     temperatureMin: main.temp_min,
     temperatureMax: main.temp_max,
     weatherMain: weather[0].main,
     weatherDescription: weather[0].description,
-    weatherIcon: weather[0].icon,
-    updatedTime: new Date().toString(),
+    updatedTime: moment().unix(),
     windDegree: wind.deg,
     windSpeed: wind.speed,
     visibility: visibility,
