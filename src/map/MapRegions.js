@@ -1,6 +1,6 @@
 import React from 'react'
 
-const RegionsSelect = ({ regions, onRegionsChange }) => {
+const MapRegions = ({ regions, onRegionsChange }) => {
   return (
     <select onChange={(e) => onRegionsChange(e.target.value)}>
       {regions.map((region) =>
@@ -12,4 +12,4 @@ const RegionsSelect = ({ regions, onRegionsChange }) => {
   )
 }
 
-export default RegionsSelect
+export default MapRegions

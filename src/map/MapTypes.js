@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TypesSelect = ({ types, onTypesChange }) => {
+const MapTypes = ({ types, onTypesChange }) => {
   return (
     <div >
       {types.map((type) =>
@@ -11,4 +11,4 @@ const TypesSelect = ({ types, onTypesChange }) => {
   )
 }
 
-export default TypesSelect
+export default MapTypes

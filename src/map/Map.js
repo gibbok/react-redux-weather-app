@@ -1,6 +1,6 @@
 import React from 'react'
-import RegionsSelect from './RegionsSelect'
-import TypesSelect from './TypesSelect'
+import MapRegions from './MapRegions'
+import MapTypes from './MapTypes'
 import MapOpenLayer from './MapOpenLayer'
 import styles from '../../node_modules/openlayers/css/ol.css' // eslint-disable-line no-unused-vars
 
@@ -11,11 +11,11 @@ const Map = React.createClass({
   render () {
     return (
       <div>
-        <TypesSelect
+        <MapTypes
           types={this.props.types}
           onTypesChange={this.props.onTypesChange}
           />
-        <RegionsSelect
+        <MapRegions
           regions={this.props.regions}
           onRegionsChange={this.props.onRegionsChange}
          />
