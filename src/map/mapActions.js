@@ -1,13 +1,19 @@
 import * as types from './mapActionTypes'
 
-const setRegion = value => ({
+/*
+ * Action set a region.
+ */
+const setMapRegion = value => ({
   type: types.SET_MAP_REGION,
   payload: value
 })
 
-const setType = value => ({
+/*
+ * Action set a map type.
+ */
+const setMapType = value => ({
   type: types.SET_MAP_TYPE,
   payload: value
 })
 
-export { setRegion, setType}
+export {setMapRegion, setMapType}
