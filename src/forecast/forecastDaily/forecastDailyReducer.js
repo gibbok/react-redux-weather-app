@@ -26,9 +26,10 @@ const updateData = (state, action) => {
     return {
       momentId: createMomentId(x.dt * 1000),
       dt: x.dt,
-      date: new Date(x.dt * 1000).toDateString(),
+      date: x.dt,
       tempMin: x.temp.min,
       tempMax: x.temp.max,
+      iconCode: x.weather[0].id,
       weatherDescription: x.weather[0].description
     }
   })

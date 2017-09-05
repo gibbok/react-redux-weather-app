@@ -3,8 +3,12 @@ import ForecastHourly from './ForecastHourly'
 import { getForecastHourly, setForecastHourlyActiveReportType } from './forecastHourlyActions'
 import store from '../../app/store'
 
+// const forecastHourly = (forecastHourly) => {
+//   return forecastHourly.data.filter(x => x.momentId === forecastHourly.ui.selectedDate)
+// }
+
 const forecastHourly = (forecastHourly) => {
-  return forecastHourly.data.filter(x => x.momentId === forecastHourly.ui.selectedDate)
+  return forecastHourly.data
 }
 
 const getForecastHourlyLocationId = () => {

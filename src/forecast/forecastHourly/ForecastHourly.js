@@ -7,6 +7,7 @@ import DetailsButton from './DetailsButton'
 const ForecastHourly = ({ forecastHourly, activeTypeReport, onSummaryClick, onDetailsClick }) => {
   return (
     <div>
+      <h2>Hourly</h2>
       <SummaryButton onSummaryClick={onSummaryClick} />
       <DetailsButton onDetailsClick={onDetailsClick} />
       {activeTypeReport === 'summary'

@@ -48,6 +48,7 @@
         "redux": "3.6.0",
         "redux-promise-middleware": "4.2.0",
         "redux-thunk": "2.2.0",
+        "moment": "2.18.1",
         "style-loader":"0.17.0",
         "openlayers":"4.1.1",
         "url-loader":"0.5.8",
