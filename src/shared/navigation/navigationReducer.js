@@ -9,14 +9,14 @@ const initialState = {
         title: 'Weather',
         tooltip: 'Weather',
         isActive: true,
-        url: ''
+        url: '/'
       },
       {
         id: 'map',
         title: 'Map',
         tooltip: 'Weather map',
         isActive: false,
-        url: 'map'
+        url: '/map'
       }
     ],
     ui: {

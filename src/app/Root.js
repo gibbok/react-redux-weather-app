@@ -9,7 +9,7 @@ const Root = ({ store }) => (
     <Router>
       <Switch>
         <Route exact path='/' component={Forecast} />
-        <Route exact path='/Map' component={Map} />
+        <Route exact path='/map' component={Map} />
       </Switch>
     </Router>
   </Provider>
