@@ -64,7 +64,7 @@ const MapOpenLayer = React.createClass({
         anchor: [0, 0],
         anchorXUnits: 'fraction',
         anchorYUnits: 'pixels',
-        opacity: 0.75,
+        opacity: 1,
         src: 'assets/pin.svg'
       }))
     })
@@ -86,12 +86,12 @@ const MapOpenLayer = React.createClass({
       target: 'map',
       layers: [
         tileLayer,
-        markerLayer,
         new ol.layer.Tile({
           source: new ol.source.XYZ({
             url: api.mapTemperature()
           })
-        })
+        }),
+        markerLayer
       ],
       view: new ol.View({
         center: ol.proj.transform(this.props.geo, 'EPSG:4326', 'EPSG:3857'),
@@ -125,7 +125,7 @@ const MapOpenLayer = React.createClass({
     let tile = new ol.source.XYZ({
       url: url
     })
-    let layer = this.olMap.getLayers().getArray()[2]
+    let layer = this.olMap.getLayers().getArray()[1]
     layer.setSource(tile)
   },
   /*
