@@ -7,8 +7,8 @@ export const createMomentId = timeInMs => {
   return `${year}:${month}:${date}:${day}`
 }
 
-export const getHoursFromMoment = timeInMs => {
-  let moment = new Date(timeInMs)
-  let hours = moment.getUTCHours()
-  return hours
-}
+// export const getHoursFromMoment = timeInMs => {
+//   let moment = new Date(timeInMs)
+//   let hours = moment.getUTCHours()
+//   return hours
+// }

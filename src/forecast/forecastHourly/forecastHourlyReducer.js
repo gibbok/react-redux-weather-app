@@ -1,6 +1,6 @@
 import dotProp from 'dot-prop-immutable'
 import * as types from './forecastHourlyActionTypes'
-import { createMomentId, getHoursFromMoment } from '../../app/utility'
+import { createMomentId } from '../../app/utility'
 import location from '../../app/location'
 
 const initialState = {
@@ -28,7 +28,6 @@ const updateData = (state, action) => {
     return {
       momentId: createMomentId(timeInMs),
       timespan: x.dt,
-      // hour: getHoursFromMoment(timeInMs),
       temp: x.main.temp,
       weatherIconCode: x.weather[0].id,
       weatherDescription: x.weather[0].main,
