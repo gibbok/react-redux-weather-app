@@ -2,21 +2,24 @@ import React from 'react'
 import DetailDayGroup from './DetailDayGroup'
 
 const Details = ({ forecastHourly }) => {
-  const dayGroup = forecastHourly.reduce((acc, item) => {
-    (acc[item.momentId] || (acc[item.momentId] = [])).push(item)
+  const hoursByDate = forecastHourly.reduce((acc, hour) => {
+    (acc[hour.momentId] || (acc[hour.momentId] = [])).push(hour)
     return acc
   }, {})
-  const dayGroupRender = Object.keys(dayGroup).map((day, index) => {
-    const infos = dayGroup[day]
-    return <DetailDayGroup
-      key={index}
-      timespan={dayGroup[day][0].timespan}
-      infos={infos}
-/>
+  const dateHours = Object.keys(hoursByDate).map((day, index) => {
+    const hours = hoursByDate[day]
+    const timespanHead = hoursByDate[day][0].timespan
+    return (
+      <DetailDayGroup
+        key={index}
+        timespan={timespanHead}
+        hours={hours}
+      />
+    )
   })
   return (
     <div>
-      {dayGroupRender}
+      {dateHours}
     </div>
   )
 }
