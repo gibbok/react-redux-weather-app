@@ -24,10 +24,11 @@ const updateAppIsFetching = (state, action, value) => {
 const updateData = (state, action) => {
   const { payload: { list } } = action
   const data = list.map(x => {
-    let timeInMs = x.dt * 1000
+    const timeInMs = x.dt * 1000
     return {
       momentId: createMomentId(timeInMs),
-      hour: getHoursFromMoment(timeInMs),
+      timespan: x.dt,
+      // hour: getHoursFromMoment(timeInMs),
       temp: x.main.temp,
       weatherIconCode: x.weather[0].id,
       weatherDescription: x.weather[0].main,

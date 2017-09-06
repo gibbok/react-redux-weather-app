@@ -39,8 +39,8 @@ const Weather = ({ weather: {
         {temperature}
       </div>
       <div>
-        <span>Min {temperatureMin}</span>
-        <span>Max {temperatureMax}</span>
+        <span>Min {temperatureMin} &#176;</span>
+        <span>Max {temperatureMax} &#176;</span>
       </div>
       <div>
         <div>
