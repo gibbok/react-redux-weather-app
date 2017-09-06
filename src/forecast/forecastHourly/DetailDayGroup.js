@@ -1,11 +1,11 @@
 import React from 'react'
 import moment from 'moment'
-import Detail from './Detail'
+import DetailHour from './DetailHour'
 
 const DetailDayGroup = ({ timespan, hours }) => {
   const dayFormat = moment.unix(timespan).format('ddd, MMM D')
   const hoursDetails = hours.map((day, index) =>
-    <Detail
+    <DetailHour
       key={index}
       {...hours[index]}
     />
