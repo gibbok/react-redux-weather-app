@@ -34,7 +34,8 @@ const updateData = (state, action) => {
       windDegree: x.wind.deg,
       windSpeed: x.wind.speed,
       humidityUnit: '%',
-      humidityValue: x.main.humidity
+      humidityValue: x.main.humidity,
+      rain: x.rain['3h']
     }
   })
   return dotProp.set(state, 'forecastHourly.data', data)
