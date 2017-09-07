@@ -4,7 +4,7 @@
     "description": "Weather Application based on ReactJs and Redux",
     "main": "index.js",
     "scripts": {
-        "test": "standard",
+        "test": "standard && jest",
         "format": "standard --fix",
         "start": "webpack-dev-server --config webpack.config.dev.js",
         "build": "webpack --config webpack.config.prod.js"
@@ -61,11 +61,15 @@
         "eslint": "3.18.0",
         "eslint-plugin-react": "6.10.0",
         "standard": "9.0.2",
-        "webpack": "2.2.1"
+        "webpack": "2.2.1",
+        "jest":"21.0.1"
     },
     "standard": {
+        "env": [ "jest" ],
         "globals": [
-            "fetch"
+            "fetch",
+            "test",
+            "expect"
         ]
     }
 }
