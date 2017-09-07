@@ -21,39 +21,39 @@ import {
 } from './api'
 
 describe('api', function () {
-  it('creates api url find', () => {
+  it('should create url find', () => {
     expect(find('brno')).toEqual(`${apiUrl}find?q=brno&APPID=${apiKey}`)
   })
 
-  it('creates api url weather', () => {
+  it('should create url weather', () => {
     expect(weather(5128581)).toEqual(`${apiUrl}weather?id=5128581&APPID=${apiKey}&units=metric`)
   })
 
-  it('creates api url forecastDaily', () => {
+  it('should create url forecastDaily', () => {
     expect(forecastDaily(5128581)).toEqual(`${apiUrl}forecast/daily?id=5128581&APPID=${apiKey}&units=metric`)
   })
 
-  it('creates api url forecast', () => {
+  it('should create url forecast', () => {
     expect(forecast(5128581)).toEqual(`${apiUrl}forecast?id=5128581&APPID=${apiKey}&units=metric`)
   })
 
-  it('creates api url mapTemperature', () => {
+  it('should create url mapTemperature', () => {
     expect(mapTemperature()).toEqual(`${apiMapTemperature}?APPID=${apiKey}`)
   })
 
-  it('creates api url mapPrecipitation', () => {
+  it('should create url mapPrecipitation', () => {
     expect(mapPrecipitation()).toEqual(`${apiMapPrecipitation}?APPID=${apiKey}`)
   })
 
-  it('creates api url mapPressure', () => {
+  it('should create url mapPressure', () => {
     expect(mapPressure()).toEqual(`${apiMapPressure}?APPID=${apiKey}`)
   })
 
-  it('creates api url mapPressure', () => {
+  it('should create url mapPressure', () => {
     expect(mapWind()).toEqual(`${apiMapWind}?APPID=${apiKey}`)
   })
 
-  it('creates api url mapCloud', () => {
+  it('should create url mapCloud', () => {
     expect(mapCloud()).toEqual(`${apiMapCoulds}?APPID=${apiKey}`)
   })
 })
