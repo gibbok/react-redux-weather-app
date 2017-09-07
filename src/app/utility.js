@@ -6,9 +6,3 @@ export const createMomentId = timeInMs => {
   let year = moment.getUTCFullYear()
   return `${year}:${month}:${date}:${day}`
 }
-
-// export const getHoursFromMoment = timeInMs => {
-//   let moment = new Date(timeInMs)
-//   let hours = moment.getUTCHours()
-//   return hours
-// }
