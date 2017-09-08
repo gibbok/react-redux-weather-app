@@ -4,7 +4,7 @@
     "description": "Weather Application based on ReactJs and Redux",
     "main": "index.js",
     "scripts": {
-        "test": "standard && jest --verbose",
+        "test": "standard && jest",
         "format": "standard --fix",
         "start": "webpack-dev-server --config webpack.config.dev.js",
         "build": "webpack --config webpack.config.prod.js"
