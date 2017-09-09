@@ -3,7 +3,7 @@ import { render, mount, shallow } from 'enzyme'
 import Location from './Location'
 
 describe('<Location />', () => {
-  it('should render without throwing an error', () => {
+  it('should render', () => {
     expect(shallow(
       <Location
         id={3067696}
