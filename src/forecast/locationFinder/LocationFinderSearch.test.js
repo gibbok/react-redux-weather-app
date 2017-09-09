@@ -24,12 +24,12 @@ describe('<LocationFinderSearch />', () => {
   })
 
   it('should accept click on submit', () => {
-    const click = sinon.spy()
+    const onInputClick = sinon.spy()
     const actualNode = shallow(
       <LocationFinderSearch
-        onSearchClick={click}
+        onSearchClick={onInputClick}
     />)
     actualNode.find('input[type=\'submit\']').simulate('click')
-    sinon.assert.called(click)
+    sinon.assert.called(onInputClick)
   })
 })

@@ -1,6 +1,7 @@
 import React from 'react'
 import { render, mount, shallow } from 'enzyme'
 import Location from './Location'
+import sinon from 'sinon'
 
 describe('<Location />', () => {
   it('should render', () => {
@@ -32,5 +33,13 @@ describe('<Location />', () => {
         onLocationClick={() => {}}
       />
     ).find('li > a').length).toBe(1)
+  })
+
+  it('should simulates click events', () => {
+    const onLinkClick = sinon.spy()
+    const actualNode = shallow(
+      <Location onLocationClick={onLinkClick} />)
+    actualNode.find('a').simulate('click')
+    sinon.assert.called(onLinkClick)
   })
 })
