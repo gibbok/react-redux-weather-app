@@ -1,10 +1,9 @@
 import React from 'react'
 import { render, mount, shallow } from 'enzyme'
-
 import Location from './Location'
 
 describe('<Location />', () => {
-  it('should render', () => {
+  it('should render without throwing an error', () => {
     expect(shallow(
       <Location
         id={3067696}
