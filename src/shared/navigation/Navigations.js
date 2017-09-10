@@ -1,7 +1,7 @@
 import React from 'react'
 import Navigation from './Navigation'
 
-const NavigationList = ({ navigations, onNavigationClick }) => (
+const Navigations = ({ navigations, onNavigationClick }) => (
   <div>
     {navigations.map((navigation, index) =>
       <Navigation
@@ -13,4 +13,4 @@ const NavigationList = ({ navigations, onNavigationClick }) => (
   </div>
 )
 
-export default NavigationList
+export default Navigations
