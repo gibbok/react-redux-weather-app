@@ -1,27 +1,34 @@
-import React from 'react'
+import React, {Component} from 'react'
 import * as ol from 'openlayers'
 import * as api from '../app/api'
 
 /*
  * Open Layer interactive world map.
  */
-const MapOpenLayer = React.createClass({
-  olMap: undefined,
-  getInitialState () {
-    return {
+class MapOpenLayer extends Component {
+  constructor (props) {
+    super(props)
+    this.olMap = undefined
+    this.state = {
       activeMapRegion: 'currentLocation',
       activeMapType: 'temperature'
     }
-  },
+  }
+  // getInitialState () {
+  //   return {
+  //     activeMapRegion: 'currentLocation',
+  //     activeMapType: 'temperature'
+  //   }
+  // },
   componentDidMount () {
     this.olMapInit()
-  },
+  }
   getActiveMapRegion () {
     return this.props.regions.find(mapRegion => mapRegion.isActive)
-  },
+  }
   getActiveMapType () {
     return this.props.types.find(mapType => mapType.isActive)
-  },
+  }
   /*
    * When an user select a new region, save region in state and move map center.
    */
@@ -31,7 +38,7 @@ const MapOpenLayer = React.createClass({
       this.moveMapCenterToRegion()
       this.state.activeMapRegion = activeMapRegion.id
     }
-  },
+  }
   /*
    * When an user select a new map type, save map type in state and render new map tile.
    */
@@ -41,11 +48,11 @@ const MapOpenLayer = React.createClass({
       this.changeLayerOlMap(activeMapType.id)
       this.state.activeMapType = activeMapType.id
     }
-  },
+  }
   componentDidUpdate (prevProps) {
     this.setMapRegion()
     this.setMapType()
-  },
+  }
 /*
  * Initialize and draw on screen the Open Layer world map.
  */
@@ -98,7 +105,7 @@ const MapOpenLayer = React.createClass({
         zoom: 4
       })
     })
-  },
+  }
 /*
  * Change the layer information on the map, allowing user to chose different weather information.
  */
@@ -127,7 +134,7 @@ const MapOpenLayer = React.createClass({
     })
     let layer = this.olMap.getLayers().getArray()[1]
     layer.setSource(tile)
-  },
+  }
   /*
    * Move the center of the map to a different world region.
    */
@@ -164,12 +171,12 @@ const MapOpenLayer = React.createClass({
       duration: 1000,
       zoom: 4
     })
-  },
+  }
   render () {
     return (
       <div id='map' className='map' />
     )
   }
-})
+}
 
 export default MapOpenLayer

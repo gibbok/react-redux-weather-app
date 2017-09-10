@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CustomTooltip = React.createClass({
+const CustomTooltip = () => ({
   render () {
     const { payload, active } = this.props
     if (!active) {

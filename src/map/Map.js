@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react'
 import MapRegions from './MapRegions'
 import MapTypes from './MapTypes'
 import MapOpenLayer from './MapOpenLayer'
@@ -7,7 +7,7 @@ import styles from '../../node_modules/openlayers/css/ol.css' // eslint-disable-
 /*
  * Render the main weather map, including ui for the selection of a region and map type.
  */
-const Map = React.createClass({
+class Map extends Component {
   render () {
     return (
       <div>
@@ -27,6 +27,6 @@ const Map = React.createClass({
       </div>
     )
   }
-})
+}
 
 export default Map
