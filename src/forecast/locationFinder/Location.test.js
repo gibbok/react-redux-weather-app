@@ -15,7 +15,7 @@ describe('<Location />', () => {
       />).contains(<li><a onClick='test'>Prague, CZ</a></li>)).toBe(true)
   })
 
-  it('should render as snapshot', () => {
+  it('should render (snapshot)', () => {
     const wrapper = shallow(
       <Location
         id={3067696}

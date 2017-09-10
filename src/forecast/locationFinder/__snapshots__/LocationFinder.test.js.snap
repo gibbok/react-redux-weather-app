@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LocationFinder /> should render 1`] = `
+<ul>
+  <Location
+    country="CZ"
+    id={3067696}
+    name="Prague"
+    onLocationClick={[Function]}
+  />
+  <Location
+    country="US"
+    id={4548393}
+    name="Prague"
+    onLocationClick={[Function]}
+  />
+</ul>
+`;
