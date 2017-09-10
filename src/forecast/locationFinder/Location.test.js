@@ -2,6 +2,7 @@ import React from 'react'
 import { render, mount, shallow } from 'enzyme'
 import Location from './Location'
 import sinon from 'sinon'
+import toJson from 'enzyme-to-json'
 
 describe('<Location />', () => {
   it('should render', () => {
@@ -12,6 +13,18 @@ describe('<Location />', () => {
         country='CZ'
         onLocationClick='test'
       />).contains(<li><a onClick='test'>Prague, CZ</a></li>)).toBe(true)
+  })
+
+  it('should render as snapshot', () => {
+    const wrapper = shallow(
+      <Location
+        id={3067696}
+        name='Prague'
+        country='CZ'
+        onLocationClick='test'
+    />
+    )
+    expect(toJson(wrapper)).toMatchSnapshot()
   })
 
   it('should render to static HTML', function () {
@@ -38,7 +51,10 @@ describe('<Location />', () => {
   it('should simulates click events', () => {
     const onLinkClick = sinon.spy()
     const actualNode = shallow(
-      <Location onLocationClick={onLinkClick} />)
+      <Location
+        onLocationClick={onLinkClick}
+      />
+    )
     actualNode.find('a').simulate('click')
     sinon.assert.called(onLinkClick)
   })

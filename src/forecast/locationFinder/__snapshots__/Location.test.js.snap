@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Location /> should render as snapshot 1`] = `
+<li>
+  <a
+    onClick="test"
+  >
+    Prague
+    , 
+    CZ
+  </a>
+</li>
+`;
