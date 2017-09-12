@@ -2,7 +2,7 @@ import React from 'react'
 import moment from 'moment'
 import IconWeather from '../../shared/icon/IconWeather'
 
-const ForecastDay = ({ onClick, momentId, date, tempMin, tempMax, iconCode, weatherDescription }) => {
+const ForecastDay = ({ onClick, date, tempMin, tempMax, iconCode, weatherDescription }) => {
   const dateFormat = moment.unix(date).format('ddd, MMM D')
   const tempMinRounded = Math.round(tempMin)
   const tempMaxRounded = Math.round(tempMax)
