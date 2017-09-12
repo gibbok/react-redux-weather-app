@@ -1,7 +1,7 @@
-import React from 'react'
+import React, {Component} from 'react'
 import IconWeather from '../../shared/icon/IconWeather'
 
-const SummaryChartIcon = React.createClass({
+class SummaryChartIcon extends Component {
   render () {
     const { cx, cy, payload: {weatherIconCode} } = this.props
     return (
@@ -12,6 +12,5 @@ const SummaryChartIcon = React.createClass({
       </svg>
     )
   }
-})
-
+}
 export default SummaryChartIcon
