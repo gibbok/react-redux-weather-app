@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Details /> should render 1`] = `
+<div>
+  <DetailDayGroup
+    hours={
+      Array [
+        Object {
+          "humidityUnit": "%",
+          "humidityValue": 93,
+          "momentId": "2017:8:12:2",
+          "temp": 14.73,
+          "timespan": 1505206800,
+          "weatherDescription": "Clouds",
+          "weatherIconCode": 803,
+          "windDegree": 273.006,
+          "windSpeed": 1.26,
+        },
+      ]
+    }
+    timespan={1505206800}
+  />
+  <DetailDayGroup
+    hours={
+      Array [
+        Object {
+          "humidityUnit": "%",
+          "humidityValue": 89,
+          "momentId": "2017:8:13:1",
+          "temp": 16.55,
+          "timespan": 1505217600,
+          "weatherDescription": "Clouds",
+          "weatherIconCode": 804,
+          "windDegree": 344,
+          "windSpeed": 1.3,
+        },
+      ]
+    }
+    timespan={1505217600}
+  />
+</div>
+`;
