@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ForecastDays /> should render 1`] = `
+<div>
+  <h2>
+    Daily
+  </h2>
+  <div>
+    <ForecastDay
+      date={1505145600}
+      dt={1505145600}
+      iconCode={801}
+      momentId="2017:8:11:1"
+      onClick={[Function]}
+      tempMax={15.57}
+      tempMin={11.2}
+      weatherDescription="few clouds"
+    />
+    <ForecastDay
+      date={1505165700}
+      dt={1505165700}
+      iconCode={200}
+      momentId="2017:8:11:2"
+      onClick={[Function]}
+      tempMax={14.12}
+      tempMin={12.4}
+      weatherDescription="storm rains"
+    />
+  </div>
+</div>
+`;

@@ -1,7 +1,7 @@
 import React from 'react'
 import {shallow} from 'enzyme'
-import ForecastDay from './ForecastDay'
 import toJson from 'enzyme-to-json'
+import ForecastDay from './ForecastDay'
 import IconWeather from '../../shared/icon/IconWeather'
 
 describe('<ForecastDay />', () => {
