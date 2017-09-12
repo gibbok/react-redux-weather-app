@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SummaryChart /> should render 1`] = `
+<AnimationDecorator(ComposedDataDecorator(LineChart))
+  data={
+    Array [
+      Object {
+        "day": "Tue, Sep 12",
+        "hour": "02 PM",
+        "momentId": "2017:8:12:2",
+        "rain": undefined,
+        "temp": 16,
+        "timespan": 1505217600,
+        "weatherIconCode": 804,
+      },
+      Object {
+        "day": "Tue, Sep 12",
+        "hour": "05 PM",
+        "momentId": "2017:8:12:2",
+        "rain": undefined,
+        "temp": 22,
+        "timespan": 1505228400,
+        "weatherIconCode": 801,
+      },
+    ]
+  }
+  height={450}
+  layout="horizontal"
+  margin={
+    Object {
+      "bottom": 5,
+      "left": 5,
+      "right": 5,
+      "top": 5,
+    }
+  }
+  stackOffset="none"
+  width={900}
+>
+  <Line
+    activeDot={true}
+    animationBegin={0}
+    animationDuration={1500}
+    animationEasing="ease"
+    connectNulls={false}
+    dataKey="temp"
+    dot={<SummaryChartIcon />}
+    fill="#fff"
+    isAnimationActive={true}
+    legendType="line"
+    onAnimationEnd={[Function]}
+    onAnimationStart={[Function]}
+    points={Array []}
+    stroke="#8884d8"
+    strokeWidth={1}
+    type="monotone"
+    xAxisId={0}
+    yAxisId={0}
+  />
+  <CartesianGrid
+    fill="none"
+    height={0}
+    horizontal={true}
+    horizontalPoints={Array []}
+    stroke="#ccc"
+    strokeDasharray="5 5"
+    vertical={true}
+    verticalPoints={Array []}
+    width={0}
+    x={0}
+    y={0}
+  />
+  <XAxis
+    allowDataOverflow={false}
+    allowDecimals={true}
+    dataKey="hour"
+    domain={
+      Array [
+        0,
+        "auto",
+      ]
+    }
+    height={30}
+    hide={false}
+    mirror={false}
+    orientation="bottom"
+    padding={
+      Object {
+        "left": 0,
+        "right": 0,
+      }
+    }
+    reversed={false}
+    scale="auto"
+    tickCount={5}
+    type="category"
+    width={0}
+    xAxisId={0}
+  />
+  <YAxis
+    allowDataOverflow={false}
+    allowDecimals={true}
+    dataKey="temp"
+    domain={
+      Array [
+        0,
+        "auto",
+      ]
+    }
+    height={0}
+    hide={false}
+    mirror={false}
+    orientation="left"
+    padding={
+      Object {
+        "bottom": 0,
+        "top": 0,
+      }
+    }
+    reversed={false}
+    scale="auto"
+    tickCount={5}
+    type="number"
+    width={60}
+    yAxisId={0}
+  />
+  <Tooltip
+    active={false}
+    animationDuration={400}
+    animationEasing="ease"
+    content={<CustomTooltip />}
+    coordinate={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    cursor={true}
+    cursorStyle={Object {}}
+    isAnimationActive={true}
+    itemSorter={[Function]}
+    itemStyle={Object {}}
+    labelStyle={Object {}}
+    offset={10}
+    separator=" : "
+    viewBox={
+      Object {
+        "x1": 0,
+        "x2": 0,
+        "y1": 0,
+        "y2": 0,
+      }
+    }
+    wrapperStyle={Object {}}
+  />
+</AnimationDecorator(ComposedDataDecorator(LineChart))>
+`;
