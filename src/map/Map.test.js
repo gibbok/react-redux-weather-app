@@ -32,7 +32,8 @@ describe('<Map />', () => {
           title: 'Precipitation',
           isActive: false
         }
-      ]
+      ],
+      geo: [-74.006, 40.7143]
     }
 
     const wrapper = shallow(
@@ -41,7 +42,7 @@ describe('<Map />', () => {
         types={data.types}
         onTypesChange={() => {}}
         onRegionsChange={() => {}}
-        geo={[-74.006, 40.7143]}
+        geo={data.geo}
         />
     )
     expect(toJson(wrapper)).toMatchSnapshot()

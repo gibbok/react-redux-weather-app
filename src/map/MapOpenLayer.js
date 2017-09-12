@@ -14,12 +14,6 @@ class MapOpenLayer extends Component {
       activeMapType: 'temperature'
     }
   }
-  // getInitialState () {
-  //   return {
-  //     activeMapRegion: 'currentLocation',
-  //     activeMapType: 'temperature'
-  //   }
-  // },
   componentDidMount () {
     this.olMapInit()
   }
