@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DetailsButton /> should render 1`] = `
+<button
+  onClick={[Function]}
+  type="button"
+>
+  Details
+</button>
+`;
