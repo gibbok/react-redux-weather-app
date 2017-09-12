@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`<Foo /> render 1`] = `
-<p>
-  I am not a very smart component...
-</p>
-`;
