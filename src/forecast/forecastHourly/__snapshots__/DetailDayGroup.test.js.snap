@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DetailDayGroup /> should render 1`] = `
+<div>
+  <div>
+    Tue, Sep 12
+  </div>
+  <div>
+    <DetailHour
+      humidityUnit="%"
+      humidityValue={93}
+      momentId="2017:8:12:2"
+      temp={14.42}
+      timespan={1505206800}
+      weatherDescription="Clouds"
+      weatherIconCode={803}
+      windDegree={273.006}
+      windSpeed={1.26}
+    />
+  </div>
+</div>
+`;
