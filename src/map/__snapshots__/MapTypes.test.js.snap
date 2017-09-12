@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MapTypes /> should render 1`] = `
+<div>
+  <div
+    onClick={[Function]}
+  >
+    Temperature
+  </div>
+  <div
+    onClick={[Function]}
+  >
+    Precipitation
+  </div>
+  <div
+    onClick={[Function]}
+  >
+    Pressure
+  </div>
+  <div
+    onClick={[Function]}
+  >
+    Wind
+  </div>
+  <div
+    onClick={[Function]}
+  >
+    Cloud
+  </div>
+</div>
+`;
