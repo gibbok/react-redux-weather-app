@@ -1,7 +1,7 @@
 import React from 'react'
+import moment from 'moment'
 import IconWeather from '../../shared/icon/IconWeather'
 import IconWind from '../../shared/icon/IconWind'
-import moment from 'moment'
 
 const DetailHour = ({ momentId, timespan, temp, weatherIconCode, weatherDescription, windDegree, windSpeed, humidityUnit, humidityValue }) => {
   const hourFormat = moment.unix(timespan).format('h A')

@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DetailHour /> should render 1`] = `
+<div>
+  <div>
+    <div>
+      2 AM
+    </div>
+    <div>
+      22
+       °
+    </div>
+  </div>
+  <div>
+    <IconWeather
+      code={803}
+    />
+  </div>
+  <div>
+    Clouds
+  </div>
+  <div>
+    <IconWind
+      degree={227.007}
+    />
+  </div>
+  <div>
+    3
+     mps
+  </div>
+  <div>
+    Humidity
+  </div>
+  <div>
+    63
+     
+    %
+  </div>
+</div>
+`;
