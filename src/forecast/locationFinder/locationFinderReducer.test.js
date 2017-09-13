@@ -18,6 +18,19 @@ describe('locationFinderReducer', () => {
     expect(locationFinderReducer(undefined, {})).toEqual(dataInitialState)
   })
 
+  it('should render action GET_LOCATIONS_PENDING', () => {
+    expect(locationFinderReducer({}, {
+      type: types.GET_LOCATIONS_PENDING,
+      payload: {}
+    })).toEqual({
+      locationFinder: {
+        app: {
+          isFetching: true
+        }
+      }
+    })
+  })
+
   it('should handle action GET_LOCATIONS_FULFILLED', () => {
     const dataAPI = {
       'message': 'accurate',
