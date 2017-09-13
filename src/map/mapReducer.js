@@ -116,12 +116,10 @@ function mapReducer (state = initialState, action) {
       return updateAppIsFetching(state, action, true)
 
     case types.SET_MAP_TYPE:
-      debugger
       updateType(state, action)
       return updateTypes(state, action)
 
     case types.SET_MAP_REGION:
-      debugger
       updateRegion(state, action)
       return updateRegions(state, action)
 
