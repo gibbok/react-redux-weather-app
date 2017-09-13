@@ -38,6 +38,7 @@ const updateData = (state, action) => {
       rain: 'rain' in x ? x.rain['3h'] : undefined
     }
   })
+  debugger
   return dotProp.set(state, 'forecastHourly.data', data)
 }
 
@@ -50,6 +51,7 @@ function forecastHourlyReducer (state = initialState, action) {
     case types.GET_FORECAST_HOURLY_PENDING:
       return updateAppIsFetching(state, action, true)
     case types.GET_FORECAST_HOURLY_FULFILLED:
+      debugger
       updateAppIsFetching(state, action, false)
       return updateData(state, action)
     case types.SET_FORECAST_HOURLY_ACTIVE_REPORT_TYPE:
