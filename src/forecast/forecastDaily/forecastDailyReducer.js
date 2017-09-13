@@ -33,6 +33,7 @@ const updateData = (state, action) => {
       weatherDescription: x.weather[0].description
     }
   })
+  debugger
   return dotProp.set(state, 'forecastDaily.data', data)
 }
 
@@ -41,6 +42,7 @@ function forecastDailyReducer (state = initialState, action) {
     case types.GET_FORECAST_DAILY_PENDING:
       return updateAppIsFetching(state, action, true)
     case types.GET_FORECAST_DAILY_FULFILLED:
+      debugger
       updateAppIsFetching(state, action, false)
       return updateData(state, action)
     default:
