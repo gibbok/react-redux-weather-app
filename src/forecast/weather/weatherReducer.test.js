@@ -31,7 +31,7 @@ describe('weatherReducer', () => {
     })
   })
 
-  it('should handle action', () => {
+  it('should handle action GET_WEATHER_FULFILLED', () => {
     const dataAPI = {
       'coord': {
         'lon': -74.01,
