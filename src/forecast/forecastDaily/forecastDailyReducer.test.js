@@ -5,7 +5,7 @@ import location from '../../app/location'
 
 describe('forecastDailyReducer', () => {
   it('should return the initial state', () => {
-    const initialState = {
+    const dataInitialState = {
       forecastDaily: {
         data: [],
         app: {
@@ -17,7 +17,7 @@ describe('forecastDailyReducer', () => {
         }
       }
     }
-    expect(forecastDailyReducer(undefined, {})).toEqual(initialState)
+    expect(forecastDailyReducer(undefined, {})).toEqual(dataInitialState)
   })
 
   it('should handle action GET_FORECAST_DAILY_FULFILLED', () => {
