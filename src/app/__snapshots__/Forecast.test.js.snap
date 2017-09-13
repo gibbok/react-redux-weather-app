@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Forecast /> should render 1`] = `
+<div>
+  <Connect(Navigations) />
+  <Connect(LocationFinderSearch) />
+  <Connect(LocationFinder) />
+  <Connect(Weather) />
+  <Connect(ForecastDays) />
+  <Connect(ForecastHourly) />
+</div>
+`;
