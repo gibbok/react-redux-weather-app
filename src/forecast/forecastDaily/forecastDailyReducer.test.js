@@ -20,6 +20,17 @@ describe('forecastDailyReducer', () => {
     expect(forecastDailyReducer(undefined, {})).toEqual(dataInitialState)
   })
 
+  it('should handle action GET_FORECAST_DAILY_PENDING', () => {
+    expect(forecastDailyReducer({}, {
+      type: types.GET_FORECAST_DAILY_PENDING,
+      payload: {}
+    })).toEqual({
+      forecastDaily: {
+        app: {isFetching: true}
+      }
+    })
+  })
+
   it('should handle action GET_FORECAST_DAILY_FULFILLED', () => {
     const dataAPI = {
       'city': {
