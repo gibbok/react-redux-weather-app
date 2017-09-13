@@ -18,7 +18,6 @@ const initialState = {
 }
 
 const updateAppIsFetching = (state, action, value) => {
-  debugger
   return dotProp.set(state, 'forecastHourly.app.isFetching', value)
 }
 
