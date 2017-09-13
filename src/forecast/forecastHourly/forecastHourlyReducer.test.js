@@ -21,6 +21,17 @@ describe('forecastHourlyReducer', () => {
     expect(forecastHourlyReducer(undefined, {})).toEqual(dataInitialState)
   })
 
+  it('should handle action GET_FORECAST_HOURLY_PENDING', () => {
+    expect(forecastHourlyReducer({}, {
+      type: types.GET_FORECAST_HOURLY_PENDING,
+      payload: {}
+    })).toEqual({
+      forecastHourly: {
+        app: {isFetching: true}
+      }
+    })
+  })
+
   it('should handle action GET_FORECAST_HOURLY_FULFILLED', () => {
     const dataApi = {
       'cod': '200',
