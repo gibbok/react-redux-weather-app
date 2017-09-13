@@ -1620,4 +1620,17 @@ describe('forecastHourlyReducer', () => {
       payload: dataApi
     })).toEqual(dataState)
   })
+
+  it('should handle action SET_FORECAST_HOURLY_ACTIVE_REPORT_TYPE', () => {
+    expect(forecastHourlyReducer({}, {
+      type: types.SET_FORECAST_HOURLY_ACTIVE_REPORT_TYPE,
+      payload: 'details'
+    })).toEqual({
+      forecastHourly: {
+        ui: {
+          activeReportType: 'details'
+        }
+      }
+    })
+  })
 })
