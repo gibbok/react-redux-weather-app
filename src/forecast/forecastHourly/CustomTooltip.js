@@ -9,7 +9,7 @@ class CustomTooltip extends Component {
     const data = payload[0].payload
     const hour = data.hour
     const temp = data.temp
-    const rain = data.rain ? payload[0].payload.rain.toFixed(1) : 'N/A'
+    const rain = data.rain === undefined ? 'N/A' : data.rain.toFixed(1)
     const day = data.day
     return (
       <div>

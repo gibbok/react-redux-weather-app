@@ -1,50 +1,49 @@
 import React from 'react'
-import {mount} from 'enzyme'
-import sinon from 'sinon'
+import {shallow} from 'enzyme'
 import toJson from 'enzyme-to-json'
 import CustomTooltip from './CustomTooltip'
 
 describe('<CustomTooltip />', () => {
-  it('calls render', () => {
-    sinon.spy(CustomTooltip.prototype, 'render')
-    expect(CustomTooltip.prototype.render.calledOnce).toEqual(true)
-  })
-
-  it('should mount in a full DOM with rain information', () => {
-    const wrapper = mount(
+  it('should render with rain data', () => {
+    const wrapper = shallow(
       <CustomTooltip
-        payload={
-        [
+        active
+        payload={[
           {
-            momentId: '2017:8:14:4',
-            timespan: 1505401200,
-            temp: 23,
-            weatherIconCode: 500,
-            rain: 0.15,
-            day: 'Thu, Sep 14',
-            hour: '05 PM'
+            payload: {
+              momentId: '2017:8:14:4',
+              timespan: 1505401200,
+              temp: 23,
+              weatherIconCode: 500,
+              rain: 0.15,
+              day: 'Thu, Sep 14',
+              hour: '05 PM'
+            }
           }
-        ]}
+        ]
+        }
     />
     )
     expect(toJson(wrapper)).toMatchSnapshot()
   })
-
-  it('should mount in a full DOM without rain information', () => {
-    const wrapper = mount(
+  it('should render with no rain data', () => {
+    const wrapper = shallow(
       <CustomTooltip
-        payload={
-        [
+        active
+        payload={[
           {
-            momentId: '2017:8:14:4',
-            timespan: 1505401200,
-            temp: 23,
-            weatherIconCode: 500,
-            rain: 'N/A',
-            day: 'Thu, Sep 14',
-            hour: '05 PM'
+            payload: {
+              momentId: '2017:8:14:4',
+              timespan: 1505401200,
+              temp: 23,
+              weatherIconCode: 500,
+              rain: undefined,
+              day: 'Thu, Sep 14',
+              hour: '05 PM'
+            }
           }
-        ]}
+        ]
+        }
     />
     )
     expect(toJson(wrapper)).toMatchSnapshot()

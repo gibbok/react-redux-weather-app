@@ -1,37 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CustomTooltip /> should mount in a full DOM with rain information 1`] = `
-<CustomTooltip
-  payload={
-    Array [
-      Object {
-        "day": "Thu, Sep 14",
-        "hour": "05 PM",
-        "momentId": "2017:8:14:4",
-        "rain": 0.15,
-        "temp": 23,
-        "timespan": 1505401200,
-        "weatherIconCode": 500,
-      },
-    ]
-  }
-/>
+exports[`<CustomTooltip /> should render with no rain data 1`] = `
+<div>
+  <div>
+    Thu, Sep 14
+  </div>
+  <div>
+    <div>
+      Hour:
+    </div>
+    <div>
+      05 PM
+    </div>
+  </div>
+  <div>
+    <div>
+      Temp:
+    </div>
+    <div>
+      23
+       °
+    </div>
+  </div>
+  <div>
+    <div>
+      Rain:
+    </div>
+    <div>
+      N/A
+    </div>
+  </div>
+</div>
 `;
 
-exports[`<CustomTooltip /> should mount in a full DOM without rain information 1`] = `
-<CustomTooltip
-  payload={
-    Array [
-      Object {
-        "day": "Thu, Sep 14",
-        "hour": "05 PM",
-        "momentId": "2017:8:14:4",
-        "rain": "N/A",
-        "temp": 23,
-        "timespan": 1505401200,
-        "weatherIconCode": 500,
-      },
-    ]
-  }
-/>
+exports[`<CustomTooltip /> should render with rain data 1`] = `
+<div>
+  <div>
+    Thu, Sep 14
+  </div>
+  <div>
+    <div>
+      Hour:
+    </div>
+    <div>
+      05 PM
+    </div>
+  </div>
+  <div>
+    <div>
+      Temp:
+    </div>
+    <div>
+      23
+       °
+    </div>
+  </div>
+  <div>
+    <div>
+      Rain:
+    </div>
+    <div>
+      0.1
+    </div>
+  </div>
+</div>
 `;
