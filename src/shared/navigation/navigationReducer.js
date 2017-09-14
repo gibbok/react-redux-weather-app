@@ -40,8 +40,7 @@ const updateData = (state, action) => {
 function navigationReducer (state = initialState, action) {
   switch (action.type) {
     case types.SET_ACTIVE:
-      updateUiActive(state, action)
-      return updateData(state, action)
+      return updateData(updateUiActive(state, action), action)
     default:
       return state
   }
