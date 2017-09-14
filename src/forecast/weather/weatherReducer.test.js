@@ -19,16 +19,32 @@ describe('weatherReducer', () => {
   })
 
   it('should handle action GET_WEATHER_PENDING', () => {
-    expect(weatherReducer({}, {
+    const dataPrevState = {
+      'weather': {
+        'data': {},
+        'app': {
+          'locationId': 5128581,
+          'isFetching': false
+        },
+        'ui': {}
+      }
+    }
+
+    const dataNextState = {
+      'weather': {
+        'data': {},
+        'app': {
+          'locationId': 5128581,
+          'isFetching': true
+        },
+        'ui': {}
+      }
+    }
+
+    expect(weatherReducer(dataPrevState, {
       type: types.GET_WEATHER_PENDING,
       payload: {}
-    })).toEqual({
-      weather: {
-        app: {
-          isFetching: true
-        }
-      }
-    })
+    })).toEqual(dataNextState)
   })
 
   it('should handle action GET_WEATHER_FULFILLED', () => {
@@ -73,9 +89,12 @@ describe('weatherReducer', () => {
       'cod': 200
     }
 
-    const dataState = {
-      weather: {
-        data: {
+    const dataNextState = {
+      'weather': {
+        'app': {
+          'isFetching': false
+        },
+        'data': {
           'name': 'New York',
           'country': 'US',
           'icon': 741,
@@ -101,6 +120,6 @@ describe('weatherReducer', () => {
     expect(weatherReducer({}, {
       type: types.GET_WEATHER_FULFILLED,
       payload: dataAPI
-    })).toEqual(dataState)
+    })).toEqual(dataNextState)
   })
 })

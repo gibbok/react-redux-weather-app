@@ -33,8 +33,7 @@ function locationFinderReducer (state = initialState, action) {
       return updateAppIsFetching(state, action, true)
 
     case types.GET_LOCATIONS_FULFILLED:
-      updateAppIsFetching(state, action, false)
-      return updateData(state, action)
+      return updateData(updateAppIsFetching(state, action, false), action)
 
     case types.SET_SEARCHVALUE:
       return updateUiInputValue(state, action)

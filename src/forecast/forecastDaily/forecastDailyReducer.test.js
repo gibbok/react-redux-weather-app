@@ -207,8 +207,11 @@ describe('forecastDailyReducer', () => {
     }
 
     const dataState = {
-      forecastDaily: {
-        data: [{
+      'forecastDaily': {
+        'app': {
+          'isFetching': false
+        },
+        'data': [{
           'momentId': '2017:8:12:2',
           'dt': 1505232000,
           'date': 1505232000,

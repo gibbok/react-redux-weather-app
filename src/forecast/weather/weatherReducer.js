@@ -7,7 +7,7 @@ const initialState = {
   weather: {
     data: {},
     app: {
-      locationId: location().locationId, // nyc usa
+      locationId: location().locationId,
       isFetching: false
     },
     ui: {}
@@ -49,8 +49,7 @@ function weatherReducer (state = initialState, action) {
       return updateAppIsFetching(state, action, true)
 
     case types.GET_WEATHER_FULFILLED:
-      updateAppIsFetching(state, action, false)
-      return updateData(state, action)
+      return updateData(updateAppIsFetching(state, action, false), action)
 
     default:
       return state

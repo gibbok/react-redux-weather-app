@@ -57,7 +57,7 @@ describe('navigationReducer', () => {
         }
       }
     }
-    debugger
+
     expect(navigationReducer(undefined, {
       type: types.SET_ACTIVE,
       payload: 'map'

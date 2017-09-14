@@ -42,8 +42,7 @@ function forecastDailyReducer (state = initialState, action) {
       return updateAppIsFetching(state, action, true)
 
     case types.GET_FORECAST_DAILY_FULFILLED:
-      updateAppIsFetching(state, action, false)
-      return updateData(state, action)
+      return updateData(updateAppIsFetching(state, action, false), action)
 
     default:
       return state

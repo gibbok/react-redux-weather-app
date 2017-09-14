@@ -1189,8 +1189,11 @@ describe('forecastHourlyReducer', () => {
     }
 
     const dataState = {
-      forecastHourly: {
-        data: [{
+      'forecastHourly': {
+        'app': {
+          'isFetching': false
+        },
+        'data': [{
           'momentId': '2017:8:13:3',
           'timespan': 1505293200,
           'temp': 15.53,

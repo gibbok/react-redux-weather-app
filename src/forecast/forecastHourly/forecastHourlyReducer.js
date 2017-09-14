@@ -51,8 +51,7 @@ function forecastHourlyReducer (state = initialState, action) {
       return updateAppIsFetching(state, action, true)
 
     case types.GET_FORECAST_HOURLY_FULFILLED:
-      updateAppIsFetching(state, action, false)
-      return updateData(state, action)
+      return updateData(updateAppIsFetching(state, action, false), action)
 
     case types.SET_FORECAST_HOURLY_ACTIVE_REPORT_TYPE:
       return updateDataActiveReportType(state, action)

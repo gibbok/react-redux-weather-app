@@ -73,8 +73,11 @@ describe('locationFinderReducer', () => {
     }
 
     const dataState = {
-      locationFinder: {
-        data: [
+      'locationFinder': {
+        'app': {
+          'isFetching': false
+        },
+        'data': [
           {
             'country': 'CZ',
             'id': 3078610,
