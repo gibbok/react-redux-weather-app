@@ -1,40 +1,39 @@
-
 import React from 'react'
 import { createMockStore, createMockDispatch } from 'redux-test-utils'
 import {shallow} from 'enzyme'
 import toJson from 'enzyme-to-json'
 import configureStore from 'redux-mock-store'
-import { getForecastDaily } from './forecastDailyActions'
-import ForecastDailyContainer from './ForecastDailyContainer'
+import ForecastHourlyContainer from './ForecastHourlyContainer'
+import {getForecastHourly} from './forecastHourlyActions'
 import location from '../../app/location'
 import { createMomentId } from '../../app/utility'
 
-describe('ForecastDailyContainer', () => {
+describe('<ForecastHourlyContainer />', () => {
   it('should render', () => {
     const initialState = {
-      forecastDailyReducer: {
-        forecastDaily: {
-          forecastDaily: {},
+      forecastHourlyReducer: {
+        forecastHourly: {
           data: [],
           app: {
-            locationId: location().locationId,
+            locationId: location().locationId, // nyc usa
             isFetching: false
           },
           ui: {
-            selectedDate: createMomentId(Date.now())
+            selectedDate: createMomentId(Date.now()),
+            activeReportType: 'summary'
           }
         }}
     }
     const mockStore = configureStore()
     const store = mockStore(initialState)
-    const wrapper = shallow(<ForecastDailyContainer store={store} />)
+    const wrapper = shallow(<ForecastHourlyContainer store={store} />)
     expect(toJson(wrapper)).toMatchSnapshot()
   })
 
   it('should dispatch', () => {
     const state = 'state'
     const store = createMockStore(state)
-    const action = getForecastDaily(location().locationId)
+    const action = getForecastHourly(location().locationId)
 
     store.dispatch(action)
     expect(store.getAction(action.type)).toEqual(action)

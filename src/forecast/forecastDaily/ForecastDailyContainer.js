@@ -12,7 +12,6 @@ const getForecastDailyLocationId = () => {
 }
 
 const mapStateToProps = (state) => {
-  debugger
   return {
     forecastDays: forecastDaily(state.forecastDailyReducer.forecastDaily.data)
   }
