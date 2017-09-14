@@ -6,7 +6,6 @@ import configureStore from 'redux-mock-store'
 import LocationFinderContainer from './LocationFinderContainer'
 import {getLocations, setSearchValue, setLocation} from './locationFinderSearchActions'
 import location from '../../app/location'
-// import { createMomentId } from '../../app/utility'
 
 describe('<LocationFinderContainer />', () => {
   it('should render', () => {
