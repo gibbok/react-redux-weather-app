@@ -4,6 +4,15 @@ import toJson from 'enzyme-to-json'
 import CustomTooltip from './CustomTooltip'
 
 describe('<CustomTooltip />', () => {
+  it('should not render when is not active', () => {
+    const wrapper = shallow(
+      <CustomTooltip
+        active={false}
+    />
+    )
+    expect(wrapper.find(CustomTooltip).length).toEqual(0)
+  })
+
   it('should render with rain data', () => {
     const wrapper = shallow(
       <CustomTooltip
@@ -26,6 +35,7 @@ describe('<CustomTooltip />', () => {
     )
     expect(toJson(wrapper)).toMatchSnapshot()
   })
+
   it('should render with no rain data', () => {
     const wrapper = shallow(
       <CustomTooltip
