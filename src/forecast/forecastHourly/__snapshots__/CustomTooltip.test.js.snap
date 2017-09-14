@@ -1,3 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CustomTooltip /> should render 1`] = `null`;
+exports[`<CustomTooltip /> should mount in a full DOM with rain information 1`] = `
+<CustomTooltip
+  payload={
+    Array [
+      Object {
+        "day": "Thu, Sep 14",
+        "hour": "05 PM",
+        "momentId": "2017:8:14:4",
+        "rain": 0.15,
+        "temp": 23,
+        "timespan": 1505401200,
+        "weatherIconCode": 500,
+      },
+    ]
+  }
+/>
+`;
+
+exports[`<CustomTooltip /> should mount in a full DOM without rain information 1`] = `
+<CustomTooltip
+  payload={
+    Array [
+      Object {
+        "day": "Thu, Sep 14",
+        "hour": "05 PM",
+        "momentId": "2017:8:14:4",
+        "rain": "N/A",
+        "temp": 23,
+        "timespan": 1505401200,
+        "weatherIconCode": 500,
+      },
+    ]
+  }
+/>
+`;

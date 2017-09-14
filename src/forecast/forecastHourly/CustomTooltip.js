@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {Component} from 'react'
 
-const CustomTooltip = () => ({
+class CustomTooltip extends Component {
   render () {
     const { payload, active } = this.props
     if (!active) {
@@ -43,6 +43,6 @@ const CustomTooltip = () => ({
       </div>
     )
   }
-})
+}
 
 export default CustomTooltip
