@@ -1,9 +1,15 @@
 import React from 'react'
 import {mount} from 'enzyme'
+import sinon from 'sinon'
 import toJson from 'enzyme-to-json'
 import CustomTooltip from './CustomTooltip'
 
 describe('<CustomTooltip />', () => {
+  it('calls render', () => {
+    sinon.spy(CustomTooltip.prototype, 'render')
+    expect(CustomTooltip.prototype.render.calledOnce).toEqual(true)
+  })
+
   it('should mount in a full DOM with rain information', () => {
     const wrapper = mount(
       <CustomTooltip
