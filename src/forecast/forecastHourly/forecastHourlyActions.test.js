@@ -1,8 +1,9 @@
-import {getForecastHourly} from './forecastHourlyActions'
+import {getForecastHourly, setForecastHourlyActiveReportType} from './forecastHourlyActions'
 import thunk from 'redux-thunk'
 import configureMockStore from 'redux-mock-store'
 import fetchMock from 'fetch-mock'
 import * as api from '../../app/api'
+import * as types from './forecastHourlyActionTypes'
 
 const middlewares = [ thunk ]
 const mockStore = configureMockStore(middlewares)
@@ -23,5 +24,18 @@ describe('forecastHourlyActions', () => {
            expect(store.getActions()).toEqual(expectedActions)
            expect(data).toEqual({data: 'mockData'})
          })
+  })
+
+  it('should return an action of type SET_FORECAST_HOURLY_ACTIVE_REPORT_TYPE', () => {
+    const action = setForecastHourlyActiveReportType('details')
+    const store = mockStore({ })
+    const expectedActions = [
+      {
+        type: types.SET_FORECAST_HOURLY_ACTIVE_REPORT_TYPE,
+        payload: 'details'
+      }
+    ]
+    store.dispatch(action)
+    expect(store.getActions()).toEqual(expectedActions)
   })
 })
