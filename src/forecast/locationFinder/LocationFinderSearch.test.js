@@ -20,26 +20,17 @@ describe('<LocationFinderSearch />', () => {
     expect(mount(<LocationFinderSearch />).find('input[type=\'submit\']').length).toBe(1)
   })
 
-  it('should accept change', () => {
-    // given
-    const change = sinon.spy()
-    const actualNode = shallow(
-      <LocationFinderSearch
-        onLocationChange={change}
-    />)
-    // when
-    actualNode.find('input[type=\'text\']').simulate('change')
-    // then
-    sinon.assert.called(change)
+  it('should simulate change event on input of type text', () => {
+    const onLocationChange = sinon.spy()
+    const wrapper = shallow(<LocationFinderSearch onLocationChange={onLocationChange} />)
+    wrapper.find('input[type=\'text\']').simulate('change')
+    expect(onLocationChange.called).toEqual(true)
   })
 
-  it('should accept click on submit', () => {
-    const onInputClick = sinon.spy()
-    const actualNode = shallow(
-      <LocationFinderSearch
-        onSearchClick={onInputClick}
-    />)
-    actualNode.find('input[type=\'submit\']').simulate('click')
-    sinon.assert.called(onInputClick)
+  it('should simulate click event on input of type submit', () => {
+    const onSearchClick = sinon.spy()
+    const wrapper = shallow(<LocationFinderSearch onSearchClick={onSearchClick} />)
+    wrapper.find('input[type=\'submit\']').simulate('click')
+    expect(onSearchClick.called).toEqual(true)
   })
 })

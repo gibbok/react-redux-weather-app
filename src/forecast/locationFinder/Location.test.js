@@ -48,14 +48,10 @@ describe('<Location />', () => {
     ).find('li > a').length).toBe(1)
   })
 
-  it('should simulates click events', () => {
+  it('should simulate click event', () => {
     const onLinkClick = sinon.spy()
-    const actualNode = shallow(
-      <Location
-        onLocationClick={onLinkClick}
-      />
-    )
-    actualNode.find('a').simulate('click')
-    sinon.assert.called(onLinkClick)
+    let wrapper = shallow(<Location onLocationClick={onLinkClick} />)
+    wrapper.find('a').simulate('click')
+    expect(onLinkClick.called).toEqual(true)
   })
 })
