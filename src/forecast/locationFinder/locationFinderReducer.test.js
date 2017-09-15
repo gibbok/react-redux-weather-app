@@ -92,4 +92,17 @@ describe('locationFinderReducer', () => {
       payload: dataAPI
     })).toEqual(dataState)
   })
+
+  it('should handle action SET_SEARCHVALUE', () => {
+    expect(locationFinderReducer({}, {
+      type: types.SET_SEARCHVALUE,
+      payload: 'brno'
+    })).toEqual({
+      locationFinder: {
+        ui: {
+          inputValue: 'brno'
+        }
+      }
+    })
+  })
 })
