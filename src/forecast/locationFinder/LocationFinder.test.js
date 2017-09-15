@@ -67,4 +67,12 @@ describe('<LocationFinder />', () => {
     )
     expect(toJson(wrapper)).toMatchSnapshot()
   })
+
+  it('should not render if has no locations', () => {
+    const data = []
+    const wrapper = shallow(
+      <LocationFinder locations={data} />
+    )
+    expect(toJson(wrapper)).toMatchSnapshot()
+  })
 })

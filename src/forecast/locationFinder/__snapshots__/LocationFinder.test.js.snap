@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<LocationFinder /> should not render if has no locations 1`] = `null`;
+
 exports[`<LocationFinder /> should render 1`] = `
 <ul>
   <Location
