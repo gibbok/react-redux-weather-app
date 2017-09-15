@@ -31,7 +31,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     onRegionsChange: (region) => {
       dispatch(setMapRegion(region))
     },
-    onTypesChange: (type) => {
+    onTypesClick: (type) => {
       dispatch(setMapType(type))
     }
   }

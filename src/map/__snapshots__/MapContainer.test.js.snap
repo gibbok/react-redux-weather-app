@@ -77,7 +77,7 @@ exports[`WeatherContainer should render 1`] = `
     }
   }
   onRegionsChange={[Function]}
-  onTypesChange={[Function]}
+  onTypesClick={[Function]}
   regions={
     Array [
       Object {

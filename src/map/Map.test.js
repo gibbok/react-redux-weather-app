@@ -40,7 +40,7 @@ describe('<Map />', () => {
       <Map
         regions={data.regions}
         types={data.types}
-        onTypesChange={() => {}}
+        onTypesClick={() => {}}
         onRegionsChange={() => {}}
         geo={data.geo}
         />
@@ -80,7 +80,7 @@ describe('<Map />', () => {
       <Map
         regions={data.regions}
         types={data.types}
-        onTypesChange={() => {}}
+        onTypesClick={() => {}}
         onRegionsChange={() => {}}
         geo={[-74.006, 40.7143]}
           />

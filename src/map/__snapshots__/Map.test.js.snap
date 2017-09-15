@@ -3,7 +3,7 @@
 exports[`<Map /> should render 1`] = `
 <div>
   <MapTypes
-    onTypesChange={[Function]}
+    onTypesClick={[Function]}
     types={
       Array [
         Object {

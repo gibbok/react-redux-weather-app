@@ -13,7 +13,7 @@ class Map extends Component {
       <div>
         <MapTypes
           types={this.props.types}
-          onTypesChange={this.props.onTypesChange}
+          onTypesClick={this.props.onTypesClick}
           />
         <MapRegions
           regions={this.props.regions}
