@@ -26,6 +26,8 @@ const mapStateToProps = (state) => {
     types: getMapTypes(state)
   }
 }
+
+/* istanbul ignore next */
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onRegionsChange: (region) => {

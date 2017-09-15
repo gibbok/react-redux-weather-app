@@ -12,6 +12,7 @@ const mapStateToProps = (state) => {
   }
 }
 
+/* istanbul ignore next */
 const mapDispatchToProps = (dispatch) => {
   return {
     onLocationClick: (location) => {

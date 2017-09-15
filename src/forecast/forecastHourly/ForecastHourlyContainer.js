@@ -26,6 +26,7 @@ const mapStateToProps = (state) => {
   }
 }
 
+/* istanbul ignore next */
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onSummaryClick: (e) => {
