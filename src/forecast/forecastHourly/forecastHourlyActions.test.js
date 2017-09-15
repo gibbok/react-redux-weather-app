@@ -1,4 +1,4 @@
-import {getForecastDaily} from './forecastDailyActions'
+import {getForecastHourly} from './forecastHourlyActions'
 import thunk from 'redux-thunk'
 import configureMockStore from 'redux-mock-store'
 import fetchMock from 'fetch-mock'
@@ -7,16 +7,16 @@ import * as api from '../../app/api'
 const middlewares = [ thunk ]
 const mockStore = configureMockStore(middlewares)
 
-describe('forecastDailyActions', () => {
-  it('should dispatch action GET_FORECAST_DAILY and check for its fulfillment', () => {
+describe('forecastHourlyActions', () => {
+  it('should dispatch action GET_FORECAST_HOURLY and check for its fulfillment', () => {
     const location = 5128581
     const store = mockStore({ })
 
-    fetchMock.get(api.forecastDaily(location), {data: 'mockData'})
-    const action = getForecastDaily(location)
+    fetchMock.get(api.forecast(location), {data: 'mockData'})
+    const action = getForecastHourly(location)
 
     const expectedActions = [
-         {type: 'GET_FORECAST_DAILY', payload: new Promise(() => {}, () => {})}
+         {type: 'GET_FORECAST_HOURLY', payload: new Promise(() => {}, () => {})}
     ]
     return store.dispatch(action).payload
          .then(data => { // return of async actions
