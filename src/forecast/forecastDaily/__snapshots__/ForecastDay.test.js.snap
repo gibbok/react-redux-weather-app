@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ForecastDay /> should render 1`] = `
+<div>
+  <div>
+    Sun, Aug 1
+  </div>
+  <div>
+    <IconWeather
+      code={200}
+    />
+  </div>
+  <div>
+    <div>
+      10
+      °
+    </div>
+    <div>
+      15
+      °
+    </div>
+  </div>
+  <div>
+    storm showers
+  </div>
+</div>
+`;

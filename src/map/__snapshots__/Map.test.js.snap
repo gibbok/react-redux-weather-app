@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Map /> should render 1`] = `
+<div>
+  <MapTypes
+    onTypesClick={[Function]}
+    types={
+      Array [
+        Object {
+          "id": "temperature",
+          "isActive": true,
+          "title": "Temperature",
+        },
+        Object {
+          "id": "precipitation",
+          "isActive": false,
+          "title": "Precipitation",
+        },
+      ]
+    }
+  />
+  <MapRegions
+    onRegionsChange={[Function]}
+    regions={
+      Array [
+        Object {
+          "id": "currentLocation",
+          "isActive": true,
+          "title": "Current Location",
+        },
+        Object {
+          "id": "northAmerica",
+          "isActive": false,
+          "title": "North America",
+        },
+      ]
+    }
+  />
+  <MapOpenLayer
+    geo={
+      Array [
+        -74.006,
+        40.7143,
+      ]
+    }
+    regions={
+      Array [
+        Object {
+          "id": "currentLocation",
+          "isActive": true,
+          "title": "Current Location",
+        },
+        Object {
+          "id": "northAmerica",
+          "isActive": false,
+          "title": "North America",
+        },
+      ]
+    }
+    types={
+      Array [
+        Object {
+          "id": "temperature",
+          "isActive": true,
+          "title": "Temperature",
+        },
+        Object {
+          "id": "precipitation",
+          "isActive": false,
+          "title": "Precipitation",
+        },
+      ]
+    }
+  />
+</div>
+`;

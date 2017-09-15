@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LocationFinderSearch /> should render 1`] = `
+<form>
+  <input
+    onChange={[Function]}
+    placeholder="Location"
+    type="text"
+  />
+  <input
+    onClick={[Function]}
+    type="submit"
+    value="Search"
+  />
+</form>
+`;

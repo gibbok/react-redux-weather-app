@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MapRegions /> should render 1`] = `
+<select
+  onChange={[Function]}
+>
+  <option
+    value="currentLocation"
+  >
+    Current Location
+  </option>
+  <option
+    value="northAmerica"
+  >
+    North America
+  </option>
+  <option
+    value="southAmerica"
+  >
+    South America
+  </option>
+  <option
+    value="europe"
+  >
+    Europe
+  </option>
+  <option
+    value="asia"
+  >
+    Asia
+  </option>
+  <option
+    value="pacificIslands"
+  >
+    Pacific Islands
+  </option>
+  <option
+    value="africa"
+  >
+    Africa
+  </option>
+</select>
+`;

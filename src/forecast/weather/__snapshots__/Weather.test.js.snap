@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Weather /> should render 1`] = `
+<div>
+  <div>
+    New York
+    , 
+    US
+  </div>
+  <div>
+    <IconWeather
+      code={800}
+    />
+  </div>
+  <div>
+    15.14
+  </div>
+  <div>
+    <span>
+      Min 
+      10
+       °
+    </span>
+    <span>
+      Max 
+      20
+       °
+    </span>
+  </div>
+  <div>
+    <div>
+      Clear
+    </div>
+    <div>
+      clear sky
+    </div>
+  </div>
+  <div>
+    Updated as of 
+    8:10 AM
+  </div>
+  <div>
+    Wind 
+    306.501
+     
+    1.29
+     mps 
+    <IconWind
+      degree={306.501}
+    />
+  </div>
+  <div>
+    Visibility 
+    16093
+     meter
+  </div>
+  <div>
+    Humidity 
+    68
+     %
+  </div>
+  <div>
+    Sunrise 
+    12:34 PM
+  </div>
+  <div>
+    Sunset 
+    1:09 AM
+  </div>
+  <div>
+    Cloudiness 
+    1
+     %
+  </div>
+  <div>
+    Pressure 
+    1020
+     
+    hPa
+  </div>
+</div>
+`;

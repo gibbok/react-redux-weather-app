@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Navigation /> should render with snapshot 1`] = `
+<div
+  alt="test tooltop"
+  onClick="test"
+>
+  <NavLink
+    activeClassName="active"
+    activeStyle={
+      Object {
+        "color": "red",
+        "fontWeight": "bold",
+      }
+    }
+    exact={true}
+    to="/map"
+  >
+    test title
+  </NavLink>
+</div>
+`;

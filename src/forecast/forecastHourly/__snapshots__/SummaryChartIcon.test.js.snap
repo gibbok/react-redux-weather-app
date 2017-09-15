@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SummaryChartIcon /> should render 1`] = `
+<svg
+  x={NaN}
+  y={NaN}
+>
+  <foreignObject
+    height="100%"
+    width="100%"
+  >
+    <IconWeather
+      code={200}
+    />
+  </foreignObject>
+</svg>
+`;
