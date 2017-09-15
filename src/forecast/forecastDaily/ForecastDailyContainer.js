@@ -17,16 +17,8 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onForecastDayClick: (id) => {
-    }
-  }
-}
-
 const ForecastDailyContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(ForecastDays)
 
 store.dispatch(getForecastDaily(getForecastDailyLocationId()))

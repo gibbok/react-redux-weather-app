@@ -9,7 +9,6 @@ const ForecastDays = ({ forecastDays, onForecastDayClick }) => (
         <ForecastDay
           key={index}
           {...forecastDays[index]}
-          onClick={() => onForecastDayClick(day)}
       />
     )}
     </div>

@@ -2,8 +2,8 @@
 
 exports[`ForecastDailyContainer should render 1`] = `
 <ForecastDays
+  dispatch={[Function]}
   forecastDays={Array []}
-  onForecastDayClick={[Function]}
   store={
     Object {
       "clearActions": [Function],
