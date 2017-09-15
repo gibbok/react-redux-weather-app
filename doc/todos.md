@@ -6,8 +6,10 @@
 
 ## Todo
 - [ ] Make sure all components are tested using snapshots where possible.
-- [ ] Use sinon to mock behavior.
-- [ ] Add tests for asynch action creators.
+- [x] Use sinon to mock behavior.
+
+- [ ] Add tests for asynch action creators [PROGRESS].
+- [ ] Remove deprecated code [PROGRESS].
 - [ ] Swith to yearn.
 - [ ] Swith to flow.
 - [ ] Use JS to CSS.
