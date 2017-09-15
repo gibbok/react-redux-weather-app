@@ -83,7 +83,7 @@ const initialState = {
 }
 
 const updateAppIsFetching = (state, action, value) => {
-  return dotProp.set(state, 'weather.app.isFetching', value)
+  return dotProp.set(state, 'map.app.isFetching', value)
 }
 
 const updateType = (state, action) => {

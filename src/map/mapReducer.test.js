@@ -419,4 +419,90 @@ describe('mapReducer', () => {
       payload: 'wind'
     })).toEqual(dataNextState)
   })
+
+  it('should handle action GET_MAP', () => {
+    const dataNextState = {
+      map: {
+        data: {
+          regions: [
+            {
+              id: 'currentLocation',
+              title: 'Current Location',
+              isActive: true
+            },
+            {
+              id: 'northAmerica',
+              title: 'North America',
+              isActive: false
+            },
+            {
+              id: 'southAmerica',
+              title: 'South America',
+              isActive: false
+            },
+            {
+              id: 'europe',
+              title: 'Europe',
+              isActive: false
+            },
+            {
+              id: 'asia',
+              title: 'Asia',
+              isActive: false
+            },
+            {
+              id: 'pacificIslands',
+              title: 'Pacific Islands',
+              isActive: false
+            },
+            {
+              id: 'africa',
+              title: 'Africa',
+              isActive: false
+            }
+          ],
+          types: [
+            {
+              id: 'temperature',
+              title: 'Temperature',
+              isActive: true
+            },
+            {
+              id: 'precipitation',
+              title: 'Precipitation',
+              isActive: false
+            },
+            {
+              id: 'pressure',
+              title: 'Pressure',
+              isActive: false
+            },
+            {
+              id: 'wind',
+              title: 'Wind',
+              isActive: false
+            },
+            {
+              id: 'cloud',
+              title: 'Cloud',
+              isActive: false
+            }
+          ]
+        },
+        app: {
+          locationId: location().locationId,
+          geo: location().geo,
+          isFetching: true
+        },
+        ui: {
+          type: 'temperature',
+          region: 'northAmerica'
+        }
+      }
+    }
+    expect(mapReducer(undefined, {
+      type: types.GET_MAP,
+      payload: true
+    })).toEqual(dataNextState)
+  })
 })
