@@ -19,7 +19,6 @@ const initialState = {
 const updateAppIsFetching = (state, action, value) => {
   return dotProp.set(state, 'forecastDaily.app.isFetching', value)
 }
-
 const updateData = (state, action) => {
   const { payload: { list } } = action
   const data = list.map(x => {
