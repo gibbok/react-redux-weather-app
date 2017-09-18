@@ -1,3 +1,5 @@
+// @flow
+import {ActionType} from '../../types' // eslint-disable-line no-unused-vars
 import {getForecastDaily} from './forecastDailyActions'
 import thunk from 'redux-thunk'
 import configureMockStore from 'redux-mock-store'
@@ -13,10 +15,10 @@ describe('forecastDailyActions', () => {
     const store = mockStore({ })
 
     fetchMock.get(api.forecastDaily(location), {data: 'mockData'})
-    const action = getForecastDaily(location)
+    const action:ActionType = getForecastDaily(location)
 
-    const expectedActions = [
-         {type: 'GET_FORECAST_DAILY', payload: new Promise(() => {}, () => {})}
+    const expectedActions:ActionType = [
+         {type: 'GET_FORECAST_DAILY', payload: new Promise(() => {})}
     ]
     return store.dispatch(action).payload
          .then(data => { // return of async actions
