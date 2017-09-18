@@ -1,6 +1,7 @@
+// @flow
 import getIconClassName from './weatherIcons'
 
-describe(getIconClassName, () => {
+describe('getIconClassName', () => {
   it('it should return a className day for weather-icons', () => {
     expect(getIconClassName(200)).toBe('wi wi-day-storm-showers')
   })
