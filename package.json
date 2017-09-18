@@ -77,7 +77,8 @@
     "webpack": "2.2.1",
     "jest-cli":"21.1.0",
     "fetch-mock":"5.12.2",
-    "flow-bin": "0.54.1"
+    "flow-bin": "0.54.1",
+    "flow-typed":"2.1.5"
   },
   "standard": {
     "env": [
