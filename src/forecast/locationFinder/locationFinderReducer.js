@@ -1,7 +1,9 @@
+import {StateType, ActionType} from '../../types' // eslint-disable-line no-unused-vars
+
 import dotProp from 'dot-prop-immutable'
 import * as types from './locationFinderActionTypes'
 
-const initialState = {
+const initialState:StateType = {
   locationFinder: {
     data: [
     ],
@@ -14,20 +16,20 @@ const initialState = {
   }
 }
 
-const updateAppIsFetching = (state, action, value) => {
+const updateAppIsFetching = (state:StateType, action:ActionType, value:boolean):StateType => {
   return dotProp.set(state, 'locationFinder.app.isFetching', value)
 }
 
-const updateData = (state, action) => {
+const updateData = (state:StateType, action:ActionType):StateType => {
   const locations = action.payload.list.map(({ id, name, sys: { country } }) => ({ id, name, country }))
   return dotProp.set(state, 'locationFinder.data', locations)
 }
 
-const updateUiInputValue = (state, action) => {
+const updateUiInputValue = (state:StateType, action:ActionType):StateType => {
   return dotProp.set(state, 'locationFinder.ui.inputValue', action.payload)
 }
 
-function locationFinderReducer (state = initialState, action) {
+function locationFinderReducer (state:StateType = initialState, action:ActionType):StateType {
   switch (action.type) {
     case types.GET_LOCATIONS_PENDING:
       return updateAppIsFetching(state, action, true)
