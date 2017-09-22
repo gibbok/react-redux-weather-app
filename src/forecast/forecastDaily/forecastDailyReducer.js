@@ -1,9 +1,12 @@
+// @flow
+import {StateType, ActionType} from '../../types' // eslint-disable-line no-unused-vars
+
 import dotProp from 'dot-prop-immutable'
 import * as types from './forecastDailyActionTypes'
 import { createMomentId } from '../../app/utility'
 import location from '../../app/location'
 
-const initialState = {
+const initialState:StateType = {
   forecastDaily: {
     data: [],
     app: {
@@ -16,10 +19,10 @@ const initialState = {
   }
 }
 
-const updateAppIsFetching = (state, action, value) => {
+const updateAppIsFetching = (state:StateType, action:ActionType, value:boolean):StateType => {
   return dotProp.set(state, 'forecastDaily.app.isFetching', value)
 }
-const updateData = (state, action) => {
+const updateData = (state:StateType, action:ActionType):StateType => {
   const { payload: { list } } = action
   const data = list.map(x => {
     return {
@@ -35,7 +38,7 @@ const updateData = (state, action) => {
   return dotProp.set(state, 'forecastDaily.data', data)
 }
 
-function forecastDailyReducer (state = initialState, action) {
+function forecastDailyReducer (state:StateType = initialState, action:ActionType):StateType {
   switch (action.type) {
     case types.GET_FORECAST_DAILY_PENDING:
       return updateAppIsFetching(state, action, true)
