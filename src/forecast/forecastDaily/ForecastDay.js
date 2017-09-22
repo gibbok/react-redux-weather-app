@@ -13,7 +13,7 @@ type PropsType = {
 }
 /* eslint-enable no-undef */
 
-const ForecastDay = ({ date, tempMin, tempMax, iconCode, weatherDescription }:PropsType):React.Element<any> => {
+const ForecastDay:React.StatelessFunctionalComponent<PropsType> = ({ date, tempMin, tempMax, iconCode, weatherDescription }:PropsType):React.Element<any> => {
   const dateFormat = moment.unix(date).format('ddd, MMM D')
   const tempMinRounded = Math.round(tempMin)
   const tempMaxRounded = Math.round(tempMax)

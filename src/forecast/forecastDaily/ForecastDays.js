@@ -10,7 +10,7 @@ type PropsType = {
 }
 /* eslint-enable no-undef */
 
-const ForecastDays = ({ forecastDays, onForecastDayClick }:PropsType):React.Element<any> => (
+const ForecastDays:React.StatelessFunctionalComponent<PropsType> = ({ forecastDays, onForecastDayClick }:PropsType):React.Element<any> => (
   <div>
     <h2>Daily</h2>
     <div>
