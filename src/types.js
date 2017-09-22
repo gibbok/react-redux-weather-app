@@ -1,9 +1,20 @@
 /* eslint-disable no-unused-vars */
-/* global ActionType, StateType, LocationType */
+/* global  ActionType, StateType, LocationType */
+
 export type ActionType ={
-    type:string,
-    payload: Object
+  +type:string,
+  +payload: Object
   }
+
+// type ActionGetForecastDaily={
+//   +type:string,
+//   +payload: Object
+// }
+
+// type ActionFake={
+//   +type:string,
+//   +payload: Object
+// }
 
 export type StateType = {
     +forecastDaily: {
