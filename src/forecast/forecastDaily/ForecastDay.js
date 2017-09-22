@@ -5,7 +5,7 @@ import IconWeather from '../../shared/icon/IconWeather'
 
 /* eslint-disable no-undef */
 type PropsType = {
-  date: number,
+  +date: number,
   +tempMin: number,
   +tempMax: number,
   +iconCode:number,
