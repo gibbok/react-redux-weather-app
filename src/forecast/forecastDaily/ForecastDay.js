@@ -1,9 +1,19 @@
 // @flow
-import React from 'react'
+import * as React from 'react'
 import moment from 'moment'
 import IconWeather from '../../shared/icon/IconWeather'
 
-const ForecastDay = ({ date, tempMin, tempMax, iconCode, weatherDescription }:{+date:Date, +tempMin: number, +tempMax: number, +iconCode:string, +weatherDescription:string }) => {
+/* eslint-disable no-undef */
+type PropsType = {
+  date: number,
+  +tempMin: number,
+  +tempMax: number,
+  +iconCode:number,
+  +weatherDescription:string
+}
+/* eslint-enable no-undef */
+
+const ForecastDay = ({ date, tempMin, tempMax, iconCode, weatherDescription }:PropsType) => {
   const dateFormat = moment.unix(date).format('ddd, MMM D')
   const tempMinRounded = Math.round(tempMin)
   const tempMaxRounded = Math.round(tempMax)
