@@ -1,3 +1,4 @@
+// @flow
 import forecastHourlyReducer from './forecastHourlyReducer'
 import { createMomentId } from '../../app/utility'
 import location from '../../app/location'
