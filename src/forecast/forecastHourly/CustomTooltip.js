@@ -1,6 +1,24 @@
-import React, {Component} from 'react'
+// @flow
+// import React, {Component} from 'react'
+import * as React from 'react'
 
-class CustomTooltip extends Component {
+/* eslint-disable no-undef */
+type PropsType = {
+  active:boolean,
+  payload:Array<{
+    payload:{
+    momentId: string,
+    timespan: number,
+    temp: number,
+    weatherIconCode: number,
+    rain: number | void,
+    day: string,
+    hour: string
+  }}>
+}
+/* eslint-enable no-undef */
+
+class CustomTooltip extends React.Component<PropsType> {
   render () {
     const { payload, active } = this.props
     if (!active) {
