@@ -1,5 +1,5 @@
 // @flow
-import * as React from 'react'
+import * as React from 'react' // eslint-disable-line no-unused-vars
 import moment from 'moment'
 import IconWeather from '../../shared/icon/IconWeather'
 
@@ -13,7 +13,7 @@ type PropsType = {
 }
 /* eslint-enable no-undef */
 
-const ForecastDay:React.StatelessComponent<PropsType> = ({ date, tempMin, tempMax, iconCode, weatherDescription }:PropsType):ReactElement<any> => {
+const ForecastDay = ({ date, tempMin, tempMax, iconCode, weatherDescription }:PropsType):React.Element<any> => {
   const dateFormat = moment.unix(date).format('ddd, MMM D')
   const tempMinRounded = Math.round(tempMin)
   const tempMaxRounded = Math.round(tempMax)
