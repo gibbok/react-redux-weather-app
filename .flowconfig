@@ -1,6 +1,8 @@
 [ignore]
-.*/node_modules/enzyme-matchers/.*
-.*/node_modules/jest-enzyme/.*
+<PROJECT_ROOT>/node_modules/enzyme-matchers/.*
+<PROJECT_ROOT>/node_modules/jest-enzyme/.*
+<PROJECT_ROOT>/node_modules/npx/.*
+
 [include]
 
 [libs]

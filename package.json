@@ -9,7 +9,7 @@
     "start": "webpack-dev-server --config webpack.config.dev.js",
     "build": "webpack --config webpack.config.prod.js",
     "flow": "flow",
-    "postinstall": "flow-typed install"
+    "postinstall": "flow-typed install jest@^20.39.0 && flow-typed install"
   },
   "repository": {
     "type": "git",
@@ -76,10 +76,12 @@
     "standard": "10.0.3",
     "jest-cli":"21.1.0",
     "fetch-mock":"5.12.2",
-    "flow-bin": "0.54.1",
+    "flow-bin": "0.55.0",
     "flow-typed":"2.1.5",
+    "flow-upgrade":"1.0.3",
     "eslint-config-standard":"10.2.1",
-    "eslint-config-standard-flow": "1.0.1"
+    "eslint-config-standard-flow": "1.0.1",
+    "npx":"9.6.0"
   },
   "standard": {
     "env": [
