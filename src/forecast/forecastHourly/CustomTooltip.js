@@ -4,16 +4,16 @@ import * as React from 'react'
 
 /* eslint-disable no-undef */
 type PropsType = {
-  active:boolean,
-  payload:Array<{
-    payload:{
-    momentId: string,
-    timespan: number,
-    temp: number,
-    weatherIconCode: number,
-    rain: number | void,
-    day: string,
-    hour: string
+  +active:boolean,
+  +payload:Array<{
+    +payload:{
+    +momentId: string,
+    +timespan: number,
+    +temp: number,
+    +weatherIconCode: number,
+    +rain: number | void,
+    +day: string,
+    +hour: string
   }}>
 }
 /* eslint-enable no-undef */
