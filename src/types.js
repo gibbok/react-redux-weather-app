@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-/* global ActionType, StateType */
+/* global ActionType, StateType, LocationType */
 export type ActionType ={
     type:string,
     payload: Object
@@ -17,4 +17,11 @@ export type StateType = {
       }
     }
   }
+
+export type LocationType = {
+  +locationId: number, // nyc usa
+  +geo: Array<number>,
+  +isFetching: boolean
+}
+
   /* eslint-enable no-unused-vars */
