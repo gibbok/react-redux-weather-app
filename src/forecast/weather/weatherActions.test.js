@@ -1,3 +1,4 @@
+// @flow
 import {getWeather} from './weatherActions'
 import thunk from 'redux-thunk'
 import configureMockStore from 'redux-mock-store'
@@ -16,7 +17,7 @@ describe('weatherActions', () => {
     const action = getWeather(location)
 
     const expectedActions = [
-         {type: 'GET_WEATHER', payload: new Promise(() => {}, () => {})}
+         {type: 'GET_WEATHER', payload: new Promise(() => {})}
     ]
     return store.dispatch(action).payload
          .then(data => { // return of async actions

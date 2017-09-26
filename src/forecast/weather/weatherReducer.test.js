@@ -1,3 +1,4 @@
+// @flow
 import weatherReducer from './weatherReducer'
 import location from '../../app/location'
 import * as types from './weatherActionTypes'
