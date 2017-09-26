@@ -1,3 +1,4 @@
+// @flow
 import * as actions from './navigationActions'
 import * as types from './navigationActionTypes'
 
