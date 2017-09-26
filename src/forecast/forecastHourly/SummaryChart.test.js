@@ -15,6 +15,7 @@ describe('<SummaryChart />', () => {
         weatherDescription: 'Clouds',
         windDegree: 344,
         windSpeed: 1.3,
+        rain: 1.1,
         humidityUnit: '%',
         humidityValue: 89},
       {
@@ -25,6 +26,7 @@ describe('<SummaryChart />', () => {
         weatherDescription: 'Clouds',
         windDegree: 266.501,
         windSpeed: 1.27,
+        rain: undefined,
         humidityUnit: '%',
         humidityValue: 67
       }

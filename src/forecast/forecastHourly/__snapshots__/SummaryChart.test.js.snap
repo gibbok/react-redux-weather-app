@@ -8,7 +8,7 @@ exports[`<SummaryChart /> should render 1`] = `
         "day": "Tue, Sep 12",
         "hour": "02 PM",
         "momentId": "2017:8:12:2",
-        "rain": undefined,
+        "rain": 1.1,
         "temp": 16,
         "timespan": 1505217600,
         "weatherIconCode": 804,
