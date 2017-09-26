@@ -1,3 +1,4 @@
+// @flow
 import {StateType, ActionType} from '../../types' // eslint-disable-line no-unused-vars
 
 import dotProp from 'dot-prop-immutable'

@@ -8,7 +8,6 @@ type PropsType = {
   name: string,
   country:string
 }
-
 /* eslint-enable no-undef */
 
 const Location:React.StatelessFunctionalComponent<any> = ({ onLocationClick, id, name, country }:PropsType):React.Element<any> => (

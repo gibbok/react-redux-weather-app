@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import Location from './Location'
 
 const LocationFinder = ({ locations, onLocationClick }) => {
@@ -12,4 +12,5 @@ const LocationFinder = ({ locations, onLocationClick }) => {
   const locationList = locations.length > 0 ? <ul>{locationItems}</ul> : null
   return (locationList)
 }
+
 export default LocationFinder

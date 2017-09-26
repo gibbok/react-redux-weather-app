@@ -1,3 +1,4 @@
+// @flow
 import {getLocations, setSearchValue, setLocation} from './locationFinderSearchActions'
 import thunk from 'redux-thunk'
 import configureMockStore from 'redux-mock-store'
