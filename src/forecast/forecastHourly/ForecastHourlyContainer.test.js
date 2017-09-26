@@ -1,3 +1,4 @@
+// @flow
 import React from 'react'
 import { createMockStore, createMockDispatch } from 'redux-test-utils'
 import {shallow} from 'enzyme'
