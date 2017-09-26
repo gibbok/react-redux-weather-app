@@ -1,8 +1,11 @@
+// @flow
+import {ActionType} from '../../types' // eslint-disable-line no-unused-vars
+
 import 'isomorphic-fetch'
 import * as api from '../../app/api'
 import * as types from './forecastHourlyActionTypes'
 
-const getForecastHourly = query => ({
+const getForecastHourly:ActionType = (query:number):ActionType => ({
   type: types.GET_FORECAST_HOURLY,
   payload: new Promise((resolve, reject) => {
     fetch(api.forecast(query)).then(response => {
@@ -11,7 +14,7 @@ const getForecastHourly = query => ({
   })
 })
 
-const setForecastHourlyActiveReportType = type => ({
+const setForecastHourlyActiveReportType:ActionType = (type:string):ActionType => ({
   type: types.SET_FORECAST_HOURLY_ACTIVE_REPORT_TYPE,
   payload: type
 })
