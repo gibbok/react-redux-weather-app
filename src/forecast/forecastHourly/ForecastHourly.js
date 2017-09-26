@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react'
-
+import {ForecastHourlyType} from '../../types' // eslint-disable-line no-unused-vars
 import SummaryChart from './SummaryChart'
 import Details from './Details'
 import SummaryButton from './SummaryButton'
@@ -8,17 +8,7 @@ import DetailsButton from './DetailsButton'
 
 /* eslint-disable no-undef */
 type PropsType = {
-  +forecastHourly:Array<{
-    +humidityUnit: '%',
-    +humidityValue: number,
-    +momentId:string,
-    +temp: number,
-    +timespan:number,
-    +weatherDescription: string,
-    +weatherIconCode: number,
-    +windDegree:number,
-    +windSpeed:number
-  }>,
+  +forecastHourly:ForecastHourlyType,
   +activeTypeReport: string,
   +onSummaryClick: Function,
   +onDetailsClick: Function

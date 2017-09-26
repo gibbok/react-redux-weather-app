@@ -1,21 +1,11 @@
 // @flow
 import * as React from 'react'
+import {ForecastHourlyType} from '../../types' // eslint-disable-line no-unused-vars
 import DetailDayGroup from './DetailDayGroup'
 
 /* eslint-disable no-undef */
 type PropsType = {
-  forecastHourly:Array<{
-    +humidityUnit: '%',
-    +humidityValue: number,
-    +momentId:string,
-    // +rain?: void | number,
-    +temp: number,
-    +timespan:number,
-    +weatherDescription: string,
-    +weatherIconCode: number,
-    +windDegree:number,
-    +windSpeed:number
-  }>
+  +forecastHourly:ForecastHourlyType
 }
 /* eslint-enable no-undef */
 

@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-/* global  ActionType, StateType, LocationType */
+/* global  ActionType, StateType, LocationType, ForecastHourlyType */
 
 export type ActionType ={
   +type:string,
@@ -35,4 +35,16 @@ export type LocationType = {
   +isFetching: boolean
 }
 
+export type ForecastHourlyType =Array<{
+  +humidityUnit: '%',
+  +humidityValue: number,
+  +momentId:string,
+  +temp: number,
+  +timespan:number,
+  +rain: void | number,
+  +weatherDescription: string,
+  +weatherIconCode: number,
+  +windDegree:number,
+  +windSpeed:number
+}>
   /* eslint-enable no-unused-vars */

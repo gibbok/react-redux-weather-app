@@ -18,7 +18,7 @@ type PropsType = {
 }
 /* eslint-enable no-undef */
 
-class CustomTooltip extends React.Component<PropsType> {
+class CustomTooltip extends React.Component<any> {
   render () {
     const { payload, active } = this.props
     if (!active) {
