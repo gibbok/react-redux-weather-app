@@ -1,5 +1,5 @@
 // @flow
-import React from 'react'
+import * as React from 'react'
 import NavigationContainer from '../shared/navigation/NavigationContainer'
 import LocationFinderSearchContainer from '../forecast/locationFinder/LocationFinderSearchContainer'
 import LocationFinderContainer from '../forecast/locationFinder/LocationFinderContainer'

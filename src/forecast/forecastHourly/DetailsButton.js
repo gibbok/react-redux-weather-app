@@ -5,7 +5,6 @@ import * as React from 'react'
 type PropsType = {
   onDetailsClick: Function,
 }
-
 /* eslint-enable no-undef */
 
 const DetailsButton:React.StatelessFunctionalComponent<any> = ({ onDetailsClick }:PropsType):React.Element<any> => {

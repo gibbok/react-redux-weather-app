@@ -25,6 +25,7 @@ describe('<ForecastHourly />', () => {
     const wrapper = shallow(<ForecastHourly activeTypeReport={'summary'} />)
     expect(wrapper.find(SummaryChart).length).toBe(1)
   })
+
   it('should render Details when activeTypeReport is not summary', () => {
     const wrapper = shallow(<ForecastHourly />)
     expect(wrapper.find(Details).length).toBe(1)

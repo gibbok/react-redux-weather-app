@@ -1,5 +1,5 @@
 // @flow
-const mapIcons = {
+const mapIcons:Object = {
   '200': {
     label: 'thunderstorm with light rain',
     icon: 'storm-showers'
