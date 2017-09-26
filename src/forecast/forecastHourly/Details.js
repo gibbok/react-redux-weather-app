@@ -1,7 +1,25 @@
-import React from 'react'
+// @flow
+import * as React from 'react'
 import DetailDayGroup from './DetailDayGroup'
 
-const Details = ({ forecastHourly }) => {
+/* eslint-disable no-undef */
+type PropsType = {
+  forecastHourly:Array<{
+    +humidityUnit: '%',
+    +humidityValue: number,
+    +momentId:string,
+    // +rain?: void | number,
+    +temp: number,
+    +timespan:number,
+    +weatherDescription: string,
+    +weatherIconCode: number,
+    +windDegree:number,
+    +windSpeed:number
+  }>
+}
+/* eslint-enable no-undef */
+
+const Details:React.StatelessFunctionalComponent<PropsType> = ({ forecastHourly }:PropsType):React.Element<any> => {
   const hoursByDate = forecastHourly.reduce((acc, hour) => {
     (acc[hour.momentId] || (acc[hour.momentId] = [])).push(hour)
     return acc
