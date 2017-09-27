@@ -25,6 +25,14 @@ const mapDispatchToProps = (dispatch:Dispatch<*>, ownProps) => {
       e.preventDefault()
       let value = e.target.value
       dispatch(setSearchValue(value))
+    },
+    onLocationKeyPress: (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault()
+        let value = e.target.value
+        dispatch(setSearchValue(value))
+        dispatch(getLocations(value))
+      }
     }
   }
 }
