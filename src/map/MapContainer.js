@@ -1,4 +1,4 @@
-// @flowimport type { Dispatch } from 'redux' // eslint-disable-line no-unused-vars
+// @flow
 import { connect } from 'react-redux'
 import Map from './Map'
 import { setMapRegion, setMapType } from './mapActions'
