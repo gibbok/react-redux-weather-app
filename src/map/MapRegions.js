@@ -1,6 +1,18 @@
-import React from 'react'
+// @flow
+import * as React from 'react'
 
-const MapRegions = ({ regions, onRegionsChange }) => {
+/* eslint-disable no-undef */
+type PropsType = {
+  +regions: Array<{
+    +id: string,
+    +title:string,
+    +isActive:boolean
+  }>,
+  +onRegionsChange: Function
+}
+/* eslint-enable no-undef */
+
+const MapRegions:React.StatelessFunctionalComponent<any> = ({ regions, onRegionsChange }:PropsType):React.Element<any> => {
   const options = regions.map((region) =>
     <option
       value={region.id}
