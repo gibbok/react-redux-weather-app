@@ -1,4 +1,11 @@
+
 import React from 'react'
+/* eslint-disable no-undef */
+type PropsType = {
+  +regions: Array<Object>,
+  +onRegionsChange: Function
+}
+/* eslint-enable no-undef */
 
 const MapTypes = ({ types, onTypesClick }) => {
   return (
