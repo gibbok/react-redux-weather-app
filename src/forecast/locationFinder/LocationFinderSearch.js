@@ -11,10 +11,10 @@ type PropsType = {
 /* eslint-enable no-undef */
 
 const LocationFinderSearch:React.StatelessFunctionalComponent<any> = ({ onLocationChange, onSearchClick, inputValue }:PropsType):React.Element<any> => (
-  <form>
+  <div>
     <TextField hintText='Enter a location' onChange={(e) => onLocationChange(e)} />
     <FlatButton onClick={(e) => onSearchClick(e, inputValue)}>Search</FlatButton>
-  </form>
+  </div>
 )
 
 export default LocationFinderSearch
