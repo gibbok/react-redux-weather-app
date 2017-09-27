@@ -5,11 +5,11 @@ import Navigation from './Navigation'
 /* eslint-disable no-undef */
 type PropsType = {
   +navigations: Array<{
-    id:string,
-    isActive:boolean,
-    title:string,
-    tooltip:string,
-    url:string
+    +id:string,
+    +isActive:boolean,
+    +title:string,
+    +tooltip:string,
+    +url:string
   }>,
   +onNavigationClick: Function,
 }

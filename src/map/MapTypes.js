@@ -4,9 +4,9 @@ import * as React from 'react'
 /* eslint-disable no-undef */
 type PropsType = {
   +types: Array<{
-    id: string,
-    title: string,
-    isActive: boolean
+    +id: string,
+    +title: string,
+    +isActive: boolean
   }>,
   +onTypesClick: Function
 }
