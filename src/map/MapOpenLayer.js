@@ -7,10 +7,12 @@ import * as api from '../app/api'
  * Open Layer interactive world map.
  */
 class MapOpenLayer extends React.Component<any, any> {
-  olMap: Object;  // eslint-disable-line no-undef
-  state: Object; // eslint-disable-line no-undef
+  // `Class properties transform`
+  // olMap: Object;  // eslint-disable-line no-undef
+  // state: Object; // eslint-disable-line no-undef
   constructor (props:Object) {
     super(props)
+    // $FlowFixMe: surpress flow error as web-pack throw errors when using `Class properties transform`
     this.olMap = {}
     this.state = {
       activeMapRegion: 'currentLocation',
@@ -86,6 +88,7 @@ class MapOpenLayer extends React.Component<any, any> {
     }))
 
     // create map
+    // $FlowFixMe: suppressing this error until we can refactor
     this.olMap = new ol.Map({
       target: 'map',
       layers: [
@@ -129,6 +132,7 @@ class MapOpenLayer extends React.Component<any, any> {
     let tile = new ol.source.XYZ({
       url: url
     })
+    // $FlowFixMe
     let layer = this.olMap.getLayers().getArray()[1]
     layer.setSource(tile)
   }
@@ -161,7 +165,7 @@ class MapOpenLayer extends React.Component<any, any> {
         newCenterMap = [18.5333, 4.3833]
         break
     }
-
+    // $FlowFixMe
     let view = this.olMap.getView()
     view.animate({
       center: ol.proj.fromLonLat(newCenterMap),
