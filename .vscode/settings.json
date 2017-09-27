@@ -1,6 +1,5 @@
 {
-    "editor.mouseWheelZoom": true,
-    "window.zoomLevel": 3,
+
     "javascript.validate.enable": false,
     "standard.autoFixOnSave":  true,
     "standard.options": {

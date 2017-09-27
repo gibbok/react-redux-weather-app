@@ -1,4 +1,5 @@
-export const createMomentId = timeInMs => {
+// @flow
+export const createMomentId = (timeInMs: number):string => {
   let moment = new Date(timeInMs)
   let day = moment.getUTCDay()
   let date = moment.getUTCDate()

@@ -1,3 +1,4 @@
+// @flow
 import mapReducer from './mapReducer'
 import * as types from './mapActionTypes'
 import location from '../app/location'

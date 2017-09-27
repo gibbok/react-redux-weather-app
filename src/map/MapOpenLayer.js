@@ -1,14 +1,19 @@
-import React, {Component} from 'react'
+// @flow
+import * as React from 'react'
 import * as ol from 'openlayers'
 import * as api from '../app/api'
 
 /*
  * Open Layer interactive world map.
  */
-class MapOpenLayer extends Component {
-  constructor (props) {
+class MapOpenLayer extends React.Component<any, any> {
+  // `Class properties transform`
+  // olMap: Object;  // eslint-disable-line no-undef
+  // state: Object; // eslint-disable-line no-undef
+  constructor (props:Object) {
     super(props)
-    this.olMap = undefined
+    // $FlowFixMe: surpress flow error as web-pack throw errors when using `Class properties transform`
+    this.olMap = {}
     this.state = {
       activeMapRegion: 'currentLocation',
       activeMapType: 'temperature'
@@ -43,7 +48,7 @@ class MapOpenLayer extends Component {
       this.state.activeMapType = activeMapType.id
     }
   }
-  componentDidUpdate (prevProps) {
+  componentDidUpdate (prevProps:Object) {
     this.setMapRegion()
     this.setMapType()
   }
@@ -83,6 +88,7 @@ class MapOpenLayer extends Component {
     }))
 
     // create map
+    // $FlowFixMe: suppressing this error until we can refactor
     this.olMap = new ol.Map({
       target: 'map',
       layers: [
@@ -103,7 +109,7 @@ class MapOpenLayer extends Component {
 /*
  * Change the layer information on the map, allowing user to chose different weather information.
  */
-  changeLayerOlMap (name) {
+  changeLayerOlMap (name:string) {
     let url
     switch (name) {
       case 'default':
@@ -126,6 +132,7 @@ class MapOpenLayer extends Component {
     let tile = new ol.source.XYZ({
       url: url
     })
+    // $FlowFixMe
     let layer = this.olMap.getLayers().getArray()[1]
     layer.setSource(tile)
   }
@@ -158,7 +165,7 @@ class MapOpenLayer extends Component {
         newCenterMap = [18.5333, 4.3833]
         break
     }
-
+    // $FlowFixMe
     let view = this.olMap.getView()
     view.animate({
       center: ol.proj.fromLonLat(newCenterMap),

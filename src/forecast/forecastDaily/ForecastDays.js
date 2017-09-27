@@ -1,7 +1,16 @@
-import React from 'react'
+
+// @flow
+import * as React from 'react'
 import ForecastDay from './ForecastDay'
 
-const ForecastDays = ({ forecastDays, onForecastDayClick }) => (
+/* eslint-disable no-undef */
+type PropsType = {
+  +forecastDays: Array<Object>,
+  +onForecastDayClick: Object
+}
+/* eslint-enable no-undef */
+
+const ForecastDays:React.StatelessFunctionalComponent<PropsType> = ({ forecastDays, onForecastDayClick }:PropsType):React.Element<any> => (
   <div>
     <h2>Daily</h2>
     <div>

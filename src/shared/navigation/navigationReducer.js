@@ -1,7 +1,10 @@
+// @flow
+import {StateType, ActionType} from '../../types' // eslint-disable-line no-unused-vars
+
 import dotProp from 'dot-prop-immutable'
 import * as types from './navigationActionTypes'
 
-const initialState = {
+const initialState:StateType = {
   navigation: {
     data: [
       {
@@ -25,7 +28,7 @@ const initialState = {
   }
 }
 
-const updateUiActive = (state, action) => {
+const updateUiActive = (state:StateType, action:ActionType) => {
   return dotProp.set(state, 'navigation.ui.active', action.payload)
 }
 
@@ -37,7 +40,7 @@ const updateData = (state, action) => {
   return dotProp.set(state, 'navigation.data', updatedData)
 }
 
-function navigationReducer (state = initialState, action) {
+function navigationReducer (state:StateType = initialState, action:ActionType) {
   switch (action.type) {
     case types.SET_ACTIVE:
       return updateData(updateUiActive(state, action), action)

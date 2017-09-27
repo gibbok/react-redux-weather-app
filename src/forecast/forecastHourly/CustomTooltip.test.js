@@ -1,3 +1,4 @@
+// @flow
 import React from 'react'
 import {shallow} from 'enzyme'
 import toJson from 'enzyme-to-json'
@@ -8,7 +9,8 @@ describe('<CustomTooltip />', () => {
     const wrapper = shallow(
       <CustomTooltip
         active={false}
-    />
+        payload={[]}
+      />
     )
     expect(wrapper.find(CustomTooltip).length).toEqual(0)
   })

@@ -1,3 +1,4 @@
+// @flow
 import forecastDailyReducer from './forecastDailyReducer'
 import * as types from './forecastDailyActionTypes'
 import { createMomentId } from '../../app/utility'

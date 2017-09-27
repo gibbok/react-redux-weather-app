@@ -1,3 +1,4 @@
+// @flow
 import {getLocations, setSearchValue, setLocation} from './locationFinderSearchActions'
 import thunk from 'redux-thunk'
 import configureMockStore from 'redux-mock-store'
@@ -19,23 +20,23 @@ describe('locationFinderSearchActions', () => {
     const action = setLocation(location)
 
     const expectedActions = [
-                 {type: weatherActionTypes.GET_WEATHER, payload: new Promise(() => {}, () => {})},
-                 {type: forecastDailyActionTypes.GET_FORECAST_DAILY, payload: new Promise(() => {}, () => {})},
-                 {type: forecastHourlyActionTypes.GET_FORECAST_HOURLY, payload: new Promise(() => {}, () => {})}
+                 {type: weatherActionTypes.GET_WEATHER, payload: new Promise(() => {})},
+                 {type: forecastDailyActionTypes.GET_FORECAST_DAILY, payload: new Promise(() => {})},
+                 {type: forecastHourlyActionTypes.GET_FORECAST_HOURLY, payload: new Promise(() => {})}
     ]
     store.dispatch(action)
     expect(store.getActions()).toEqual(expectedActions)
   })
 
   it('should dispatch action GET_LOCATIONS and check for its fulfillment', () => {
-    const location = 5128581
+    const location = '5128581'
     const store = mockStore({ })
 
     fetchMock.get(api.find(location), {data: 'mockData'})
     const action = getLocations(location)
 
     const expectedActions = [
-             {type: types.GET_LOCATIONS, payload: new Promise(() => {}, () => {})}
+             {type: types.GET_LOCATIONS, payload: new Promise(() => {})}
     ]
     return store.dispatch(action).payload
              .then(data => { // return of async actions

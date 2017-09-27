@@ -1,3 +1,4 @@
+// @flow
 import React from 'react'
 import {shallow} from 'enzyme'
 import toJson from 'enzyme-to-json'
@@ -9,6 +10,7 @@ describe('<SummaryButton />', () => {
     const wrapper = shallow(<SummaryButton />)
     expect(toJson(wrapper)).toMatchSnapshot()
   })
+
   it('should simulate click event', () => {
     const onSummaryClick = sinon.spy()
     let wrapper = shallow(<SummaryButton onSummaryClick={onSummaryClick} />)

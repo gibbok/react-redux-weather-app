@@ -1,7 +1,15 @@
-import React from 'react'
+// @flow
+import * as React from 'react'
+import {ForecastHourlyType} from '../../types' // eslint-disable-line no-unused-vars
 import DetailDayGroup from './DetailDayGroup'
 
-const Details = ({ forecastHourly }) => {
+/* eslint-disable no-undef */
+type PropsType = {
+  +forecastHourly:ForecastHourlyType
+}
+/* eslint-enable no-undef */
+
+const Details:React.StatelessFunctionalComponent<PropsType> = ({ forecastHourly }:PropsType):React.Element<any> => {
   const hoursByDate = forecastHourly.reduce((acc, hour) => {
     (acc[hour.momentId] || (acc[hour.momentId] = [])).push(hour)
     return acc

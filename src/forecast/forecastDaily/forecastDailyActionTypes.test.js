@@ -1,3 +1,4 @@
+// @flow
 import * as types from './forecastDailyActionTypes'
 
 describe('forecastDailyActionTypes', () => {

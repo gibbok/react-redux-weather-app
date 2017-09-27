@@ -1,3 +1,4 @@
+// @flow
 import React from 'react'
 import { render, mount, shallow } from 'enzyme'
 import Location from './Location'

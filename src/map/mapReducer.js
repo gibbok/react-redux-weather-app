@@ -1,6 +1,8 @@
+// @flow
 import dotProp from 'dot-prop-immutable'
 import * as types from './mapActionTypes'
 import location from '../app/location'
+import {StateType, ActionType} from '../types' // eslint-disable-line no-unused-vars
 
 const initialState = {
   map: {
@@ -82,15 +84,15 @@ const initialState = {
   }
 }
 
-const updateAppIsFetching = (state, action, value) => {
+const updateAppIsFetching = (state:StateType, action:ActionType, value:boolean) => {
   return dotProp.set(state, 'map.app.isFetching', value)
 }
 
-const updateType = (state, action) => {
+const updateType = (state:StateType, action:ActionType) => {
   return dotProp.set(state, 'map.ui.type', action.payload)
 }
 
-const updateTypes = (state, action) => {
+const updateTypes = (state:StateType, action:ActionType) => {
   let types = state.map.data.types.map(type => {
     type.isActive = type.id === action.payload
     return type
@@ -98,11 +100,11 @@ const updateTypes = (state, action) => {
   return dotProp.set(state, 'map.data.types', types)
 }
 
-const updateRegion = (state, action) => {
+const updateRegion = (state:StateType, action:ActionType) => {
   return dotProp.set(state, 'map.data.region', action.payload)
 }
 
-const updateRegions = (state, action) => {
+const updateRegions = (state:StateType, action:ActionType) => {
   let regions = state.map.data.regions.map(region => {
     region.isActive = region.id === action.payload
     return region
@@ -110,7 +112,7 @@ const updateRegions = (state, action) => {
   return dotProp.set(state, 'map.data.regions', regions)
 }
 
-function mapReducer (state = initialState, action) {
+function mapReducer (state:StateType = initialState, action:ActionType):StateType {
   switch (action.type) {
     case types.GET_MAP:
       return updateAppIsFetching(state, action, true)

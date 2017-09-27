@@ -1,1 +1,2 @@
-export const SET_ACTIVE = 'SET_ACTIVE'
+// @flow
+export const SET_ACTIVE:string = 'SET_ACTIVE'

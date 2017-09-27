@@ -1,3 +1,4 @@
+// @flow
 import locationFinderReducer from './locationFinderReducer'
 import * as types from './locationFinderActionTypes'
 

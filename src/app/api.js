@@ -1,19 +1,20 @@
+// @flow
 import {apiUrl, apiKey, apiMapTemperature, apiMapPrecipitation, apiMapPressure, apiMapWind, apiMapCoulds} from './config'
 
-export const find = query => `${apiUrl}find?q=${query}&APPID=${apiKey}`
+export const find = (query: string):string => `${apiUrl}find?q=${query}&APPID=${apiKey}`
 
-export const weather = id => `${apiUrl}weather?id=${id}&APPID=${apiKey}&units=metric`
+export const weather = (id: number):string => `${apiUrl}weather?id=${id}&APPID=${apiKey}&units=metric`
 
-export const forecastDaily = id => `${apiUrl}forecast/daily?id=${id}&APPID=${apiKey}&units=metric`
+export const forecastDaily = (id: number):string => `${apiUrl}forecast/daily?id=${id}&APPID=${apiKey}&units=metric`
 
-export const forecast = id => `${apiUrl}forecast?id=${id}&APPID=${apiKey}&units=metric`
+export const forecast = (id: number):string => `${apiUrl}forecast?id=${id}&APPID=${apiKey}&units=metric`
 
-export const mapTemperature = () => `${apiMapTemperature}?APPID=${apiKey}`
+export const mapTemperature = ():string => `${apiMapTemperature}?APPID=${apiKey}`
 
-export const mapPrecipitation = () => `${apiMapPrecipitation}?APPID=${apiKey}`
+export const mapPrecipitation = ():string => `${apiMapPrecipitation}?APPID=${apiKey}`
 
-export const mapPressure = () => `${apiMapPressure}?APPID=${apiKey}`
+export const mapPressure = ():string => `${apiMapPressure}?APPID=${apiKey}`
 
-export const mapWind = () => `${apiMapWind}?APPID=${apiKey}`
+export const mapWind = ():string => `${apiMapWind}?APPID=${apiKey}`
 
-export const mapCloud = () => `${apiMapCoulds}?APPID=${apiKey}`
+export const mapCloud = ():string => `${apiMapCoulds}?APPID=${apiKey}`

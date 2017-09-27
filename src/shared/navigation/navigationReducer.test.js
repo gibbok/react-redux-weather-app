@@ -1,8 +1,6 @@
+// @flow
 import navigationReducer from './navigationReducer'
 import * as types from './navigationActionTypes'
-// import {setActive} from './navigationActions'
-// import { createMomentId } from '../../app/utility'
-// import location from '../../app/location'
 
 describe('navigationReducer', () => {
   it('should return the initial state', () => {

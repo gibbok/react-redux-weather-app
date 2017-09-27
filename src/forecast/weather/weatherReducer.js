@@ -1,9 +1,11 @@
+// @flow
+import {StateType, ActionType} from '../../types' // eslint-disable-line no-unused-vars
 import dotProp from 'dot-prop-immutable'
 import * as types from './weatherActionTypes'
 import location from '../../app/location'
 import moment from 'moment'
 
-const initialState = {
+const initialState:StateType = {
   weather: {
     data: {},
     app: {
@@ -14,11 +16,11 @@ const initialState = {
   }
 }
 
-const updateAppIsFetching = (state, action, value) => {
+const updateAppIsFetching = (state:StateType, action:ActionType, value:boolean):StateType => {
   return dotProp.set(state, 'weather.app.isFetching', value)
 }
 
-const updateData = (state, action) => {
+const updateData = (state:StateType, action:ActionType):StateType => {
   const { payload: { name, main, weather, wind, sys, visibility, clouds } } = action
   const weatherData = {
     name: name,
@@ -43,7 +45,7 @@ const updateData = (state, action) => {
   return dotProp.set(state, 'weather.data', weatherData)
 }
 
-function weatherReducer (state = initialState, action) {
+function weatherReducer (state:StateType = initialState, action:ActionType):StateType {
   switch (action.type) {
     case types.GET_WEATHER_PENDING:
       return updateAppIsFetching(state, action, true)

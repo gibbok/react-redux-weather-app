@@ -1,8 +1,9 @@
-import React, {Component} from 'react'
+// @flow
+import * as React from 'react'
 import IconWeather from '../../shared/icon/IconWeather'
 
-class SummaryChartIcon extends Component {
-  render () {
+class SummaryChartIcon extends React.Component<any> {
+  render ():React.Element<any> {
     const { cx, cy, payload: {weatherIconCode} } = this.props
     return (
       <svg x={cx - 10} y={cy + 20}>

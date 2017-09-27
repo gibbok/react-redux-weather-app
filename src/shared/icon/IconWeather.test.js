@@ -1,3 +1,4 @@
+// @flow
 import React from 'react'
 import IconWeather from './IconWeather'
 import {shallow} from 'enzyme'

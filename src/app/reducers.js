@@ -1,3 +1,4 @@
+// @flow
 import { combineReducers } from 'redux'
 import locationFinderReducer from '../forecast/locationFinder/locationFinderReducer'
 import navigationReducer from '../shared/navigation/navigationReducer'

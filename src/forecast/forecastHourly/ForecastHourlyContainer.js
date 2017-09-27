@@ -1,11 +1,9 @@
+// @flow
 import { connect } from 'react-redux'
 import ForecastHourly from './ForecastHourly'
 import { getForecastHourly, setForecastHourlyActiveReportType } from './forecastHourlyActions'
 import store from '../../app/store'
-
-// const forecastHourly = (forecastHourly) => {
-//   return forecastHourly.data.filter(x => x.momentId === forecastHourly.ui.selectedDate)
-// }
+import type { Dispatch } from 'redux' // eslint-disable-line no-unused-vars
 
 const forecastHourly = (forecastHourly) => {
   return forecastHourly.data
@@ -27,7 +25,7 @@ const mapStateToProps = (state) => {
 }
 
 /* istanbul ignore next */
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch:Dispatch<*>, ownProps) => {
   return {
     onSummaryClick: (e) => {
       e.preventDefault()

@@ -1,3 +1,4 @@
+// @flow
 import location from './location'
 
 describe('location', () => {

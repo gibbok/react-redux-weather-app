@@ -1,6 +1,8 @@
+// @flow
 import { connect } from 'react-redux'
 import Map from './Map'
 import { setMapRegion, setMapType } from './mapActions'
+import type { Dispatch } from 'redux' // eslint-disable-line no-unused-vars
 
 const map = state => {
   return state.mapReducer.map.data
@@ -28,7 +30,7 @@ const mapStateToProps = (state) => {
 }
 
 /* istanbul ignore next */
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch:Dispatch<*>, ownProps) => {
   return {
     onRegionsChange: (region) => {
       dispatch(setMapRegion(region))

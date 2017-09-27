@@ -1,4 +1,5 @@
-import React from 'react'
+// @flow
+import * as React from 'react'
 import {shallow} from 'enzyme'
 import toJson from 'enzyme-to-json'
 import ForecastHourly from './ForecastHourly'
@@ -24,6 +25,7 @@ describe('<ForecastHourly />', () => {
     const wrapper = shallow(<ForecastHourly activeTypeReport={'summary'} />)
     expect(wrapper.find(SummaryChart).length).toBe(1)
   })
+
   it('should render Details when activeTypeReport is not summary', () => {
     const wrapper = shallow(<ForecastHourly />)
     expect(wrapper.find(Details).length).toBe(1)

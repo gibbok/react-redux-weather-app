@@ -1,3 +1,4 @@
+// @flow
 import { connect } from 'react-redux'
 import ForecastDays from './ForecastDays'
 import { getForecastDaily } from './forecastDailyActions'

@@ -1,3 +1,4 @@
+// @flow
 import {getForecastHourly, setForecastHourlyActiveReportType} from './forecastHourlyActions'
 import thunk from 'redux-thunk'
 import configureMockStore from 'redux-mock-store'
@@ -17,8 +18,9 @@ describe('forecastHourlyActions', () => {
     const action = getForecastHourly(location)
 
     const expectedActions = [
-         {type: 'GET_FORECAST_HOURLY', payload: new Promise(() => {}, () => {})}
+      {type: 'GET_FORECAST_HOURLY', payload: new Promise(() => {})}
     ]
+
     return store.dispatch(action).payload
          .then(data => { // return of async actions
            expect(store.getActions()).toEqual(expectedActions)

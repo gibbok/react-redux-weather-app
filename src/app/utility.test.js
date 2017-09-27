@@ -1,3 +1,4 @@
+// @flow
 import {createMomentId} from './utility'
 
 describe('utility', () => {

@@ -1,9 +1,9 @@
+// @flow
 import React from 'react'
-import {shallow, mount} from 'enzyme'
+import {shallow} from 'enzyme'
 import toJson from 'enzyme-to-json'
 import ForecastDay from './ForecastDay'
 import IconWeather from '../../shared/icon/IconWeather'
-import sinon from 'sinon'
 
 describe('<ForecastDay />', () => {
   it('should render', () => {
