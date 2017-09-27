@@ -1,5 +1,5 @@
 // @flow
-import {ActionType} from '../../types' // eslint-disable-line no-unused-vars
+import {ActionType} from '../types' // eslint-disable-line no-unused-vars
 
 import * as types from './mapActionTypes'
 
