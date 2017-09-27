@@ -1,7 +1,15 @@
+// @flow
 import * as React from 'react'
 import Location from './Location'
 
-const LocationFinder = ({ locations, onLocationClick }) => {
+/* eslint-disable no-undef */
+type PropsType = {
+  +locations: Array<Object>,
+  +onLocationClick: Function
+}
+/* eslint-enable no-undef */
+
+const LocationFinder:React.StatelessFunctionalComponent<any> = ({ locations, onLocationClick }:PropsType) => {
   const locationItems = locations.map((location, index) =>
     <Location
       key={index}
