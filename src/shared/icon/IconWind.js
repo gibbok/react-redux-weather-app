@@ -1,6 +1,13 @@
-import React from 'react'
+// @flow
+import * as React from 'react'
 
-const IconWind = ({degree}) => {
+/* eslint-disable no-undef */
+type PropsType = {
+  +degree: number,
+}
+/* eslint-enable no-undef */
+
+const IconWind:React.StatelessFunctionalComponent<PropsType> = ({degree}:PropsType):React.Element<any> => {
   const degreeAdjusted = -90 + degree
   const style = {
     display: 'inline-block',
