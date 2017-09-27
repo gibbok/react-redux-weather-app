@@ -3,7 +3,7 @@ import * as React from 'react'
 
 /* eslint-disable no-undef */
 type PropsType = {
-  onDetailsClick: Function,
+  +onDetailsClick: Function,
 }
 /* eslint-enable no-undef */
 

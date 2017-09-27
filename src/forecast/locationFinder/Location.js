@@ -3,10 +3,10 @@ import * as React from 'react'
 
 /* eslint-disable no-undef */
 type PropsType = {
-  onLocationClick: Function,
-  id: number,
-  name: string,
-  country:string
+  +onLocationClick: Function,
+  +id: number,
+  +name: string,
+  +country:string
 }
 /* eslint-enable no-undef */
 

@@ -6,17 +6,16 @@ import IconWind from '../../shared/icon/IconWind'
 
 /* eslint-disable no-undef */
 type PropsType = {
-  momentId: string,
-  timespan: number,
-  temp: number,
-  weatherIconCode: number,
-  weatherDescription: string,
-  windDegree: number,
-  windSpeed: number,
-  humidityUnit: '%',
-  humidityValue: number
+  +momentId: string,
+  +timespan: number,
+  +temp: number,
+  +weatherIconCode: number,
+  +weatherDescription: string,
+  +windDegree: number,
+  +windSpeed: number,
+  +humidityUnit: '%',
+  +humidityValue: number
 }
-
 /* eslint-enable no-undef */
 
 const DetailHour:React.StatelessFunctionalComponent<PropsType> = ({ momentId, timespan, temp, weatherIconCode, weatherDescription, windDegree, windSpeed, humidityUnit, humidityValue }:PropsType):React.Element<any> => {
