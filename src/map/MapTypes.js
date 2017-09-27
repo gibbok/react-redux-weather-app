@@ -1,13 +1,18 @@
 
-import React from 'react'
+// @flow
+import * as React from 'react'
 /* eslint-disable no-undef */
 type PropsType = {
-  +regions: Array<Object>,
-  +onRegionsChange: Function
+  +types: Array<{
+    id: string,
+    title: string,
+    isActive: boolean
+  }>,
+  +onTypesClick: Function
 }
 /* eslint-enable no-undef */
 
-const MapTypes = ({ types, onTypesClick }) => {
+const MapTypes:React.StatelessFunctionalComponent<any> = ({ types, onTypesClick }:PropsType):React.Element<any> => {
   return (
     <div >
       {types.map((type) =>
