@@ -1,16 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<LocationFinderSearch /> should render 1`] = `
-<form>
-  <input
+<div>
+  <TextField
+    disabled={false}
+    floatingLabelFixed={false}
+    fullWidth={false}
+    hintText="Enter a location"
+    multiLine={false}
     onChange={[Function]}
-    placeholder="Location"
+    onKeyPress={[Function]}
+    rows={1}
     type="text"
+    underlineShow={true}
   />
-  <input
+  <FlatButton
+    disabled={false}
+    fullWidth={false}
+    labelPosition="after"
+    labelStyle={Object {}}
     onClick={[Function]}
-    type="submit"
-    value="Search"
-  />
-</form>
+    onKeyboardFocus={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onTouchStart={[Function]}
+    primary={false}
+    secondary={false}
+  >
+    Search
+  </FlatButton>
+</div>
 `;

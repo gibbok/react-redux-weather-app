@@ -4,6 +4,7 @@ exports[`<LocationFinderSearchContainer /> should render 1`] = `
 <LocationFinderSearch
   inputValue=""
   onLocationChange={[Function]}
+  onLocationKeyPress={[Function]}
   onSearchClick={[Function]}
   store={
     Object {
