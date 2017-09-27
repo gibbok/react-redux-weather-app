@@ -1,9 +1,35 @@
-import React from 'react'
+// @flow
+import * as React from 'react'
 import IconWind from '../../shared/icon/IconWind'
 import moment from 'moment'
 import IconWeather from '../../shared/icon/IconWeather'
 
-const Weather = ({ weather: {
+/* eslint-disable no-undef */
+type PropsType = {
+  +weather:{
+    +name: string,
+    +country: string,
+    +icon: number,
+    +temperature: number,
+    +temperatureMin: number,
+    +temperatureMax: number,
+    +weatherMain: number,
+    +weatherDescription: string,
+    +weatherIcon: number,
+    +updatedTime:number,
+    +windDegree: number,
+    +windSpeed: number,
+    +visibility: number,
+    +humidity: number,
+    +sunrise: number,
+    +sunset: number,
+    +cloudiness: number,
+    +pressure: number,
+    +pressureUnit: 'hPa'
+}}
+/* eslint-enable no-undef */
+
+const Weather:React.StatelessFunctionalComponent<any> = ({ weather: {
   name,
   country,
   icon,
@@ -23,7 +49,8 @@ const Weather = ({ weather: {
   cloudiness,
   pressure,
   pressureUnit
- } }) => {
+ }
+}:PropsType):React.Element<any> => {
   const updatedTimeFormat = moment.unix(updatedTime).format('h:mm A')
   const sunriseFormat = moment.unix(sunrise).format('h:mm A')
   const sunsetFormat = moment.unix(sunset).format('h:mm A')

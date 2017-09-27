@@ -16,6 +16,7 @@ describe('<Weather />', () => {
       weatherMain: 'Clear',
       weatherDescription: 'clear sky',
       updatedTime: 1505196639,
+      weatherIcon: 200,
       windDegree: 306.501,
       windSpeed: 1.29,
       visibility: 16093,
