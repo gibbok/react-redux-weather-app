@@ -6,16 +6,6 @@ export type ActionType ={
   +payload: Object
   }
 
-// type ActionGetForecastDaily={
-//   +type:string,
-//   +payload: Object
-// }
-
-// type ActionFake={
-//   +type:string,
-//   +payload: Object
-// }
-
 export type StateType = {
     +forecastDaily: {
       +data: Array<Object>,
@@ -47,4 +37,5 @@ export type ForecastHourlyType =Array<{
   +windDegree:number,
   +windSpeed:number
 }>
-  /* eslint-enable no-unused-vars */
+
+/* eslint-enable no-unused-vars */
