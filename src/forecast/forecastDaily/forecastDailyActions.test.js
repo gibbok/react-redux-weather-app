@@ -1,6 +1,5 @@
 // @flow
 import {ActionType} from '../../types' // eslint-disable-line no-unused-vars
-
 import {getForecastDaily} from './forecastDailyActions'
 import thunk from 'redux-thunk'
 import configureMockStore from 'redux-mock-store'

@@ -26,7 +26,8 @@ type PropsType = {
     +cloudiness: number,
     +pressure: number,
     +pressureUnit: 'hPa'
-}}
+  }
+}
 /* eslint-enable no-undef */
 
 const Weather:React.StatelessFunctionalComponent<any> = ({ weather: {

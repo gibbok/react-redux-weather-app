@@ -1,6 +1,5 @@
 // @flow
 import {ActionType} from '../../types' // eslint-disable-line no-unused-vars
-
 import 'isomorphic-fetch'
 import * as api from '../../app/api'
 import * as types from './weatherActionTypes'
