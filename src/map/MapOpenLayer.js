@@ -1,14 +1,17 @@
-import React, {Component} from 'react'
+// @flow
+import * as React from 'react'
 import * as ol from 'openlayers'
 import * as api from '../app/api'
 
 /*
  * Open Layer interactive world map.
  */
-class MapOpenLayer extends Component {
-  constructor (props) {
+class MapOpenLayer extends React.Component<any, any> {
+  olMap: Object;  // eslint-disable-line no-undef
+  state: Object; // eslint-disable-line no-undef
+  constructor (props:Object) {
     super(props)
-    this.olMap = undefined
+    this.olMap = {}
     this.state = {
       activeMapRegion: 'currentLocation',
       activeMapType: 'temperature'
@@ -43,7 +46,7 @@ class MapOpenLayer extends Component {
       this.state.activeMapType = activeMapType.id
     }
   }
-  componentDidUpdate (prevProps) {
+  componentDidUpdate (prevProps:Object) {
     this.setMapRegion()
     this.setMapType()
   }
@@ -103,7 +106,7 @@ class MapOpenLayer extends Component {
 /*
  * Change the layer information on the map, allowing user to chose different weather information.
  */
-  changeLayerOlMap (name) {
+  changeLayerOlMap (name:string) {
     let url
     switch (name) {
       case 'default':
