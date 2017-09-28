@@ -2,32 +2,15 @@
 
 exports[`<LocationFinderSearch /> should render 1`] = `
 <div>
-  <TextField
-    disabled={false}
-    floatingLabelFixed={false}
-    fullWidth={false}
-    hintText="Enter a location"
-    multiLine={false}
+  <withStyles(Input)
     onChange={[Function]}
-    onKeyPress={[Function]}
-    rows={1}
-    type="text"
-    underlineShow={true}
+    onKeyDown={[Function]}
+    placeholder="Enter a location"
   />
-  <FlatButton
-    disabled={false}
-    fullWidth={false}
-    labelPosition="after"
-    labelStyle={Object {}}
+  <withStyles(Button)
     onClick={[Function]}
-    onKeyboardFocus={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    onTouchStart={[Function]}
-    primary={false}
-    secondary={false}
   >
     Search
-  </FlatButton>
+  </withStyles(Button)>
 </div>
 `;

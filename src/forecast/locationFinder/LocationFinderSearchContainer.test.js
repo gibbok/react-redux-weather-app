@@ -6,7 +6,6 @@ import toJson from 'enzyme-to-json'
 import configureStore from 'redux-mock-store'
 import LocationFinderSearchContainer from './LocationFinderSearchContainer'
 import { getLocations, setLocation, setSearchValue } from './locationFinderSearchActions'
-import location from '../../app/location'
 
 describe('<LocationFinderSearchContainer />', () => {
   it('should render', () => {
@@ -33,7 +32,7 @@ describe('<LocationFinderSearchContainer />', () => {
   it('should dispatch action getLocations', () => {
     const state = 'state'
     const store = createMockStore(state)
-    const action = getLocations(location().locationId)
+    const action = getLocations('brno')
 
     store.dispatch(action)
     expect(store.getAction(action.type)).toEqual(action)
@@ -53,7 +52,7 @@ describe('<LocationFinderSearchContainer />', () => {
   it('should dispatch action setLocation', () => {
     const state = 'state'
     const store = createMockStore(state)
-    const action = setLocation(location().locationId)
+    const action = setLocation('brno')
 
     store.dispatch(action)
     expect(store.getAction(action.type)).toEqual(action)

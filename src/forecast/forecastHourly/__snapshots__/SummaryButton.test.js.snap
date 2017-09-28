@@ -1,19 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<SummaryButton /> should render 1`] = `
-<FlatButton
-  disabled={false}
-  fullWidth={false}
-  labelPosition="after"
-  labelStyle={Object {}}
+<withStyles(Button)
   onClick={[Function]}
-  onKeyboardFocus={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
-  onTouchStart={[Function]}
-  primary={false}
-  secondary={false}
 >
   Summary
-</FlatButton>
+</withStyles(Button)>
 `;

@@ -33,7 +33,7 @@ describe('<LocationFinderContainer />', () => {
   it('should dispatch action getLocations', () => {
     const state = 'state'
     const store = createMockStore(state)
-    const action = getLocations(location().locationId)
+    const action = getLocations('brno')
 
     store.dispatch(action)
     expect(store.getAction(action.type)).toEqual(action)

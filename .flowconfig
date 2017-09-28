@@ -3,6 +3,8 @@
 <PROJECT_ROOT>/node_modules/jest-enzyme/.*
 <PROJECT_ROOT>/node_modules/npx/.*
 <PROJECT_ROOT>/node_modules/react-event-listener/.*
+<PROJECT_ROOT>/node_modules/jss/.*
+<PROJECT_ROOT>/node_modules/material-ui/.*
 
 [include]
 

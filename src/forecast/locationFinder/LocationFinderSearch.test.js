@@ -4,7 +4,7 @@ import { shallow } from 'enzyme'
 import LocationFinderSearch from './LocationFinderSearch'
 import sinon from 'sinon'
 import toJson from 'enzyme-to-json'
-import {Button, TextField} from 'material-ui'
+import {Button, Input} from 'material-ui'
 
 describe('<LocationFinderSearch />', () => {
   it('should render', () => {
@@ -17,14 +17,14 @@ describe('<LocationFinderSearch />', () => {
   })
 
   it('should render material-ui', () => {
-    expect(shallow(<LocationFinderSearch />).find(TextField).length).toBe(1)
+    expect(shallow(<LocationFinderSearch />).find(Input).length).toBe(1)
     expect(shallow(<LocationFinderSearch />).find(Button).length).toBe(1)
   })
 
-  it('should simulate change event on material-ui TextField', () => {
+  it('should simulate change event on material-ui Input', () => {
     const onLocationChange = sinon.spy()
     const wrapper = shallow(<LocationFinderSearch onLocationChange={onLocationChange} />)
-    wrapper.find(TextField).simulate('change')
+    wrapper.find(Input).simulate('change')
     expect(onLocationChange.called).toEqual(true)
   })
 

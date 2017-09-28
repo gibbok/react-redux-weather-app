@@ -11,21 +11,19 @@ exports[`<Root /> should render 1`] = `
     }
   }
 >
-  <MuiThemeProvider>
-    <BrowserRouter>
-      <Switch>
-        <Route
-          component={[Function]}
-          exact={true}
-          path="/"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          path="/map"
-        />
-      </Switch>
-    </BrowserRouter>
-  </MuiThemeProvider>
+  <BrowserRouter>
+    <Switch>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/map"
+      />
+    </Switch>
+  </BrowserRouter>
 </Provider>
 `;
