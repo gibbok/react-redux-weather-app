@@ -43,8 +43,16 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          plugins: ['recharts'],
-          presets: ['es2015']
+          plugins: [
+            'recharts',
+            'transform-flow-strip-types',
+            'transform-class-properties'
+          ],
+          presets: [
+            'es2015',
+            'stage-0',
+            'stage-2'
+          ]
         }
       }
     ]
