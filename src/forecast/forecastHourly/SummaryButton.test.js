@@ -4,6 +4,7 @@ import {shallow} from 'enzyme'
 import toJson from 'enzyme-to-json'
 import sinon from 'sinon'
 import SummaryButton from './SummaryButton'
+import {FlatButton} from 'material-ui'
 
 describe('<SummaryButton />', () => {
   it('should render', () => {
@@ -14,7 +15,7 @@ describe('<SummaryButton />', () => {
   it('should simulate click event', () => {
     const onSummaryClick = sinon.spy()
     let wrapper = shallow(<SummaryButton onSummaryClick={onSummaryClick} />)
-    wrapper.find('button').simulate('click')
+    wrapper.find(FlatButton).simulate('click')
     expect(onSummaryClick.called).toEqual(true)
   })
 })

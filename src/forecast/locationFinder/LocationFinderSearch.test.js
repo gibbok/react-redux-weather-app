@@ -1,6 +1,6 @@
 // @flow
 import React from 'react'
-import { mount, shallow } from 'enzyme'
+import { shallow } from 'enzyme'
 import LocationFinderSearch from './LocationFinderSearch'
 import sinon from 'sinon'
 import toJson from 'enzyme-to-json'
