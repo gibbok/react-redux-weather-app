@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react'
-import {FlatButton, TextField} from 'material-ui'
+import {Button, Input} from 'material-ui'
 
 /* eslint-disable no-undef */
 type PropsType = {
@@ -13,8 +13,8 @@ type PropsType = {
 
 const LocationFinderSearch:React.StatelessFunctionalComponent<any> = ({ onLocationChange, onLocationKeyPress, onSearchClick, inputValue }:PropsType):React.Element<any> => (
   <div>
-    <TextField onKeyPress={(e) => onLocationKeyPress(e)} hintText='Enter a location' onChange={(e) => onLocationChange(e)} />
-    <FlatButton onClick={(e) => onSearchClick(e, inputValue)}>Search</FlatButton>
+    <Input onKeyPress={(e) => onLocationKeyPress(e)} placeholder='Enter a location' onChange={(e) => onLocationChange(e)} />
+    <Button onClick={(e) => onSearchClick(e, inputValue)}>Search</Button>
   </div>
 )
 

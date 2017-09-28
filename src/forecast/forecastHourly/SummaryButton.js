@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react'
-import {FlatButton} from 'material-ui'
+import {Button} from 'material-ui'
 
 /* eslint-disable no-undef */
 type PropsType = {
@@ -10,7 +10,7 @@ type PropsType = {
 
 const SummaryButton:React.StatelessFunctionalComponent<any> = ({ onSummaryClick }:PropsType):React.Element<any> => {
   return (
-    <FlatButton onClick={(e) => onSummaryClick(e)}>Summary</FlatButton>
+    <Button onClick={(e) => onSummaryClick(e)}>Summary</Button>
   )
 }
 

@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react'
-import {FlatButton} from 'material-ui'
+import {Button} from 'material-ui'
 
 /* eslint-disable no-undef */
 type PropsType = {
@@ -10,7 +10,7 @@ type PropsType = {
 
 const DetailsButton:React.StatelessFunctionalComponent<any> = ({ onDetailsClick }:PropsType):React.Element<any> => {
   return (
-    <FlatButton onClick={(e) => onDetailsClick(e)}>Details</FlatButton>
+    <Button onClick={(e) => onDetailsClick(e)}>Details</Button>
   )
 }
 
