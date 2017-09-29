@@ -1,10 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Navigation /> should render with snapshot 1`] = `
-<div
-  alt="test tooltop"
+exports[`<Navigation /> should render 1`] = `
+<withStyles(ListItem)
+  button={true}
   onClick="test"
 >
+  <withStyles(ListItemIcon) />
   <NavLink
     activeClassName="active"
     activeStyle={
@@ -13,10 +14,11 @@ exports[`<Navigation /> should render with snapshot 1`] = `
         "fontWeight": "bold",
       }
     }
+    className="Navigation-root-1"
     exact={true}
     to="/map"
   >
     test title
   </NavLink>
-</div>
+</withStyles(ListItem)>
 `;

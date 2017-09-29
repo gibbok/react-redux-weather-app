@@ -2,21 +2,32 @@
 
 exports[`<Navigations /> should render 1`] = `
 <div>
-  <Navigation
-    id="home"
-    isActive={true}
-    onClick={[Function]}
-    title="Weather"
-    tooltip="Weather"
-    url="/"
-  />
-  <Navigation
-    id="map"
-    isActive={false}
-    onClick={[Function]}
-    title="Map"
-    tooltip="Weather map"
-    url="/map"
-  />
+  <withStyles(Drawer)
+    classes={
+      Object {
+        "paper": "Navigations-drawerPaper-1",
+      }
+    }
+    type="permanent"
+  >
+    <withStyles(List)>
+      <withStyles(Navigation)
+        id="home"
+        isActive={true}
+        onClick={[Function]}
+        title="Weather"
+        tooltip="Weather"
+        url="/"
+      />
+      <withStyles(Navigation)
+        id="map"
+        isActive={false}
+        onClick={[Function]}
+        title="Map"
+        tooltip="Weather map"
+        url="/map"
+      />
+    </withStyles(List)>
+  </withStyles(Drawer)>
 </div>
 `;

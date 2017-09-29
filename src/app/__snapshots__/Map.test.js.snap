@@ -2,7 +2,7 @@
 
 exports[`<Map /> should render 1`] = `
 <div>
-  <Connect(Navigations) />
+  <Connect(withStyles(Navigations)) />
   <Connect(Map) />
 </div>
 `;

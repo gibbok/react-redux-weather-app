@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<NavigationContainer /> should render 1`] = `
-<Navigations
+<withStyles(Navigations)
   navigations={
     Array [
       Object {

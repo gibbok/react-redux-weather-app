@@ -1,12 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Forecast /> should render 1`] = `
-<div>
-  <Connect(Navigations) />
-  <Connect(LocationFinderSearch) />
-  <Connect(LocationFinder) />
-  <Connect(Weather) />
-  <Connect(ForecastDays) />
-  <Connect(ForecastHourly) />
+<div
+  className="Forecast-root-1"
+>
+  <div
+    className="Forecast-frame-2"
+  >
+    <div
+      className="Forecast-drawer-5"
+    >
+      <Connect(withStyles(Navigations)) />
+    </div>
+    <withStyles(AppBar)
+      className="Forecast-bar-3"
+    >
+      <withStyles(Toolbar)>
+        <withStyles(Typography)
+          color="inherit"
+          type="title"
+        >
+          Forecast
+        </withStyles(Typography)>
+        <div
+          className="Forecast-bar__search-4"
+        >
+          <div>
+            <Connect(LocationFinderSearch) />
+            <Connect(LocationFinder) />
+          </div>
+        </div>
+      </withStyles(Toolbar)>
+    </withStyles(AppBar)>
+    <div
+      className="Forecast-content-6"
+    >
+      <Connect(Weather) />
+      <Connect(ForecastDays) />
+      <Connect(ForecastHourly) />
+    </div>
+  </div>
 </div>
 `;
