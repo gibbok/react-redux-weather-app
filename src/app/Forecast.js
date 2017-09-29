@@ -6,7 +6,8 @@ import LocationFinderContainer from '../forecast/locationFinder/LocationFinderCo
 import WeatherContainer from '../forecast/weather/WeatherContainer'
 import ForecastDailyContainer from '../forecast/forecastDaily/ForecastDailyContainer'
 import ForecastHourlyContainer from '../forecast/forecastHourly/ForecastHourlyContainer'
-import { withStyles, AppBar, Toolbar, Typography } from 'material-ui'
+import { withStyles, AppBar, Toolbar, Typography, IconButton } from 'material-ui'
+import MenuIcon from 'material-ui-icons/Menu'
 import '../../node_modules/weather-icons/css/weather-icons.css' // eslint-disable-line no-unused-vars
 
 const drawerWidth = 240
@@ -74,6 +75,13 @@ const Forecast = (props) => {
       <div className={classes.appFrame}>
         <AppBar className={classes.appBar}>
           <Toolbar disableGutters={false}>
+            <IconButton
+              color='contrast'
+              aria-label='open drawer'
+              className={classes.menuButton}
+              >
+              <MenuIcon />
+            </IconButton>
             <Typography type='title' color='inherit'>Forecast</Typography>
             <div className={classes.bar__search}>
               <div>
