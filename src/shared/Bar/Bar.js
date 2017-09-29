@@ -16,7 +16,7 @@ const drawerWidth = 240
 const styles = theme => {
   return ({
     appBar: {
-      position: 'absolute',
+      position: 'fixed',
       zIndex: theme.zIndex.navDrawer + 1,
       transition: theme.transitions.create(['width', 'margin'], {
         easing: theme.transitions.easing.sharp,
@@ -36,7 +36,7 @@ const styles = theme => {
       justifyContent: 'flex-end',
       width: '100%'
     },
-    menuButton: {
+    appBarButton: {
       marginLeft: 12,
       marginRight: 36
     },
@@ -53,7 +53,7 @@ const Bar:React.StatelessFunctionalComponent<PropsType> = ({classes}):React.Elem
         <IconButton
           color='contrast'
           aria-label='open drawer'
-          className={classes.menuButton}
+          className={classes.appBarButton}
               >
           <MenuIcon />
         </IconButton>

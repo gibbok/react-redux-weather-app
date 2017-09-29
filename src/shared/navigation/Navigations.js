@@ -77,7 +77,6 @@ const Navigations:React.StatelessFunctionalComponent<any> = ({ navigations, onNa
            )}
           </List>
         </div>
-
       </Drawer>
     </div>
   )

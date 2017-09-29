@@ -11,13 +11,13 @@ import Bar from '../shared/Bar/Bar'
 const styles = theme => {
   return ({
     root: {
-      width: '100%',
-      marginTop: theme.spacing.unit * 3,
-      zIndex: 1,
-      overflow: 'hidden'
+      width: '100%'
+      // marginTop: theme.spacing.unit * 3,
+      // zIndex: 1,
+      // overflow: 'hidden'
     },
     appFrame: {
-      position: 'relative',
+      // position: 'relative',
       display: 'flex',
       width: '100%',
       height: '100%'
@@ -26,9 +26,9 @@ const styles = theme => {
       width: '100%',
       flexGrow: 1,
       backgroundColor: theme.palette.background.default,
-      padding: 24,
-      height: 'calc(100% - 56px)',
-      marginTop: 56,
+      padding: theme.spacing.unit * 3,
+      // height: 'calc(100% - 56px)',
+      // marginTop: 56,
       [theme.breakpoints.up('sm')]: {
         height: 'calc(100% - 64px)',
         marginTop: 64
