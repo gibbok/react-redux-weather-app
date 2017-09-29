@@ -9,23 +9,27 @@ import ForecastHourlyContainer from '../forecast/forecastHourly/ForecastHourlyCo
 import { withStyles } from 'material-ui'
 import '../../node_modules/weather-icons/css/weather-icons.css' // eslint-disable-line no-unused-vars
 
-const styles = theme => ({
-  root: {
-    width: '100%'
-  },
-  appFrame: {
-    display: 'flex',
-    width: '100%',
-    height: '100%'
-  },
-  drawer: {
-    flexGrow: 0
-  },
-  content: {
-    flexGrow: 1,
-    backgroundColor: 'yellow'
-  }
-})
+const styles = theme => {
+  return ({
+    root: {
+      width: '100%'
+    },
+    appFrame: {
+      width: '100%',
+      height: '100%'
+    },
+    drawer: {
+      position: 'fixed',
+      width: 160
+    },
+    content: {
+      marginLeft: 160,
+      width: 'calc(100% - 160px)',
+      backgroundColor: theme.palette.background.default,
+      padding: theme.spacing.unit * 3
+    }
+  })
+}
 
 const Forecast = (props) => {
   const classes = props.classes

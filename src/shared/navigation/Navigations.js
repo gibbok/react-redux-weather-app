@@ -21,9 +21,7 @@ type PropsType = {
 
 const styles = theme => ({
   drawerPaper: {
-    // position: 'fix',
-    //position: 'relative',
-    width: 240,
+    width: 160,
     height: '100%'
   }
 })
@@ -52,47 +50,3 @@ const Navigations:React.StatelessFunctionalComponent<any> = ({ navigations, onNa
 }
 
 export default withStyles(styles)(Navigations)
-
-// //--------------
-// import React from 'react'
-// import InboxIcon from 'material-ui-icons/Inbox'
-// import DraftsIcon from 'material-ui-icons/Drafts'
-// import {
-//   Divider,
-//   List,
-//   ListItem,
-//   ListItemIcon,
-//   ListItemText
-// } from 'material-ui'
-
-// function Navigations () {
-//   return (
-//     <div>
-//       <List>
-//         <ListItem button>
-//           <ListItemIcon>
-//             <InboxIcon />
-//           </ListItemIcon>
-//           <ListItemText primary='Inbox' />
-//         </ListItem>
-//         <ListItem button>
-//           <ListItemIcon>
-//             <DraftsIcon />
-//           </ListItemIcon>
-//           <ListItemText primary='Drafts' />
-//         </ListItem>
-//       </List>
-//       <Divider />
-//       <List>
-//         <ListItem button>
-//           <ListItemText primary='Trash' />
-//         </ListItem>
-//         <ListItem button component='a' href='#simple-list'>
-//           <ListItemText primary='Spam' />
-//         </ListItem>
-//       </List>
-//     </div>
-//   )
-// }
-
-// export default Navigations

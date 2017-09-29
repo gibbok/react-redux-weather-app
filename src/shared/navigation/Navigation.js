@@ -41,7 +41,8 @@ const Navigation:React.StatelessFunctionalComponent<any> = ({ onClick, id, title
           fontWeight: 'bold',
           color: 'red'
         }}
-    >{title}</NavLink ></ListItem>
+      >{title}</NavLink >
+    </ListItem>
   )
 }
 
