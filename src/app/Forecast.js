@@ -6,7 +6,7 @@ import LocationFinderContainer from '../forecast/locationFinder/LocationFinderCo
 import WeatherContainer from '../forecast/weather/WeatherContainer'
 import ForecastDailyContainer from '../forecast/forecastDaily/ForecastDailyContainer'
 import ForecastHourlyContainer from '../forecast/forecastHourly/ForecastHourlyContainer'
-import { withStyles } from 'material-ui'
+import { withStyles, AppBar, Toolbar, Typography } from 'material-ui'
 import '../../node_modules/weather-icons/css/weather-icons.css' // eslint-disable-line no-unused-vars
 
 const styles = theme => {
@@ -14,9 +14,17 @@ const styles = theme => {
     root: {
       width: '100%'
     },
-    appFrame: {
+    frame: {
       width: '100%',
       height: '100%'
+    },
+    bar: {
+      position: 'fixed'
+    },
+    bar__search: {
+      display: 'flex',
+      justifyContent: 'flex-end',
+      width: '100%'
     },
     drawer: {
       position: 'fixed',
@@ -35,13 +43,22 @@ const Forecast = (props) => {
   const classes = props.classes
   return (
     <div className={classes.root}>
-      <div className={classes.appFrame}>
+      <div className={classes.frame}>
         <div className={classes.drawer}>
           <NavigationContainer />
         </div>
+        <AppBar className={classes.bar}>
+          <Toolbar>
+            <Typography type='title' color='inherit'>Forecast</Typography>
+            <div className={classes.bar__search}>
+              <div>
+                <LocationFinderSearchContainer />
+                <LocationFinderContainer />
+              </div>
+            </div>
+          </Toolbar>
+        </AppBar>
         <div className={classes.content}>
-          <LocationFinderSearchContainer />
-          <LocationFinderContainer />
           <WeatherContainer />
           <ForecastDailyContainer />
           <ForecastHourlyContainer />
