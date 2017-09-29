@@ -11,7 +11,8 @@ type PropsType = {
   +id: number,
   +title:string,
   +tooltip:string,
-  +url:string
+  +url:string,
+  +classes: Object
 }
 /* eslint-enable no-undef */
 
