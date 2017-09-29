@@ -5,35 +5,12 @@ exports[`<Forecast /> should render 1`] = `
   className="Forecast-root-1"
 >
   <div
-    className="Forecast-frame-2"
+    className="Forecast-appFrame-2"
   >
+    <withStyles(Bar) />
+    <Connect(withStyles(Navigations)) />
     <div
-      className="Forecast-drawer-5"
-    >
-      <Connect(withStyles(Navigations)) />
-    </div>
-    <withStyles(AppBar)
-      className="Forecast-bar-3"
-    >
-      <withStyles(Toolbar)>
-        <withStyles(Typography)
-          color="inherit"
-          type="title"
-        >
-          Forecast
-        </withStyles(Typography)>
-        <div
-          className="Forecast-bar__search-4"
-        >
-          <div>
-            <Connect(LocationFinderSearch) />
-            <Connect(LocationFinder) />
-          </div>
-        </div>
-      </withStyles(Toolbar)>
-    </withStyles(AppBar)>
-    <div
-      className="Forecast-content-6"
+      className="Forecast-content-3"
     >
       <Connect(Weather) />
       <Connect(ForecastDays) />

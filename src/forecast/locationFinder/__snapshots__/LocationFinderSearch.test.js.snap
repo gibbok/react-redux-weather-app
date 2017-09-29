@@ -3,11 +3,17 @@
 exports[`<LocationFinderSearch /> should render 1`] = `
 <div>
   <withStyles(Input)
+    classes={
+      Object {
+        "input": "LocationFinderSearch-input-1",
+      }
+    }
     onChange={[Function]}
     onKeyDown={[Function]}
     placeholder="Enter a location"
   />
   <withStyles(Button)
+    color="contrast"
     onClick={[Function]}
   >
     Search

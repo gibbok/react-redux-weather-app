@@ -10,24 +10,36 @@ exports[`<Navigations /> should render 1`] = `
     }
     type="permanent"
   >
-    <withStyles(List)>
-      <withStyles(Navigation)
-        id="home"
-        isActive={true}
-        onClick={[Function]}
-        title="Weather"
-        tooltip="Weather"
-        url="/"
-      />
-      <withStyles(Navigation)
-        id="map"
-        isActive={false}
-        onClick={[Function]}
-        title="Map"
-        tooltip="Weather map"
-        url="/map"
-      />
-    </withStyles(List)>
+    <div
+      className="Navigations-drawerInner-3"
+    >
+      <div
+        className="Navigations-drawerHeader-4"
+      >
+        <withStyles(IconButton)>
+          <pure(ChevronLeft) />
+        </withStyles(IconButton)>
+      </div>
+      <withStyles(Divider) />
+      <withStyles(List)>
+        <withStyles(Navigation)
+          id="home"
+          isActive={true}
+          onClick={[Function]}
+          title="Weather"
+          tooltip="Weather"
+          url="/"
+        />
+        <withStyles(Navigation)
+          id="map"
+          isActive={false}
+          onClick={[Function]}
+          title="Map"
+          tooltip="Weather map"
+          url="/map"
+        />
+      </withStyles(List)>
+    </div>
   </withStyles(Drawer)>
 </div>
 `;

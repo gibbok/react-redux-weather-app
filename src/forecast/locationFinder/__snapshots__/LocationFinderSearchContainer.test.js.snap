@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<LocationFinderSearchContainer /> should render 1`] = `
-<LocationFinderSearch
+<withStyles(LocationFinderSearch)
   inputValue=""
   onLocationChange={[Function]}
   onLocationKeyDown={[Function]}
