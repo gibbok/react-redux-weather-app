@@ -1,7 +1,8 @@
 // @flow
 import * as React from 'react'
 import Navigation from './Navigation'
-import { Drawer, List, withStyles } from 'material-ui'
+import { Drawer, List, withStyles, IconButton, Divider } from 'material-ui'
+import ChevronLeftIcon from 'material-ui-icons/ChevronLeft'
 // import HomeIcon from 'material-ui-icons/Home'
 // import MapIcon from 'material-ui-icons/Map'
 
@@ -23,9 +24,31 @@ const styles = theme => ({
   drawerPaper: {
     position: 'relative',
     height: '100%',
+    width: drawerWidth,
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen
+    })
+  },
+  drawerPaperClose: {
+    width: 60,
+    overflowX: 'hidden',
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen
+    })
+  },
+  drawerInner: {
+    // Make the items inside not wrap when transitioning:
     width: drawerWidth
   },
-  drawerHeader: theme.mixins.toolbar
+  drawerHeader: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    padding: '0 8px',
+    ...theme.mixins.toolbar
+  }
 })
 
 const Navigations:React.StatelessFunctionalComponent<any> = ({ navigations, onNavigationClick, classes }:PropsType):React.Element<any> => {
@@ -37,15 +60,24 @@ const Navigations:React.StatelessFunctionalComponent<any> = ({ navigations, onNa
           paper: classes.drawerPaper
         }}
         >
-        <List>
-          {navigations.map((navigation, index) =>
-            <Navigation
-              key={index}
-              {...navigations[index]}
-              onClick={() => onNavigationClick(navigation)}
+        <div className={classes.drawerInner}>
+          <div className={classes.drawerHeader}>
+            <IconButton>
+              <ChevronLeftIcon />
+            </IconButton>
+          </div>
+          <Divider />
+          <List>
+            {navigations.map((navigation, index) =>
+              <Navigation
+                key={index}
+                {...navigations[index]}
+                onClick={() => onNavigationClick(navigation)}
             />
            )}
-        </List>
+          </List>
+        </div>
+
       </Drawer>
     </div>
   )

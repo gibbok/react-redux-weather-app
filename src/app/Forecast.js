@@ -26,20 +26,37 @@ const styles = theme => {
     },
     appBar: {
       position: 'absolute',
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
-      order: 1
+      zIndex: theme.zIndex.navDrawer + 1,
+      transition: theme.transitions.create(['width', 'margin'], {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.leavingScreen
+      })
     },
-    drawerHeader: theme.mixins.toolbar,
+    appBarShift: {
+      marginLeft: drawerWidth,
+      width: `calc(100% - ${drawerWidth}px)`,
+      transition: theme.transitions.create(['width', 'margin'], {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.enteringScreen
+      })
+    },
+    menuButton: {
+      marginLeft: 12,
+      marginRight: 36
+    },
+    hide: {
+      display: 'none'
+    },
     bar__search: {
       display: 'flex',
       justifyContent: 'flex-end',
       width: '100%'
     },
     content: {
-      backgroundColor: theme.palette.background.default,
       width: '100%',
-      padding: theme.spacing.unit * 3,
+      flexGrow: 1,
+      backgroundColor: theme.palette.background.default,
+      padding: 24,
       height: 'calc(100% - 56px)',
       marginTop: 56,
       [theme.breakpoints.up('sm')]: {
@@ -56,7 +73,7 @@ const Forecast = (props) => {
     <div className={classes.root}>
       <div className={classes.appFrame}>
         <AppBar className={classes.appBar}>
-          <Toolbar>
+          <Toolbar disableGutters={false}>
             <Typography type='title' color='inherit'>Forecast</Typography>
             <div className={classes.bar__search}>
               <div>
