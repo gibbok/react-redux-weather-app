@@ -39,7 +39,6 @@ const styles = theme => ({
     })
   },
   drawerInner: {
-    // Make the items inside not wrap when transitioning:
     width: drawerWidth
   },
   drawerHeader: {
