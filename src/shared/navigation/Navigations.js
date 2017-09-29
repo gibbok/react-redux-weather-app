@@ -18,12 +18,14 @@ type PropsType = {
   +classes: Object
 }
 /* eslint-enable no-undef */
-
+const drawerWidth = 240
 const styles = theme => ({
   drawerPaper: {
-    width: 160,
-    height: '100%'
-  }
+    position: 'relative',
+    height: '100%',
+    width: drawerWidth
+  },
+  drawerHeader: theme.mixins.toolbar
 })
 
 const Navigations:React.StatelessFunctionalComponent<any> = ({ navigations, onNavigationClick, classes }:PropsType):React.Element<any> => {

@@ -9,32 +9,43 @@ import ForecastHourlyContainer from '../forecast/forecastHourly/ForecastHourlyCo
 import { withStyles, AppBar, Toolbar, Typography } from 'material-ui'
 import '../../node_modules/weather-icons/css/weather-icons.css' // eslint-disable-line no-unused-vars
 
+const drawerWidth = 240
 const styles = theme => {
   return ({
     root: {
-      width: '100%'
+      width: '100%',
+      marginTop: theme.spacing.unit * 3,
+      zIndex: 1,
+      overflow: 'hidden'
     },
-    frame: {
+    appFrame: {
+      position: 'relative',
+      display: 'flex',
       width: '100%',
       height: '100%'
     },
-    bar: {
-      position: 'fixed'
+    appBar: {
+      position: 'absolute',
+      width: `calc(100% - ${drawerWidth}px)`,
+      marginLeft: drawerWidth,
+      order: 1
     },
+    drawerHeader: theme.mixins.toolbar,
     bar__search: {
       display: 'flex',
       justifyContent: 'flex-end',
       width: '100%'
     },
-    drawer: {
-      position: 'fixed',
-      width: 160
-    },
     content: {
-      marginLeft: 160,
-      width: 'calc(100% - 160px)',
       backgroundColor: theme.palette.background.default,
-      padding: theme.spacing.unit * 3
+      width: '100%',
+      padding: theme.spacing.unit * 3,
+      height: 'calc(100% - 56px)',
+      marginTop: 56,
+      [theme.breakpoints.up('sm')]: {
+        height: 'calc(100% - 64px)',
+        marginTop: 64
+      }
     }
   })
 }
@@ -43,11 +54,8 @@ const Forecast = (props) => {
   const classes = props.classes
   return (
     <div className={classes.root}>
-      <div className={classes.frame}>
-        <div className={classes.drawer}>
-          <NavigationContainer />
-        </div>
-        <AppBar className={classes.bar}>
+      <div className={classes.appFrame}>
+        <AppBar className={classes.appBar}>
           <Toolbar>
             <Typography type='title' color='inherit'>Forecast</Typography>
             <div className={classes.bar__search}>
@@ -58,6 +66,9 @@ const Forecast = (props) => {
             </div>
           </Toolbar>
         </AppBar>
+
+        <NavigationContainer />
+
         <div className={classes.content}>
           <WeatherContainer />
           <ForecastDailyContainer />
