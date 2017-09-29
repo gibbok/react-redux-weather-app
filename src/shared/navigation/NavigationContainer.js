@@ -18,7 +18,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch:Dispatch<*>, ownProps) => {
   return {
     onNavigationClick: (navigation) => {
-      dispatch(setActive(navigation.id))
+      dispatch(setActive(navigation))
     }
   }
 }
