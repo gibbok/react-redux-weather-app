@@ -5,20 +5,36 @@ import SummaryChart from './SummaryChart'
 import Details from './Details'
 import SummaryButton from './SummaryButton'
 import DetailsButton from './DetailsButton'
+import { withStyles, Typography } from 'material-ui'
 
 /* eslint-disable no-undef */
 type PropsType = {
   +forecastHourly:ForecastHourlyType,
   +activeTypeReport: string,
   +onSummaryClick: Function,
-  +onDetailsClick: Function
+  +onDetailsClick: Function,
+  +classes: Object
 }
 /* eslint-enable no-undef */
 
-const ForecastHourly:React.StatelessFunctionalComponent<any> = ({ forecastHourly, activeTypeReport, onSummaryClick, onDetailsClick }:PropsType):React.Element<any> => {
+const styles = theme => {
+  const spaceUnit = theme.spacing.unit
+  return ({
+    root: {
+      width: 900
+    },
+    title: {
+      marginBottom: spaceUnit
+    }
+  })
+}
+
+const ForecastHourly:React.StatelessFunctionalComponent<any> = ({ forecastHourly, activeTypeReport, onSummaryClick, onDetailsClick, classes }:PropsType):React.Element<any> => {
   return (
-    <div>
-      <h2>Hourly</h2>
+    <div className={classes.root}>
+      <div className={classes.title}>
+        <Typography type='headline'>Hourly</Typography>
+      </div>
       <SummaryButton onSummaryClick={onSummaryClick} />
       <DetailsButton onDetailsClick={onDetailsClick} />
       {activeTypeReport === 'summary'
@@ -28,4 +44,4 @@ const ForecastHourly:React.StatelessFunctionalComponent<any> = ({ forecastHourly
   )
 }
 
-export default ForecastHourly
+export default withStyles(styles)(ForecastHourly)

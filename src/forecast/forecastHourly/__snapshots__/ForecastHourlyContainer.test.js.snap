@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ForecastHourlyContainer /> should render 1`] = `
-<ForecastHourly
+<withStyles(ForecastHourly)
   activeTypeReport="summary"
   forecastHourly={Array []}
   onDetailsClick={[Function]}

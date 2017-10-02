@@ -1,10 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ForecastHourly /> should render 1`] = `
-<div>
-  <h2>
-    Hourly
-  </h2>
+<div
+  className="ForecastHourly-root-1"
+>
+  <div
+    className="ForecastHourly-title-2"
+  >
+    <withStyles(Typography)
+      type="headline"
+    >
+      Hourly
+    </withStyles(Typography)>
+  </div>
   <SummaryButton />
   <DetailsButton />
   <SummaryChart />
