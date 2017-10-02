@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react'
-import {Button, Input, withStyles} from 'material-ui'
+import { Input, withStyles, Icon, IconButton } from 'material-ui'
 
 /* eslint-disable no-undef */
 type PropsType = {
@@ -29,7 +29,9 @@ const LocationFinderSearch:React.StatelessFunctionalComponent<any> = ({ onLocati
         placeholder='Enter a location'
         onChange={(e) => onLocationChange(e)}
       />
-      <Button color='contrast' onClick={(e) => onSearchClick(e, inputValue)}>Search</Button>
+      <IconButton color='inherit' aria-label='Search'>
+        <Icon onClick={(e) => onSearchClick(e, inputValue)}>search</Icon>
+      </IconButton>
     </div>
   )
 }
