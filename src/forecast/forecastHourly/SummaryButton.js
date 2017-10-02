@@ -10,7 +10,7 @@ type PropsType = {
 
 const SummaryButton:React.StatelessFunctionalComponent<any> = ({ onSummaryClick }:PropsType):React.Element<any> => {
   return (
-    <Button onClick={(e) => onSummaryClick(e)}>Summary</Button>
+    <Button raised onClick={(e) => onSummaryClick(e)}>Summary</Button>
   )
 }
 

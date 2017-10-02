@@ -10,7 +10,7 @@ type PropsType = {
 
 const DetailsButton:React.StatelessFunctionalComponent<any> = ({ onDetailsClick }:PropsType):React.Element<any> => {
   return (
-    <Button onClick={(e) => onDetailsClick(e)}>Details</Button>
+    <Button raised onClick={(e) => onDetailsClick(e)}>Details</Button>
   )
 }
 
