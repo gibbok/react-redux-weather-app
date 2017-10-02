@@ -21,10 +21,17 @@ const styles = theme => {
   const spaceUnit = theme.spacing.unit
   return ({
     root: {
+      display: 'flex',
+      flexDirection: 'column',
       width: 900
     },
     title: {
       marginBottom: spaceUnit
+    },
+    options: {
+      display: 'flex',
+      justifyContent: 'flex-end',
+      marginBottom: spaceUnit * 2
     }
   })
 }
@@ -35,11 +42,15 @@ const ForecastHourly:React.StatelessFunctionalComponent<any> = ({ forecastHourly
       <div className={classes.title}>
         <Typography type='headline'>Hourly</Typography>
       </div>
-      <SummaryButton onSummaryClick={onSummaryClick} />
-      <DetailsButton onDetailsClick={onDetailsClick} />
-      {activeTypeReport === 'summary'
+      <div className={classes.options}>
+        <SummaryButton onSummaryClick={onSummaryClick} />
+        <DetailsButton onDetailsClick={onDetailsClick} />
+      </div>
+      <div>
+        {activeTypeReport === 'summary'
       ? <SummaryChart forecastHourly={forecastHourly} />
       : <Details forecastHourly={forecastHourly} />}
+      </div>
     </div>
   )
 }
