@@ -32,7 +32,7 @@ const updateData = (state:StateType, action:ActionType):StateType => {
       tempMin: x.temp.min,
       tempMax: x.temp.max,
       iconCode: x.weather[0].id,
-      weatherDescription: x.weather[0].description
+      weatherMain: x.weather[0].main
     }
   })
   return dotProp.set(state, 'forecastDaily.data', data)

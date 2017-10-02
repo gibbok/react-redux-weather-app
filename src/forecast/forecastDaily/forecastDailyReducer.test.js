@@ -219,7 +219,7 @@ describe('forecastDailyReducer', () => {
           'tempMin': 16.8,
           'tempMax': 16.8,
           'iconCode': 803,
-          'weatherDescription': 'broken clouds'
+          'weatherMain': 'Clouds'
         },
         {
           'momentId': '2017:8:13:3',
@@ -228,7 +228,7 @@ describe('forecastDailyReducer', () => {
           'tempMin': 14.6,
           'tempMax': 25.49,
           'iconCode': 800,
-          'weatherDescription': 'sky is clear'
+          'weatherMain': 'Clear'
         },
         {
           'momentId': '2017:8:14:4',
@@ -237,7 +237,7 @@ describe('forecastDailyReducer', () => {
           'tempMin': 19.78,
           'tempMax': 24.57,
           'iconCode': 500,
-          'weatherDescription': 'light rain'
+          'weatherMain': 'Rain'
         },
         {
           'momentId': '2017:8:15:5',
@@ -246,7 +246,7 @@ describe('forecastDailyReducer', () => {
           'tempMin': 19.91,
           'tempMax': 22.68,
           'iconCode': 502,
-          'weatherDescription': 'heavy intensity rain'
+          'weatherMain': 'Rain'
         },
         {
           'momentId': '2017:8:16:6',
@@ -255,7 +255,7 @@ describe('forecastDailyReducer', () => {
           'tempMin': 19.35,
           'tempMax': 22.46,
           'iconCode': 501,
-          'weatherDescription': 'moderate rain'
+          'weatherMain': 'Rain'
         },
         {
           'momentId': '2017:8:17:0',
@@ -264,7 +264,7 @@ describe('forecastDailyReducer', () => {
           'tempMin': 17.65,
           'tempMax': 23.74,
           'iconCode': 500,
-          'weatherDescription': 'light rain'
+          'weatherMain': 'Rain'
         },
         {
           'momentId': '2017:8:18:1',
@@ -273,7 +273,7 @@ describe('forecastDailyReducer', () => {
           'tempMin': 14.13,
           'tempMax': 19.37,
           'iconCode': 800,
-          'weatherDescription': 'sky is clear'
+          'weatherMain': 'Clear'
         }
         ]
       }
