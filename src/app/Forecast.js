@@ -11,7 +11,8 @@ import Bar from '../shared/Bar/Bar'
 const styles = theme => {
   return ({
     root: {
-      width: '100%'
+      width: '100%',
+      display: 'flex'
       // marginTop: theme.spacing.unit * 3,
       // zIndex: 1,
       // overflow: 'hidden'
@@ -26,6 +27,9 @@ const styles = theme => {
       width: '100%',
       flexGrow: 1,
       backgroundColor: theme.palette.background.default,
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
       padding: theme.spacing.unit * 3,
       // height: 'calc(100% - 56px)',
       // marginTop: 56,

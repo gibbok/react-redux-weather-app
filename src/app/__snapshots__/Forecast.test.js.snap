@@ -12,9 +12,9 @@ exports[`<Forecast /> should render 1`] = `
     <div
       className="Forecast-content-3"
     >
-      <Connect(Weather) />
-      <Connect(ForecastDays) />
-      <Connect(ForecastHourly) />
+      <Connect(withStyles(Weather)) />
+      <Connect(withStyles(ForecastDays)) />
+      <Connect(withStyles(ForecastHourly)) />
     </div>
   </div>
 </div>
