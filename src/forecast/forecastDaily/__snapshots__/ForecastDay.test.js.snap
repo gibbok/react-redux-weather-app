@@ -1,27 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ForecastDay /> should render 1`] = `
-<div>
+<div
+  className="ForecastDay-root-1"
+>
   <div>
-    Sun, Aug 1
+    <withStyles(Typography)
+      type="title"
+    >
+      Sun, Aug 1
+    </withStyles(Typography)>
   </div>
   <div>
-    <IconWeather
-      code={200}
-    />
+    <withStyles(Typography)
+      type="title"
+    >
+      <IconWeather
+        code={200}
+      />
+    </withStyles(Typography)>
   </div>
   <div>
     <div>
-      10
-      °
+      <withStyles(Typography)
+        type="subheading"
+      >
+        Min 
+        10
+        °
+      </withStyles(Typography)>
     </div>
     <div>
-      15
-      °
+      <withStyles(Typography)
+        type="subheading"
+      >
+        Max 
+        15
+        °
+      </withStyles(Typography)>
     </div>
   </div>
   <div>
-    storm showers
+    <withStyles(Typography)
+      type="subheading"
+    >
+      Storm
+    </withStyles(Typography)>
   </div>
 </div>
 `;

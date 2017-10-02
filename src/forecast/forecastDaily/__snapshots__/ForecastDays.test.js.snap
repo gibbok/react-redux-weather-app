@@ -1,12 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ForecastDays /> should render 1`] = `
-<div>
-  <h2>
-    Daily
-  </h2>
-  <div>
-    <ForecastDay
+<div
+  className="ForecastDays-root-1"
+>
+  <div
+    className="ForecastDays-title-2"
+  >
+    <withStyles(Typography)
+      type="headline"
+    >
+      Daily
+    </withStyles(Typography)>
+  </div>
+  <div
+    className="ForecastDays-tiles-3"
+  >
+    <withStyles(ForecastDay)
       date={1505145600}
       dt={1505145600}
       iconCode={801}
@@ -15,7 +25,7 @@ exports[`<ForecastDays /> should render 1`] = `
       tempMin={11.2}
       weatherDescription="few clouds"
     />
-    <ForecastDay
+    <withStyles(ForecastDay)
       date={1505165700}
       dt={1505165700}
       iconCode={200}
