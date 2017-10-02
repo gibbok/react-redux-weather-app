@@ -1,82 +1,164 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Weather /> should render 1`] = `
-<div>
-  <div>
-    New York
-    , 
-    US
+<div
+  className="Weather-root-1"
+>
+  <div
+    className="Weather-title-2"
+  >
+    <withStyles(Typography)
+      type="headline"
+    >
+      New York
+      , 
+      US
+    </withStyles(Typography)>
   </div>
-  <div>
-    <IconWeather
-      code={800}
-    />
+  <div
+    className="Weather-temperature-3"
+  >
+    <div
+      className="Weather-temperatureContent-4"
+    >
+      <div>
+        <withStyles(Typography)
+          type="display1"
+        >
+          <IconWeather
+            code={800}
+          />
+        </withStyles(Typography)>
+      </div>
+      <div>
+        <withStyles(Typography)
+          type="display3"
+        >
+          15
+          °
+        </withStyles(Typography)>
+      </div>
+      <div
+        className="Weather-temperatureMinMax-5"
+      >
+        <withStyles(Typography)
+          type="subheading"
+        >
+          Min 
+          10
+           °
+        </withStyles(Typography)>
+        <withStyles(Typography)
+          type="subheading"
+        >
+          Max 
+          20
+           °
+        </withStyles(Typography)>
+      </div>
+    </div>
   </div>
-  <div>
-    15.14
-  </div>
-  <div>
-    <span>
-      Min 
-      10
-       °
-    </span>
-    <span>
-      Max 
-      20
-       °
-    </span>
-  </div>
-  <div>
-    <div>
+  <div
+    className="Weather-description-6"
+  >
+    <withStyles(Typography)
+      type="title"
+    >
       Clear
+    </withStyles(Typography)>
+  </div>
+  <div
+    className="Weather-update-7"
+  >
+    <withStyles(Typography)
+      type="body1"
+    >
+      Updated as of 
+      8:10 AM
+    </withStyles(Typography)>
+  </div>
+  <div
+    className="Weather-infos-8"
+  >
+    <div
+      className="Weather-infosContent-9"
+    >
+      <div
+        className="Weather-infosLine1-10"
+      >
+        <div>
+          <withStyles(Typography)
+            type="body1"
+          >
+            Wind 
+            306.501
+             
+            1.29
+             mps 
+            <IconWind
+              degree={306.501}
+            />
+          </withStyles(Typography)>
+        </div>
+        <div>
+          <withStyles(Typography)
+            type="body1"
+          >
+            Visibility 
+            16093
+             meter
+          </withStyles(Typography)>
+        </div>
+        <div>
+          <withStyles(Typography)
+            type="body1"
+          >
+            Humidity 
+            68
+             %
+          </withStyles(Typography)>
+        </div>
+      </div>
+      <div
+        className="Weather-infosLine2-11"
+      >
+        <div>
+          <withStyles(Typography)
+            type="body1"
+          >
+            Sunrise 
+            12:34 PM
+          </withStyles(Typography)>
+        </div>
+        <div>
+          <withStyles(Typography)
+            type="body1"
+          >
+            Sunset 
+            1:09 AM
+          </withStyles(Typography)>
+        </div>
+        <div>
+          <withStyles(Typography)
+            type="body1"
+          >
+            Cloudiness 
+            1
+             %
+          </withStyles(Typography)>
+        </div>
+        <div>
+          <withStyles(Typography)
+            type="body1"
+          >
+            Pressure 
+            1020
+             
+            hPa
+          </withStyles(Typography)>
+        </div>
+      </div>
     </div>
-    <div>
-      clear sky
-    </div>
-  </div>
-  <div>
-    Updated as of 
-    8:10 AM
-  </div>
-  <div>
-    Wind 
-    306.501
-     
-    1.29
-     mps 
-    <IconWind
-      degree={306.501}
-    />
-  </div>
-  <div>
-    Visibility 
-    16093
-     meter
-  </div>
-  <div>
-    Humidity 
-    68
-     %
-  </div>
-  <div>
-    Sunrise 
-    12:34 PM
-  </div>
-  <div>
-    Sunset 
-    1:09 AM
-  </div>
-  <div>
-    Cloudiness 
-    1
-     %
-  </div>
-  <div>
-    Pressure 
-    1020
-     
-    hPa
   </div>
 </div>
 `;

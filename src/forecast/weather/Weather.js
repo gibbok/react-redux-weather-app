@@ -3,6 +3,7 @@ import * as React from 'react'
 import IconWind from '../../shared/icon/IconWind'
 import moment from 'moment'
 import IconWeather from '../../shared/icon/IconWeather'
+import { withStyles, Typography } from 'material-ui'
 
 /* eslint-disable no-undef */
 type PropsType = {
@@ -14,7 +15,6 @@ type PropsType = {
     +temperatureMin: number,
     +temperatureMax: number,
     +weatherMain: number,
-    +weatherDescription: string,
     +weatherIcon: number,
     +updatedTime:number,
     +windDegree: number,
@@ -26,9 +26,67 @@ type PropsType = {
     +cloudiness: number,
     +pressure: number,
     +pressureUnit: 'hPa'
-  }
+  },
+  +classes: Object
 }
 /* eslint-enable no-undef */
+
+const styles = theme => {
+  const spaceUnit = theme.spacing.unit
+  return ({
+    root: {
+      display: 'flex',
+      width: 900,
+      marginBottom: spaceUnit * 3,
+      flexDirection: 'column'
+    },
+    title: {
+      display: 'flex',
+      justifyContent: 'center'
+    },
+    temperature: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center'
+    },
+    temperatureContent: {
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center'
+    },
+    temperatureMinMax: {
+      display: 'flex',
+      flexDirection: 'column'
+    },
+    description: {
+      display: 'flex',
+      justifyContent: 'center'
+    },
+    update: {
+      display: 'flex',
+      justifyContent: 'center',
+      marginTop: spaceUnit * 0.5,
+      marginBottom: spaceUnit
+    },
+    infos: {
+      display: 'flex',
+      justifyContent: 'center'
+    },
+    infosContent: {
+      display: 'flex',
+      flexDirection: 'column',
+      width: 500
+    },
+    infosLine1: {
+      display: 'flex',
+      justifyContent: 'space-between'
+    },
+    infosLine2: {
+      display: 'flex',
+      justifyContent: 'space-between'
+    }
+  })
+}
 
 const Weather:React.StatelessFunctionalComponent<any> = ({ weather: {
   name,
@@ -38,7 +96,6 @@ const Weather:React.StatelessFunctionalComponent<any> = ({ weather: {
   temperatureMin,
   temperatureMax,
   weatherMain,
-  weatherDescription,
   weatherIcon,
   updatedTime,
   windDegree,
@@ -50,60 +107,79 @@ const Weather:React.StatelessFunctionalComponent<any> = ({ weather: {
   cloudiness,
   pressure,
   pressureUnit
- }
+ },
+ classes
 }:PropsType):React.Element<any> => {
+  const temperatureRounded = Math.round(temperature)
   const updatedTimeFormat = moment.unix(updatedTime).format('h:mm A')
   const sunriseFormat = moment.unix(sunrise).format('h:mm A')
   const sunsetFormat = moment.unix(sunset).format('h:mm A')
   return (
-    <div>
-      <div>
-        {name}, {country}
+    <div className={classes.root}>
+      <div className={classes.title}>
+        <Typography type='headline'>
+          {name}, {country}
+        </Typography>
       </div>
-      <div>
-        <IconWeather code={icon} />
+      <div className={classes.temperature}>
+        <div className={classes.temperatureContent}>
+          <div>
+            <Typography type='display1'>
+              <IconWeather code={icon} />
+            </Typography>
+          </div>
+          <div>
+            <Typography type='display3'>
+              {temperatureRounded}&#176;
+          </Typography>
+          </div>
+          <div className={classes.temperatureMinMax}>
+            <Typography type='subheading'>Min {temperatureMin} &#176;</Typography>
+            <Typography type='subheading'>Max {temperatureMax} &#176;</Typography>
+          </div>
+        </div>
       </div>
-      <div>
-        {temperature}
-      </div>
-      <div>
-        <span>Min {temperatureMin} &#176;</span>
-        <span>Max {temperatureMax} &#176;</span>
-      </div>
-      <div>
-        <div>
+      <div className={classes.description}>
+        <Typography type='title'>
           {weatherMain}
-        </div>
-        <div>
-          {weatherDescription}
-        </div>
+        </Typography>
       </div>
-      <div>
+      <div className={classes.update}>
+        <Typography type='body1'>
         Updated as of {updatedTimeFormat}
+        </Typography>
       </div>
-      <div>
-        Wind {windDegree} {windSpeed} mps <IconWind degree={windDegree} />
-      </div>
-      <div>
-        Visibility {visibility} meter
-      </div>
-      <div>
-        Humidity {humidity} &#37;
-      </div>
-      <div>
-        Sunrise {sunriseFormat}
-      </div>
-      <div>
-        Sunset {sunsetFormat}
-      </div>
-      <div>
-        Cloudiness {cloudiness} &#37;
-      </div>
-      <div>
-        Pressure {pressure} {pressureUnit}
+      <div className={classes.infos}>
+        <div className={classes.infosContent}>
+          <div className={classes.infosLine1}>
+            <div>
+              <Typography type='body1'>Wind {windDegree} {windSpeed} mps <IconWind degree={windDegree} /></Typography>
+            </div>
+            <div>
+              <Typography type='body1'>Visibility {visibility} meter</Typography>
+            </div>
+            <div>
+              <Typography type='body1'>Humidity {humidity} &#37;</Typography>
+            </div>
+          </div>
+          <div className={classes.infosLine2}>
+            <div>
+              <Typography type='body1'>Sunrise {sunriseFormat}</Typography>
+            </div>
+            <div>
+              <Typography type='body1'>Sunset {sunsetFormat}</Typography>
+            </div>
+            <div>
+              <Typography type='body1'>Cloudiness {cloudiness} &#37;</Typography>
+            </div>
+            <div>
+              <Typography type='body1'>Pressure {pressure} {pressureUnit}</Typography>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
 }
 
-export default Weather
+export default withStyles(styles)(Weather)

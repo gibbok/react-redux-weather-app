@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`WeatherContainer should render 1`] = `
-<Weather
+<withStyles(Weather)
   dispatch={[Function]}
   store={
     Object {
