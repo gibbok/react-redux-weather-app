@@ -14,7 +14,7 @@ describe('<ForecastDay />', () => {
         tempMin={10}
         tempMax={15}
         iconCode={200}
-        weatherDescription={'storm showers'}
+        weatherMain={'Storm'}
       />
     )
     expect(toJson(wrapper)).toMatchSnapshot()
@@ -28,7 +28,7 @@ describe('<ForecastDay />', () => {
         tempMin={10}
         tempMax={15}
         iconCode={200}
-        weatherDescription={'storm showers'}
+        weatherMain={'Storm'}
         />
       )
     expect(wrapper.find(IconWeather).length).toBe(1)

@@ -2,26 +2,49 @@
 // @flow
 import * as React from 'react'
 import ForecastDay from './ForecastDay'
+import { withStyles, Typography } from 'material-ui'
 
 /* eslint-disable no-undef */
 type PropsType = {
   +forecastDays: Array<Object>,
-  +onForecastDayClick: Object
+  +onForecastDayClick: Object,
+  +classes: Object
 }
 /* eslint-enable no-undef */
 
-const ForecastDays:React.StatelessFunctionalComponent<PropsType> = ({ forecastDays, onForecastDayClick }:PropsType):React.Element<any> => (
-  <div>
-    <h2>Daily</h2>
-    <div>
-      {forecastDays.map((day, index) =>
-        <ForecastDay
-          key={index}
-          {...forecastDays[index]}
-      />
-    )}
-    </div>
-  </div>
-)
+const styles = theme => {
+  const spaceUnit = theme.spacing.unit
+  return ({
+    root: {
+      width: 900,
+      marginBottom: spaceUnit * 3
+    },
+    title: {
+      marginBottom: spaceUnit
+    },
+    tiles: {
+      display: 'flex'
+    }
+  })
+}
 
-export default ForecastDays
+const ForecastDays:React.StatelessFunctionalComponent<PropsType> = ({ forecastDays, onForecastDayClick, classes }:PropsType):React.Element<any> => {
+  const forecast = forecastDays.map((day, index) =>
+    <ForecastDay
+      key={index}
+      {...forecastDays[index]}
+      />
+    )
+  return (
+    <div className={classes.root}>
+      <div className={classes.title}>
+        <Typography type='headline'>Daily</Typography>
+      </div>
+      <div className={classes.tiles}>
+        {forecast}
+      </div>
+    </div>
+  )
+}
+
+export default withStyles(styles)(ForecastDays)
