@@ -3,6 +3,7 @@
 exports[`<SummaryButton /> should render 1`] = `
 <withStyles(Button)
   onClick={[Function]}
+  raised={true}
 >
   Summary
 </withStyles(Button)>

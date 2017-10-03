@@ -21,24 +21,46 @@ exports[`<Navigations /> should render 1`] = `
         </withStyles(IconButton)>
       </div>
       <withStyles(Divider) />
-      <withStyles(List)>
-        <withStyles(Navigation)
-          id="home"
-          isActive={true}
-          onClick={[Function]}
-          title="Weather"
-          tooltip="Weather"
-          url="/"
-        />
-        <withStyles(Navigation)
-          id="map"
-          isActive={false}
-          onClick={[Function]}
-          title="Map"
-          tooltip="Weather map"
-          url="/map"
-        />
-      </withStyles(List)>
+      <withStyles(ListItem)
+        button={true}
+      >
+        <withStyles(ListItemIcon)>
+          <pure(Home) />
+        </withStyles(ListItemIcon)>
+        <NavLink
+          activeClassName="active"
+          activeStyle={
+            Object {
+              "color": "red",
+              "fontWeight": "bold",
+            }
+          }
+          exact={true}
+          to="/"
+        >
+          Weather
+        </NavLink>
+      </withStyles(ListItem)>
+      <withStyles(ListItem)
+        button={true}
+      >
+        <withStyles(ListItemIcon)>
+          <pure(Map) />
+        </withStyles(ListItemIcon)>
+        <NavLink
+          activeClassName="active"
+          activeStyle={
+            Object {
+              "color": "red",
+              "fontWeight": "bold",
+            }
+          }
+          exact={true}
+          to="/map"
+        >
+          Map
+        </NavLink>
+      </withStyles(ListItem)>
     </div>
   </withStyles(Drawer)>
 </div>

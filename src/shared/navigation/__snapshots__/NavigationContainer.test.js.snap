@@ -2,24 +2,6 @@
 
 exports[`<NavigationContainer /> should render 1`] = `
 <withStyles(Navigations)
-  navigations={
-    Array [
-      Object {
-        "id": "home",
-        "isActive": true,
-        "title": "Weather",
-        "tooltip": "Weather",
-        "url": "/",
-      },
-      Object {
-        "id": "map",
-        "isActive": false,
-        "title": "Map",
-        "tooltip": "Weather map",
-        "url": "/map",
-      },
-    ]
-  }
   onNavigationClick={[Function]}
   store={
     Object {

@@ -3,6 +3,7 @@
 exports[`<DetailsButton /> should render 1`] = `
 <withStyles(Button)
   onClick={[Function]}
+  raised={true}
 >
   Details
 </withStyles(Button)>

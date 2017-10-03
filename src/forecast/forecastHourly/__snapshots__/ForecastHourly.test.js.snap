@@ -13,8 +13,14 @@ exports[`<ForecastHourly /> should render 1`] = `
       Hourly
     </withStyles(Typography)>
   </div>
-  <SummaryButton />
-  <DetailsButton />
-  <SummaryChart />
+  <div
+    className="ForecastHourly-options-3"
+  >
+    <SummaryButton />
+    <DetailsButton />
+  </div>
+  <div>
+    <SummaryChart />
+  </div>
 </div>
 `;

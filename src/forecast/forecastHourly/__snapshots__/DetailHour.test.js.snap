@@ -1,40 +1,65 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<DetailHour /> should render 1`] = `
-<div>
+<div
+  className="DetailHour-root-1"
+>
   <div>
-    <div>
-      2 AM
-    </div>
-    <div>
+    <withStyles(Typography)
+      type="title"
+    >
+      <IconWeather
+        code={803}
+      />
+    </withStyles(Typography)>
+  </div>
+  <div>
+    <withStyles(Typography)
+      type="subheading"
+    >
       22
        °
-    </div>
+    </withStyles(Typography)>
   </div>
   <div>
-    <IconWeather
-      code={803}
-    />
+    <withStyles(Typography)
+      type="subheading"
+    >
+      Clouds
+    </withStyles(Typography)>
   </div>
   <div>
-    Clouds
+    <withStyles(Typography)
+      type="body1"
+    >
+      Wind 
+      <IconWind
+        degree={227.007}
+      />
+       
+      3
+       mps
+    </withStyles(Typography)>
   </div>
   <div>
-    <IconWind
-      degree={227.007}
-    />
+    <withStyles(Typography)
+      type="body1"
+    >
+      Humidity 
+      63
+       
+      %
+    </withStyles(Typography)>
   </div>
   <div>
-    3
-     mps
-  </div>
-  <div>
-    Humidity
-  </div>
-  <div>
-    63
-     
-    %
+    <withStyles(Divider) />
+    <withStyles(Typography)
+      type="subheading"
+    >
+      <strong>
+        2 AM
+      </strong>
+    </withStyles(Typography)>
   </div>
 </div>
 `;

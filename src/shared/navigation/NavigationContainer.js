@@ -4,13 +4,8 @@ import Navigations from './Navigations'
 import { setActive } from './navigationActions'
 import type { Dispatch } from 'redux' // eslint-disable-line no-unused-vars
 
-const getNavigations = (navigations) => {
-  return navigations
-}
-
 const mapStateToProps = (state, ownProps) => {
   return {
-    navigations: getNavigations(state.navigationReducer.navigation.data)
   }
 }
 
@@ -18,6 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch:Dispatch<*>, ownProps) => {
   return {
     onNavigationClick: (navigation) => {
+      console.log('onNavigationClick')
       dispatch(setActive(navigation))
     }
   }

@@ -1,10 +1,10 @@
 // @flow
 import * as React from 'react'
-import Navigation from './Navigation'
-import { Drawer, List, withStyles, IconButton, Divider } from 'material-ui'
+import { Drawer, withStyles, IconButton, Divider, ListItem, ListItemIcon } from 'material-ui'
+import HomeIcon from 'material-ui-icons/Home'
+import MapIcon from 'material-ui-icons/Map'
 import ChevronLeftIcon from 'material-ui-icons/ChevronLeft'
-// import HomeIcon from 'material-ui-icons/Home'
-// import MapIcon from 'material-ui-icons/Map'
+import { NavLink } from 'react-router-dom'
 
 /* eslint-disable no-undef */
 type PropsType = {
@@ -66,15 +66,32 @@ const Navigations:React.StatelessFunctionalComponent<any> = ({ navigations, onNa
             </IconButton>
           </div>
           <Divider />
-          <List>
-            {navigations.map((navigation, index) =>
-              <Navigation
-                key={index}
-                {...navigations[index]}
-                onClick={() => onNavigationClick(navigation)}
-            />
-           )}
-          </List>
+          <ListItem button>
+            <ListItemIcon>
+              <HomeIcon />
+            </ListItemIcon>
+            <NavLink
+              to={'/'}
+              exact
+              activeStyle={{
+                fontWeight: 'bold',
+                color: 'red'
+              }}
+            >Weather</NavLink >
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon>
+              <MapIcon />
+            </ListItemIcon>
+            <NavLink
+              to={'/map'}
+              exact
+              activeStyle={{
+                fontWeight: 'bold',
+                color: 'red'
+              }}
+            >Map</NavLink >
+          </ListItem>
         </div>
       </Drawer>
     </div>

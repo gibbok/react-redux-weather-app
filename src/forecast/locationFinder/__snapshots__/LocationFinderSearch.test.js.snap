@@ -12,11 +12,15 @@ exports[`<LocationFinderSearch /> should render 1`] = `
     onKeyDown={[Function]}
     placeholder="Enter a location"
   />
-  <withStyles(Button)
-    color="contrast"
-    onClick={[Function]}
+  <withStyles(IconButton)
+    aria-label="Search"
+    color="inherit"
   >
-    Search
-  </withStyles(Button)>
+    <withStyles(Icon)
+      onClick={[Function]}
+    >
+      search
+    </withStyles(Icon)>
+  </withStyles(IconButton)>
 </div>
 `;

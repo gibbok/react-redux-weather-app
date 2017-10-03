@@ -1,12 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<DetailDayGroup /> should render 1`] = `
-<div>
-  <div>
-    Tue, Sep 12
+<div
+  className="DetailDayGroup-root-1"
+>
+  <div
+    className="DetailDayGroup-title-2"
+  >
+    <withStyles(Typography)
+      type="title"
+    >
+      Tue, Sep 12
+    </withStyles(Typography)>
   </div>
-  <div>
-    <DetailHour
+  <withStyles(Divider) />
+  <div
+    className="DetailDayGroup-hours-3"
+  >
+    <withStyles(DetailHour)
       humidityUnit="%"
       humidityValue={93}
       momentId="2017:8:12:2"

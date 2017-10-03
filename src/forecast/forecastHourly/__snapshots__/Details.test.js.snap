@@ -1,8 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Details /> should render 1`] = `
-<div>
-  <DetailDayGroup
+<div
+  className="Details-root-1"
+>
+  <withStyles(DetailDayGroup)
     hours={
       Array [
         Object {
@@ -20,7 +22,7 @@ exports[`<Details /> should render 1`] = `
     }
     timespan={1505206800}
   />
-  <DetailDayGroup
+  <withStyles(DetailDayGroup)
     hours={
       Array [
         Object {

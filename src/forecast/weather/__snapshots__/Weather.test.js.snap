@@ -91,13 +91,12 @@ exports[`<Weather /> should render 1`] = `
             type="body1"
           >
             Wind 
-            306.501
-             
-            1.29
-             mps 
             <IconWind
               degree={306.501}
             />
+             
+            1
+             mps
           </withStyles(Typography)>
         </div>
         <div>
