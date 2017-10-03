@@ -3,6 +3,7 @@ import * as React from 'react'
 import moment from 'moment'
 import IconWeather from '../../shared/icon/IconWeather'
 import IconWind from '../../shared/icon/IconWind'
+import { withStyles, Typography, Divider } from 'material-ui'
 
 /* eslint-disable no-undef */
 type PropsType = {
@@ -14,44 +15,58 @@ type PropsType = {
   +windDegree: number,
   +windSpeed: number,
   +humidityUnit: '%',
-  +humidityValue: number
+  +humidityValue: number,
+  +classes: Object
 }
 /* eslint-enable no-undef */
 
-const DetailHour:React.StatelessFunctionalComponent<PropsType> = ({ momentId, timespan, temp, weatherIconCode, weatherDescription, windDegree, windSpeed, humidityUnit, humidityValue }:PropsType):React.Element<any> => {
+const styles = theme => {
+  return ({
+    root: {
+      width: 112
+    }
+  })
+}
+
+const DetailHour:React.StatelessFunctionalComponent<PropsType> = ({ momentId, timespan, temp, weatherIconCode, weatherDescription, windDegree, windSpeed, humidityUnit, humidityValue, classes }:PropsType):React.Element<any> => {
   const hourFormat = moment.unix(timespan).format('h A')
   const tempFormat = Math.round(temp)
   const windSpeedFormat = Math.round(windSpeed)
   return (
-    <div>
+    <div className={classes.root}>
       <div>
-        <div>
-          {hourFormat}
-        </div>
-        <div>
+        <Typography type='title'>
+          <IconWeather code={weatherIconCode} />
+        </Typography>
+      </div>
+      <div>
+        <Typography type='subheading'>
           {tempFormat} &#176;
-          </div>
+        </Typography>
       </div>
       <div>
-        <IconWeather code={weatherIconCode} />
+        <Typography type='subheading'>
+          {weatherDescription}
+        </Typography>
       </div>
       <div>
-        {weatherDescription}
+        <Typography type='body1'>
+          Wind <IconWind degree={windDegree} /> {windSpeedFormat} mps
+        </Typography>
       </div>
       <div>
-        <IconWind degree={windDegree} />
+        <Typography type='body1'>
+          Humidity {humidityValue} {humidityUnit}
+        </Typography>
       </div>
       <div>
-        {windSpeedFormat} mps
-      </div>
-      <div>
-        Humidity
-      </div>
-      <div>
-        {humidityValue} {humidityUnit}
+        <Divider />
+        <Typography type='subheading'>
+          <strong>{hourFormat}</strong>
+        </Typography>
       </div>
     </div>
   )
 }
 
-export default DetailHour
+export default withStyles(styles)(DetailHour)

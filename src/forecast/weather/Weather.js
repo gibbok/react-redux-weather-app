@@ -114,6 +114,7 @@ const Weather:React.StatelessFunctionalComponent<any> = ({ weather: {
   const updatedTimeFormat = moment.unix(updatedTime).format('h:mm A')
   const sunriseFormat = moment.unix(sunrise).format('h:mm A')
   const sunsetFormat = moment.unix(sunset).format('h:mm A')
+  const windSpeedFormat = Math.round(windSpeed)
   return (
     <div className={classes.root}>
       <div className={classes.title}>
@@ -153,7 +154,7 @@ const Weather:React.StatelessFunctionalComponent<any> = ({ weather: {
         <div className={classes.infosContent}>
           <div className={classes.infosLine1}>
             <div>
-              <Typography type='body1'>Wind {windDegree} {windSpeed} mps <IconWind degree={windDegree} /></Typography>
+              <Typography type='body1'>Wind <IconWind degree={windDegree} /> {windSpeedFormat} mps</Typography>
             </div>
             <div>
               <Typography type='body1'>Visibility {visibility} meter</Typography>

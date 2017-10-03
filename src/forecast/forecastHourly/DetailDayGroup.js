@@ -2,6 +2,7 @@
 import * as React from 'react'
 import moment from 'moment'
 import DetailHour from './DetailHour'
+import { withStyles, Typography, Divider } from 'material-ui'
 
 /* eslint-disable no-undef */
 type PropsType = {
@@ -16,11 +17,30 @@ type PropsType = {
     +weatherIconCode: number,
     +windDegree: number,
     +windSpeed: number
-  }>
+  }>,
+  +classes: Object
 }
 /* eslint-enable no-undef */
 
-const DetailDayGroup:React.StatelessFunctionalComponent<PropsType> = ({ timespan, hours }:PropsType):React.Element<any> => {
+const styles = theme => {
+  const spaceUnit = theme.spacing.unit
+  return ({
+    root: {
+    },
+    title: {
+      marginBottom: spaceUnit * 1
+    },
+    hours: {
+      display: 'flex',
+      marginTop: spaceUnit * 1.5,
+      marginBottom: spaceUnit * 3
+      // borderTop: '1px solid rgba(0,0,0,0.5)',
+      // borderBottom: '1px solid rgba(0,0,0,0.5)'
+    }
+  })
+}
+
+const DetailDayGroup:React.StatelessFunctionalComponent<PropsType> = ({ timespan, hours, classes }:PropsType):React.Element<any> => {
   const dayFormat = moment.unix(timespan).format('ddd, MMM D')
   const hoursDetails = hours.map((day, index) =>
     <DetailHour
@@ -29,15 +49,18 @@ const DetailDayGroup:React.StatelessFunctionalComponent<PropsType> = ({ timespan
     />
   )
   return (
-    <div>
-      <div>
-        {dayFormat}
+    <div className={classes.root}>
+      <div className={classes.title}>
+        <Typography type='title'>
+          {dayFormat}
+        </Typography>
       </div>
-      <div>
+      <Divider />
+      <div className={classes.hours}>
         {hoursDetails}
       </div>
     </div>
   )
 }
 
-export default DetailDayGroup
+export default withStyles(styles)(DetailDayGroup)
