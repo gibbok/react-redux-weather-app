@@ -13,7 +13,6 @@ describe('<Navigations />', () => {
 
   it('should NavLink have navigational properties', () => {
     const wrapper = shallow(<Navigations />)
-    // expect(wrapper.find(NavLink).find({ to: '/' }).first().length === 1).toEqual(true)
     expect(wrapper.find(NavLink).get(0).props.to).toEqual('/')
     expect(wrapper.find(NavLink).get(1).props.to).toEqual('/map')
   })
