@@ -47,10 +47,18 @@ const styles = theme => ({
     justifyContent: 'flex-end',
     padding: '0 8px',
     ...theme.mixins.toolbar
+  },
+  navLinks: theme.typography.button,
+  navLinksText: {
+    color: 'rgba(0, 0, 0, 0.87)'
   }
 })
 
 const Navigations:React.StatelessFunctionalComponent<any> = ({ navigations, onNavigationClick, classes }:PropsType):React.Element<any> => {
+  const activeStyle = {
+    fontWeight: 'bold'
+  }
+
   return (
     <div>
       <Drawer
@@ -66,86 +74,34 @@ const Navigations:React.StatelessFunctionalComponent<any> = ({ navigations, onNa
             </IconButton>
           </div>
           <Divider />
-          <NavLink
-            to={'/'}
-            exact
-            activeStyle={{
-              fontWeight: 'bold',
-              color: 'red'
-            }}>
-            <ListItem button>
-              <ListItemIcon>
-                <HomeIcon />
-              </ListItemIcon>
-              Weather
-            </ListItem>
-          </NavLink >
-          <NavLink
-            to={'/map'}
-            exact
-            activeStyle={{
-              fontWeight: 'bold',
-              color: 'red'
-            }}>
-            <ListItem button>
-              <ListItemIcon>
-                <MapIcon />
-              </ListItemIcon>
-              Map
-            </ListItem>
-          </NavLink >
+          <div className={classes.navLinks}>
+            <NavLink
+              to={'/'}
+              exact
+              activeStyle={activeStyle}>
+              <ListItem button>
+                <ListItemIcon>
+                  <HomeIcon />
+                </ListItemIcon>
+                <div className={classes.navLinksText}>Weather</div>
+              </ListItem>
+            </NavLink >
+            <NavLink
+              to={'/map'}
+              exact
+              activeStyle={activeStyle}>
+              <ListItem button>
+                <ListItemIcon>
+                  <MapIcon />
+                </ListItemIcon>
+                <div className={classes.navLinksText}>Map</div>
+              </ListItem>
+            </NavLink >
+          </div>
         </div>
       </Drawer>
     </div>
   )
 }
-
-// const Navigations:React.StatelessFunctionalComponent<any> = ({ navigations, onNavigationClick, classes }:PropsType):React.Element<any> => {
-//   return (
-//     <div>
-//       <Drawer
-//         type='permanent'
-//         classes={{
-//           paper: classes.drawerPaper
-//         }}
-//         >
-//         <div className={classes.drawerInner}>
-//           <div className={classes.drawerHeader}>
-//             <IconButton>
-//               <ChevronLeftIcon />
-//             </IconButton>
-//           </div>
-//           <Divider />
-//           <ListItem button>
-//             <ListItemIcon>
-//               <HomeIcon />
-//             </ListItemIcon>
-//             <NavLink
-//               to={'/'}
-//               exact
-//               activeStyle={{
-//                 fontWeight: 'bold',
-//                 color: 'red'
-//               }}
-//             >Weather</NavLink >
-//           </ListItem>
-//           <ListItem button>
-//             <ListItemIcon>
-//               <MapIcon />
-//             </ListItemIcon>
-//             <NavLink
-//               to={'/map'}
-//               exact
-//               activeStyle={{
-//                 fontWeight: 'bold',
-//                 color: 'red'
-//               }}
-//             >Map</NavLink >
-//           </ListItem>
-//         </div>
-//       </Drawer>
-//     </div>
-//   )
-// }
 
 export default withStyles(styles)(Navigations)
