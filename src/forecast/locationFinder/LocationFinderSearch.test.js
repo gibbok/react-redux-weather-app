@@ -2,9 +2,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import LocationFinderSearch from './LocationFinderSearch'
-import sinon from 'sinon'
 import toJson from 'enzyme-to-json'
-import {Button, Input} from 'material-ui'
+import {Input, IconButton, Icon} from 'material-ui'
 
 describe('<LocationFinderSearch />', () => {
   it('should render', () => {
@@ -18,20 +17,7 @@ describe('<LocationFinderSearch />', () => {
 
   it('should render material-ui', () => {
     expect(shallow(<LocationFinderSearch />).find(Input).length).toBe(1)
-    expect(shallow(<LocationFinderSearch />).find(Button).length).toBe(1)
-  })
-
-  it('should simulate change event on material-ui Input', () => {
-    const onLocationChange = sinon.spy()
-    const wrapper = shallow(<LocationFinderSearch onLocationChange={onLocationChange} />)
-    wrapper.find(Input).simulate('change')
-    expect(onLocationChange.called).toEqual(true)
-  })
-
-  it('should simulate click event on material-ui FlatButton', () => {
-    const onSearchClick = sinon.spy()
-    const wrapper = shallow(<LocationFinderSearch onSearchClick={onSearchClick} />)
-    wrapper.find(Button).simulate('click')
-    expect(onSearchClick.called).toEqual(true)
+    expect(shallow(<LocationFinderSearch />).find(IconButton).length).toBe(1)
+    expect(shallow(<LocationFinderSearch />).find(Icon).length).toBe(1)
   })
 })

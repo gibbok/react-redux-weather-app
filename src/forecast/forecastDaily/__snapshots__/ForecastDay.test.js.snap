@@ -4,43 +4,49 @@ exports[`<ForecastDay /> should render 1`] = `
 <div
   className="ForecastDay-root-1"
 >
-  <div>
+  <div
+    className="ForecastDay-title-2"
+  >
     <withStyles(Typography)
       type="title"
     >
       Sun, Aug 1
     </withStyles(Typography)>
   </div>
-  <div>
+  <div
+    className="ForecastDay-icon-3"
+  >
     <withStyles(Typography)
-      type="title"
+      type="headline"
     >
       <IconWeather
         code={200}
       />
     </withStyles(Typography)>
   </div>
-  <div>
+  <div
+    className="ForecastDay-temperature-4"
+  >
     <div>
       <withStyles(Typography)
-        type="subheading"
+        type="title"
       >
-        Min 
-        10
-        °
-      </withStyles(Typography)>
-    </div>
-    <div>
-      <withStyles(Typography)
-        type="subheading"
-      >
-        Max 
         15
         °
       </withStyles(Typography)>
     </div>
+    <div>
+      <withStyles(Typography)
+        type="subheading"
+      >
+        10
+        °
+      </withStyles(Typography)>
+    </div>
   </div>
-  <div>
+  <div
+    className="ForecastDay-weather-5"
+  >
     <withStyles(Typography)
       type="subheading"
     >

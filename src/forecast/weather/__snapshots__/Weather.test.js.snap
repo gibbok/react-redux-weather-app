@@ -23,7 +23,7 @@ exports[`<Weather /> should render 1`] = `
     >
       <div>
         <withStyles(Typography)
-          type="display1"
+          type="display2"
         >
           <IconWeather
             code={800}
@@ -41,25 +41,49 @@ exports[`<Weather /> should render 1`] = `
       <div
         className="Weather-temperatureMinMax-5"
       >
-        <withStyles(Typography)
-          type="subheading"
+        <div
+          className="Weather-temperatureMax-7"
         >
-          Min 
-          10
-           °
-        </withStyles(Typography)>
-        <withStyles(Typography)
-          type="subheading"
+          <div>
+            <withStyles(Typography)
+              type="body2"
+            >
+              Min
+            </withStyles(Typography)>
+          </div>
+          <div>
+            <withStyles(Typography)
+              type="body2"
+            >
+              10
+               °
+            </withStyles(Typography)>
+          </div>
+        </div>
+        <div
+          className="Weather-temperatureMin-6"
         >
-          Max 
-          20
-           °
-        </withStyles(Typography)>
+          <div>
+            <withStyles(Typography)
+              type="body2"
+            >
+              Max
+            </withStyles(Typography)>
+          </div>
+          <div>
+            <withStyles(Typography)
+              type="body2"
+            >
+              20
+               °
+            </withStyles(Typography)>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div
-    className="Weather-description-6"
+    className="Weather-description-8"
   >
     <withStyles(Typography)
       type="title"
@@ -68,7 +92,7 @@ exports[`<Weather /> should render 1`] = `
     </withStyles(Typography)>
   </div>
   <div
-    className="Weather-update-7"
+    className="Weather-update-9"
   >
     <withStyles(Typography)
       type="body1"
@@ -78,13 +102,13 @@ exports[`<Weather /> should render 1`] = `
     </withStyles(Typography)>
   </div>
   <div
-    className="Weather-infos-8"
+    className="Weather-infos-10"
   >
     <div
-      className="Weather-infosContent-9"
+      className="Weather-infosContent-11"
     >
       <div
-        className="Weather-infosLine1-10"
+        className="Weather-infosLine1-12"
       >
         <div>
           <withStyles(Typography)
@@ -119,7 +143,7 @@ exports[`<Weather /> should render 1`] = `
         </div>
       </div>
       <div
-        className="Weather-infosLine2-11"
+        className="Weather-infosLine2-13"
       >
         <div>
           <withStyles(Typography)
