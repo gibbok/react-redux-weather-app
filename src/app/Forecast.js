@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react'
-import NavigationContainer from '../shared/navigation/NavigationContainer'
+import Navigations from '../shared/navigation/Navigations'
 import WeatherContainer from '../forecast/weather/WeatherContainer'
 import ForecastDailyContainer from '../forecast/forecastDaily/ForecastDailyContainer'
 import ForecastHourlyContainer from '../forecast/forecastHourly/ForecastHourlyContainer'
@@ -47,7 +47,7 @@ const Forecast = (props) => {
     <div className={classes.root}>
       <div className={classes.appFrame}>
         <Bar />
-        <NavigationContainer />
+        <Navigations />
         <div className={classes.content}>
           <WeatherContainer />
           <ForecastDailyContainer />

@@ -1,11 +1,11 @@
 // @flow
 import React from 'react'
-import NavigationContainer from '../shared/navigation/NavigationContainer'
+import Navigations from '../shared/navigation/Navigations'
 import MapContainer from '../map/MapContainer'
 
 const Map = () => (
   <div>
-    <NavigationContainer />
+    <Navigations />
     <MapContainer />
   </div>
 )

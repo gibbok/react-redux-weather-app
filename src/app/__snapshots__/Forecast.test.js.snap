@@ -8,7 +8,7 @@ exports[`<Forecast /> should render 1`] = `
     className="Forecast-appFrame-2"
   >
     <withStyles(Bar) />
-    <Connect(withStyles(Navigations)) />
+    <withStyles(Navigations) />
     <div
       className="Forecast-content-3"
     >
