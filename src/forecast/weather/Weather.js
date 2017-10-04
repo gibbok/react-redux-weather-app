@@ -59,7 +59,7 @@ const styles = theme => {
     temperatureMinMax: {
       display: 'flex',
       flexDirection: 'column',
-      width: 54
+      width: 56
     },
     temperatureMin: {
       display: 'flex',
