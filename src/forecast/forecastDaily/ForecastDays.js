@@ -17,10 +17,10 @@ const styles = theme => {
   return ({
     root: {
       width: 900,
-      marginBottom: spaceUnit * 3
+      marginBottom: spaceUnit * 6
     },
     title: {
-      marginBottom: spaceUnit
+      marginBottom: spaceUnit * 2.5
     },
     tiles: {
       display: 'flex'

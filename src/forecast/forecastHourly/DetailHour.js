@@ -21,10 +21,25 @@ type PropsType = {
 /* eslint-enable no-undef */
 
 const styles = theme => {
+  const spaceUnit = theme.spacing.unit
   return ({
     root: {
       width: 112
-    }
+    },
+    icon: {
+      marginBottom: spaceUnit * 0.5
+    },
+    temperature: {
+      marginBottom: spaceUnit * 0.5
+    },
+    description: {
+      marginBottom: spaceUnit
+    },
+    wind: {},
+    humidity: {
+      marginBottom: spaceUnit * 1.25
+    },
+    hour: {}
   })
 }
 
@@ -34,32 +49,32 @@ const DetailHour:React.StatelessFunctionalComponent<PropsType> = ({ momentId, ti
   const windSpeedFormat = Math.round(windSpeed)
   return (
     <div className={classes.root}>
-      <div>
-        <Typography type='title'>
+      <div className={classes.icon}>
+        <Typography type='headline'>
           <IconWeather code={weatherIconCode} />
         </Typography>
       </div>
-      <div>
-        <Typography type='subheading'>
+      <div className={classes.temperature}>
+        <Typography type='title'>
           {tempFormat} &#176;
         </Typography>
       </div>
-      <div>
+      <div className={classes.description}>
         <Typography type='subheading'>
           {weatherDescription}
         </Typography>
       </div>
-      <div>
+      <div className={classes.wind}>
         <Typography type='body1'>
           Wind <IconWind degree={windDegree} /> {windSpeedFormat} mps
         </Typography>
       </div>
-      <div>
+      <div className={classes.humidity}>
         <Typography type='body1'>
           Humidity {humidityValue} {humidityUnit}
         </Typography>
       </div>
-      <div>
+      <div className={classes.hour}>
         <Divider />
         <Typography type='subheading'>
           <strong>{hourFormat}</strong>

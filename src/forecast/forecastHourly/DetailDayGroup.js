@@ -34,8 +34,6 @@ const styles = theme => {
       display: 'flex',
       marginTop: spaceUnit * 1.5,
       marginBottom: spaceUnit * 3
-      // borderTop: '1px solid rgba(0,0,0,0.5)',
-      // borderBottom: '1px solid rgba(0,0,0,0.5)'
     }
   })
 }
