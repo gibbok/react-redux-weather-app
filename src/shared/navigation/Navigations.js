@@ -66,36 +66,86 @@ const Navigations:React.StatelessFunctionalComponent<any> = ({ navigations, onNa
             </IconButton>
           </div>
           <Divider />
-          <ListItem button>
-            <ListItemIcon>
-              <HomeIcon />
-            </ListItemIcon>
-            <NavLink
-              to={'/'}
-              exact
-              activeStyle={{
-                fontWeight: 'bold',
-                color: 'red'
-              }}
-            >Weather</NavLink >
-          </ListItem>
-          <ListItem button>
-            <ListItemIcon>
-              <MapIcon />
-            </ListItemIcon>
-            <NavLink
-              to={'/map'}
-              exact
-              activeStyle={{
-                fontWeight: 'bold',
-                color: 'red'
-              }}
-            >Map</NavLink >
-          </ListItem>
+          <NavLink
+            to={'/'}
+            exact
+            activeStyle={{
+              fontWeight: 'bold',
+              color: 'red'
+            }}>
+            <ListItem button>
+              <ListItemIcon>
+                <HomeIcon />
+              </ListItemIcon>
+              Weather
+            </ListItem>
+          </NavLink >
+          <NavLink
+            to={'/map'}
+            exact
+            activeStyle={{
+              fontWeight: 'bold',
+              color: 'red'
+            }}>
+            <ListItem button>
+              <ListItemIcon>
+                <MapIcon />
+              </ListItemIcon>
+              Map
+            </ListItem>
+          </NavLink >
         </div>
       </Drawer>
     </div>
   )
 }
+
+// const Navigations:React.StatelessFunctionalComponent<any> = ({ navigations, onNavigationClick, classes }:PropsType):React.Element<any> => {
+//   return (
+//     <div>
+//       <Drawer
+//         type='permanent'
+//         classes={{
+//           paper: classes.drawerPaper
+//         }}
+//         >
+//         <div className={classes.drawerInner}>
+//           <div className={classes.drawerHeader}>
+//             <IconButton>
+//               <ChevronLeftIcon />
+//             </IconButton>
+//           </div>
+//           <Divider />
+//           <ListItem button>
+//             <ListItemIcon>
+//               <HomeIcon />
+//             </ListItemIcon>
+//             <NavLink
+//               to={'/'}
+//               exact
+//               activeStyle={{
+//                 fontWeight: 'bold',
+//                 color: 'red'
+//               }}
+//             >Weather</NavLink >
+//           </ListItem>
+//           <ListItem button>
+//             <ListItemIcon>
+//               <MapIcon />
+//             </ListItemIcon>
+//             <NavLink
+//               to={'/map'}
+//               exact
+//               activeStyle={{
+//                 fontWeight: 'bold',
+//                 color: 'red'
+//               }}
+//             >Map</NavLink >
+//           </ListItem>
+//         </div>
+//       </Drawer>
+//     </div>
+//   )
+// }
 
 export default withStyles(styles)(Navigations)
