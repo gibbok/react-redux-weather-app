@@ -52,11 +52,22 @@ const styles = theme => {
     temperatureContent: {
       display: 'flex',
       flexDirection: 'row',
-      alignItems: 'center'
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      width: 200
     },
     temperatureMinMax: {
       display: 'flex',
-      flexDirection: 'column'
+      flexDirection: 'column',
+      width: 54
+    },
+    temperatureMin: {
+      display: 'flex',
+      justifyContent: 'space-between'
+    },
+    temperatureMax: {
+      display: 'flex',
+      justifyContent: 'space-between'
     },
     description: {
       display: 'flex',
@@ -66,7 +77,7 @@ const styles = theme => {
       display: 'flex',
       justifyContent: 'center',
       marginTop: spaceUnit * 0.5,
-      marginBottom: spaceUnit
+      marginBottom: spaceUnit * 2.25
     },
     infos: {
       display: 'flex',
@@ -79,7 +90,8 @@ const styles = theme => {
     },
     infosLine1: {
       display: 'flex',
-      justifyContent: 'space-between'
+      justifyContent: 'space-between',
+      marginBottom: spaceUnit * 0.75
     },
     infosLine2: {
       display: 'flex',
@@ -125,7 +137,7 @@ const Weather:React.StatelessFunctionalComponent<any> = ({ weather: {
       <div className={classes.temperature}>
         <div className={classes.temperatureContent}>
           <div>
-            <Typography type='display1'>
+            <Typography type='display2'>
               <IconWeather code={icon} />
             </Typography>
           </div>
@@ -135,8 +147,14 @@ const Weather:React.StatelessFunctionalComponent<any> = ({ weather: {
           </Typography>
           </div>
           <div className={classes.temperatureMinMax}>
-            <Typography type='subheading'>Min {temperatureMin} &#176;</Typography>
-            <Typography type='subheading'>Max {temperatureMax} &#176;</Typography>
+            <div className={classes.temperatureMax}>
+              <div><Typography type='body2'>Min</Typography></div>
+              <div><Typography type='body2'>{temperatureMin} &#176;</Typography></div>
+            </div>
+            <div className={classes.temperatureMin}>
+              <div><Typography type='body2'>Max</Typography></div>
+              <div><Typography type='body2'>{temperatureMax} &#176;</Typography></div>
+            </div>
           </div>
         </div>
       </div>

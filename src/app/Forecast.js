@@ -26,7 +26,7 @@ const styles = theme => {
     content: {
       width: '100%',
       flexGrow: 1,
-      backgroundColor: theme.palette.background.default,
+      // backgroundColor: theme.palette.background.default,
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',

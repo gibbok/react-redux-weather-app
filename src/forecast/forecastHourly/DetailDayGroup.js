@@ -26,9 +26,10 @@ const styles = theme => {
   const spaceUnit = theme.spacing.unit
   return ({
     root: {
+      marginBottom: spaceUnit * 2
     },
     title: {
-      marginBottom: spaceUnit * 1
+      marginBottom: spaceUnit
     },
     hours: {
       display: 'flex',
