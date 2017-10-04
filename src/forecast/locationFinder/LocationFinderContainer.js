@@ -7,10 +7,14 @@ import type { Dispatch } from 'redux' // eslint-disable-line no-unused-vars
 const getLocations = (locations) => {
   return locations
 }
+const getIsFinderOpen = state => {
+  return state.locationFinderReducer.locationFinder.ui.isFinderOpen
+}
 
 const mapStateToProps = (state) => {
   return {
-    locations: getLocations(state.locationFinderReducer.locationFinder.data)
+    locations: getLocations(state.locationFinderReducer.locationFinder.data),
+    isFinderOpen: getIsFinderOpen(state)
   }
 }
 

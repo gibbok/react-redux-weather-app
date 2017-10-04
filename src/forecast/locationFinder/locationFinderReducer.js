@@ -12,18 +12,23 @@ const initialState:StateType = {
       isFetching: false
     },
     ui: {
-      inputValue: ''
+      inputValue: '',
+      isFinderOpen: false
     }
   }
 }
 
-const updateAppIsFetching = (state:StateType, action:ActionType, value:boolean):StateType => {
+const updateAppIsFetching = (state:StateType, value:boolean):StateType => {
   return dotProp.set(state, 'locationFinder.app.isFetching', value)
 }
 
 const updateData = (state:StateType, action:ActionType):StateType => {
   const locations = action.payload.list.map(({ id, name, sys: { country } }) => ({ id, name, country }))
   return dotProp.set(state, 'locationFinder.data', locations)
+}
+
+const updateIsFinderOpen = (state:StateType, action:ActionType):StateType => {
+  return dotProp.set(state, 'locationFinder.ui.isFinderOpen', action.payload)
 }
 
 const updateUiInputValue = (state:StateType, action:ActionType):StateType => {
@@ -33,13 +38,19 @@ const updateUiInputValue = (state:StateType, action:ActionType):StateType => {
 function locationFinderReducer (state:StateType = initialState, action:ActionType):StateType {
   switch (action.type) {
     case types.GET_LOCATIONS_PENDING:
-      return updateAppIsFetching(state, action, true)
+      return updateAppIsFetching(state, true)
 
     case types.GET_LOCATIONS_FULFILLED:
-      return updateData(updateAppIsFetching(state, action, false), action)
+      const state1 = updateAppIsFetching(state, false)
+      const state2 = updateData(state1, action)
+      return state2
 
     case types.SET_SEARCHVALUE:
       return updateUiInputValue(state, action)
+
+    case types.SET_ISFINDEROPEN:
+      return updateIsFinderOpen(state, action)
+
     default:
       return state
   }

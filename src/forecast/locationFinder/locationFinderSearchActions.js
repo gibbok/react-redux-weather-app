@@ -8,9 +8,13 @@ import { getWeather } from '../../forecast/weather/weatherActions'
 import { getForecastDaily } from '../../forecast/forecastDaily/forecastDailyActions'
 import { getForecastHourly } from '../../forecast/forecastHourly/forecastHourlyActions'
 
+const setIsFinderOpen = (value:boolean):ActionType => ({
+  type: types.SET_ISFINDEROPEN,
+  payload: value
+})
+
 const getLocations = (query:string):ActionType => {
   const value = query.trim()
-
   if (!value.length) {
     return ({
       type: null,
@@ -27,6 +31,7 @@ const getLocations = (query:string):ActionType => {
     })
   })
 }
+
 const setSearchValue = (value:string):ActionType => ({
   type: types.SET_SEARCHVALUE,
   payload: value
@@ -40,4 +45,4 @@ const setLocation = (id:number):ActionType => {
   }
 }
 
-export { getLocations, setSearchValue, setLocation }
+export { getLocations, setSearchValue, setLocation, setIsFinderOpen }
